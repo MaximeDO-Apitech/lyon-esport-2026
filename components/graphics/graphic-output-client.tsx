@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import type {
   GraphicSnapshot,
   GraphicsState,
@@ -40,7 +40,8 @@ export function GraphicOutputClient({
 }: GraphicOutputClientProps) {
   const { envelope, getServerNowMs } = useGraphicsFeed(100);
   const [renderId, setRenderId] = useState("");
-  const [simulationStartedAt, setSimulationStartedAt] = useState(0);
+  const [simulationEndAtServerMs, setSimulationEndAtServerMs] = useState(0);
+  const simulationKeyRef = useRef("");
   const [viewportScale, setViewportScale] = useState(1);
 
   useEffect(() => {
@@ -55,10 +56,17 @@ export function GraphicOutputClient({
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       setRenderId(rendererId(output));
-      setSimulationStartedAt(Date.now());
     });
     return () => window.cancelAnimationFrame(frame);
-  }, [output, simulationSeconds]);
+  }, [output]);
+
+  useEffect(() => {
+    if (!envelope || source !== "preview" || output !== "attente" || !simulationSeconds) return;
+    const key = `${output}:${simulationSeconds}`;
+    if (simulationKeyRef.current === key) return;
+    simulationKeyRef.current = key;
+    setSimulationEndAtServerMs(getServerNowMs() + simulationSeconds * 1000);
+  }, [envelope, getServerNowMs, output, simulationSeconds, source]);
 
   const snapshot = envelope
     ? source === "preview"
@@ -78,18 +86,18 @@ export function GraphicOutputClient({
   }, [acknowledge, envelope, output, renderId, revision]);
 
   const previewState = useMemo(() => {
-    if (!envelope || source !== "preview" || output !== "attente" || !simulationSeconds || !simulationStartedAt) {
+    if (!envelope || source !== "preview" || output !== "attente" || !simulationSeconds || !simulationEndAtServerMs) {
       return envelope?.state ?? null;
     }
     const timer: ProgramTimer = {
       ...envelope.state.timer,
       status: "running",
-      endAtUtcMs: simulationStartedAt + simulationSeconds * 1000,
+      endAtUtcMs: simulationEndAtServerMs,
       remainingMsAtPause: simulationSeconds * 1000,
       showDigits: true,
     };
     return { ...envelope.state, timer } as GraphicsState;
-  }, [envelope, output, simulationSeconds, simulationStartedAt, source]);
+  }, [envelope, output, simulationEndAtServerMs, simulationSeconds, source]);
 
   return (
     <main
