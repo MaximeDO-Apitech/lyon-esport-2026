@@ -7,8 +7,8 @@ import { useEffect, useMemo, useState } from "react";
 type TimerMode = "target" | "duration" | "placeholder" | "hidden";
 
 export function ControlPanel() {
-  const [mode, setMode] = useState<TimerMode>("target");
-  const [target, setTarget] = useState("2026-11-13T19:00");
+  const [mode, setMode] = useState<TimerMode>("placeholder");
+  const [target, setTarget] = useState("");
   const [durationMinutes, setDurationMinutes] = useState("15");
   const [origin, setOrigin] = useState("");
   const [copyLabel, setCopyLabel] = useState("Copier l’URL");
