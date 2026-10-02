@@ -18,7 +18,7 @@ Typographies nommées par la charte : Eurostile Extd Black, Eurostile Extd Regul
 
 Le bloc-marque officiel est affiché dans ses couleurs sources, sans filtre, contour, recadrage, recoloration, redessin, extrusion, déformation ni altération du ratio. Il reste fixe et pleinement opaque. Le fichier public `public/assets/Bloc_marque_sans-fond_blanc.png` est une copie binaire intacte du fichier explicitement choisi par le responsable scène.
 
-Les motifs officiels utilisés sont les flammes/volutes fournies. Ils restent décoratifs et ne passent pas devant le logo, le message ni le compteur. La ligne de points reste disponible mais n’est plus utilisée sur l’écran d’attente, afin de préserver une hiérarchie plus nette.
+Les motifs officiels utilisés sont les flammes/volutes, le fond `Elements-01`, l’angle cyan, la ligne de points et le nuage de points fournis. Ils restent décoratifs, vivent dans les couches périphériques et ne passent pas devant le logo, le message ni le compteur. La ligne de points n’est jamais utilisée comme une grande colonne répétitive : elle devient un seul rail technique horizontal.
 
 ## Ressources disponibles
 
@@ -40,11 +40,16 @@ La police manquante est visible dans l’administration. Elle ne bloque pas la V
 - message centré à partir de `y = 560 px` ;
 - compteur numérique seul, centré à partir de `y = 724 px`, sans libellé secondaire ;
 - centre sombre, motifs concentrés aux bords et dans la partie basse ;
+- profondeur de fond issue de `Elements-01`, conservé intact et cadré derrière les autres couches ;
+- un angle officiel principal en haut à gauche, un rappel plus léger en bas à droite, une matrice de points en haut à droite et un rail de points unique à gauche ;
+- sphères lumineuses et micro-formes géométriques limitées aux périphéries, dans les couleurs officielles, pour prolonger les ponctuations déjà présentes dans les flammes ;
 - lueur cyan discrète située derrière le logo, jamais appliquée au fichier du logo ;
 - boucle GSAP déterministe de 15 secondes, sans caméra, flash, glitch ou pulsation du logo ;
 - une masse de flamme officielle dominante à gauche et un rappel plus léger à droite, sans troisième nappe superposée au centre ;
 - aucune translation globale des flammes : leur mouvement est une déformation interne locale à deux échelles, de faible amplitude, pilotée par des fonctions périodiques qui retrouvent exactement leur état initial à 15 secondes ;
-- respiration très lente de l’atmosphère basse et du halo placé derrière le logo ; aucun balayage traversant ni colonne de points ;
+- respiration très lente de l’atmosphère basse et du halo placé derrière le logo ;
+- dérive sinusoïdale de 1 à 6 px et micro-variations d’intensité sur les seuls détails périphériques ; toutes les phases retrouvent exactement leur état initial à 15 secondes ;
+- aucun balayage traversant ni colonne de points ;
 - compteur piloté par une horloge distincte de la boucle décorative.
 
 ### Synthé individuel
