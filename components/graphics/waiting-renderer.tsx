@@ -31,6 +31,8 @@ export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgres
       const rightCoarseDisplacement = root.current?.querySelector<SVGFEDisplacementMapElement>("[data-flow-displacement='right-coarse']");
       const rightFineDisplacement = root.current?.querySelector<SVGFEDisplacementMapElement>("[data-flow-displacement='right-fine']");
       const ambientNodes = Array.from(root.current?.querySelectorAll<HTMLElement>("[data-ambient]") ?? []);
+      const traceTop = root.current?.querySelector<HTMLElement>("[data-trace='top']");
+      const traceBottom = root.current?.querySelector<HTMLElement>("[data-trace='bottom']");
       const flameFlow = { phase: 0 };
 
       const renderFlameFlow = () => {
@@ -52,6 +54,16 @@ export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgres
         leftFineDisplacement?.setAttribute("scale", (1.4 + Math.sin(phase * 3 + 0.2) * 0.35).toFixed(2));
         rightCoarseDisplacement?.setAttribute("scale", (4.2 + Math.sin(phase + 0.72) * 0.8 + Math.sin(phase * 2 + 1.1) * 0.35).toFixed(2));
         rightFineDisplacement?.setAttribute("scale", (1.05 + Math.sin(phase * 3 + 1) * 0.25).toFixed(2));
+
+        const traceTravel = (1 - Math.cos(phase)) * 0.5;
+        if (traceTop) {
+          traceTop.style.setProperty("--trace-x", `${(traceTravel * 430).toFixed(2)}px`);
+          traceTop.style.opacity = (0.16 + Math.sin(phase) ** 2 * 0.34).toFixed(3);
+        }
+        if (traceBottom) {
+          traceBottom.style.setProperty("--trace-x", `${(-traceTravel * 360).toFixed(2)}px`);
+          traceBottom.style.opacity = (0.12 + Math.sin(phase + 0.9) ** 2 * 0.28).toFixed(3);
+        }
 
         ambientNodes.forEach((element) => {
           const shift = Number(element.dataset.shift ?? 0);
@@ -109,37 +121,54 @@ export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgres
       </svg>
       <div className="waiting-depth" aria-hidden="true" />
       <img className="waiting-official-texture" src="/assets/Elements-01.png" alt="" aria-hidden="true" />
-      <div className="waiting-lines" aria-hidden="true" />
+
+      <div className="waiting-frame-system" aria-hidden="true">
+        <i className="waiting-frame-line waiting-frame-line-top" />
+        <i className="waiting-frame-line waiting-frame-line-right" />
+        <i className="waiting-frame-line waiting-frame-line-bottom" />
+        <i className="waiting-frame-line waiting-frame-line-left" />
+        <i className="waiting-frame-trace waiting-frame-trace-top" data-trace="top" />
+        <i className="waiting-frame-trace waiting-frame-trace-bottom" data-trace="bottom" />
+      </div>
+
       <div className="waiting-structure" aria-hidden="true">
-        <div className="waiting-ambient waiting-angle waiting-angle-primary" data-ambient data-ax="2" data-ay="2" data-shift="0.35" data-opacity="0.38" data-opacity-amp="0.025" data-scale-amp="0.004">
+        <div className="waiting-ambient waiting-angle waiting-angle-top-left" data-ambient data-shift="0.2" data-opacity="0.24" data-opacity-amp="0.055" data-scale-amp="0.002">
           <img src="/assets/Angle.png" alt="" />
         </div>
-        <div className="waiting-ambient waiting-angle waiting-angle-secondary" data-ambient data-ax="1.5" data-ay="2" data-shift="2.45" data-opacity="0.25" data-opacity-amp="0.02" data-scale-amp="0.003">
+        <div className="waiting-ambient waiting-angle waiting-angle-top-right" data-ambient data-shift="1.7" data-opacity="0.31" data-opacity-amp="0.065" data-scale-amp="0.002">
           <img src="/assets/Angle.png" alt="" />
         </div>
-        <div className="waiting-ambient waiting-matrix" data-ambient data-ax="3" data-ay="2.5" data-shift="1.1" data-opacity="0.21" data-opacity-amp="0.025" data-scale-amp="0.006">
+        <div className="waiting-ambient waiting-angle waiting-angle-bottom-left" data-ambient data-shift="3.25" data-opacity="0.31" data-opacity-amp="0.06" data-scale-amp="0.002">
+          <img src="/assets/Angle.png" alt="" />
+        </div>
+        <div className="waiting-ambient waiting-angle waiting-angle-bottom-right" data-ambient data-shift="4.8" data-opacity="0.24" data-opacity-amp="0.055" data-scale-amp="0.002">
+          <img src="/assets/Angle.png" alt="" />
+        </div>
+
+        <div className="waiting-ambient waiting-matrix waiting-matrix-top-left" data-ambient data-ax="5" data-ay="4" data-shift="0.9" data-opacity="0.2" data-opacity-amp="0.045" data-scale-amp="0.004">
           <img src="/assets/Nuage-points.png" alt="" />
         </div>
-        <div className="waiting-ambient waiting-dot-rail" data-ambient data-ax="2.4" data-ay="1.2" data-shift="4.2" data-opacity="0.17" data-opacity-amp="0.022">
-          <img src="/assets/Ligne-points.png" alt="" />
+        <div className="waiting-ambient waiting-matrix waiting-matrix-bottom-right" data-ambient data-ax="5" data-ay="4" data-shift="4.05" data-opacity="0.17" data-opacity-amp="0.04" data-scale-amp="0.004">
+          <img src="/assets/Nuage-points.png" alt="" />
         </div>
-        <div className="waiting-index-marks waiting-index-marks-left"><i /><i /><i /></div>
-        <div className="waiting-index-marks waiting-index-marks-right"><i /><i /><i /></div>
+
+        <div className="waiting-ambient waiting-dot-rail" data-ambient data-ax="1" data-ay="3" data-shift="2.3" data-opacity="0.19" data-opacity-amp="0.045">
+          <img className="waiting-dot-rail-line waiting-dot-rail-line-a" src="/assets/Ligne-points.png" alt="" />
+          <img className="waiting-dot-rail-line waiting-dot-rail-line-b" src="/assets/Ligne-points.png" alt="" />
+        </div>
       </div>
       <div className="waiting-atmosphere" data-atmosphere aria-hidden="true" />
 
       <div className="waiting-ambient-field" aria-hidden="true">
-        <i className="waiting-ambient waiting-orb waiting-orb-cyan waiting-orb-a" data-ambient data-ax="5" data-ay="4" data-shift="0.4" data-opacity="0.46" data-opacity-amp="0.05" data-scale-amp="0.08" />
-        <i className="waiting-ambient waiting-orb waiting-orb-orange waiting-orb-b" data-ambient data-ax="4" data-ay="6" data-shift="1.8" data-opacity="0.4" data-opacity-amp="0.04" data-scale-amp="0.06" />
-        <i className="waiting-ambient waiting-orb waiting-orb-cyan waiting-orb-c" data-ambient data-ax="4" data-ay="5" data-shift="3.1" data-opacity="0.4" data-opacity-amp="0.045" data-scale-amp="0.07" />
-        <i className="waiting-ambient waiting-orb waiting-orb-solar waiting-orb-d" data-ambient data-ax="5" data-ay="4" data-shift="4.7" data-opacity="0.38" data-opacity-amp="0.04" data-scale-amp="0.075" />
-        <i className="waiting-ambient waiting-orb waiting-orb-orange waiting-orb-e" data-ambient data-ax="3" data-ay="5" data-shift="5.45" data-opacity="0.34" data-opacity-amp="0.035" data-scale-amp="0.055" />
-
-        <i className="waiting-ambient waiting-micro waiting-micro-a" data-ambient data-ax="3" data-ay="2" data-shift="0.9" data-opacity="0.34" data-opacity-amp="0.035" />
-        <i className="waiting-ambient waiting-micro waiting-micro-b" data-ambient data-ax="2" data-ay="3" data-shift="2.7" data-opacity="0.28" data-opacity-amp="0.03" />
-        <i className="waiting-ambient waiting-micro waiting-micro-c" data-ambient data-ax="3" data-ay="2" data-shift="4.35" data-opacity="0.3" data-opacity-amp="0.03" />
+        <i className="waiting-ambient waiting-energy-node waiting-energy-node-a" data-ambient data-ax="4" data-ay="5" data-shift="0.5" data-opacity="0.5" data-opacity-amp="0.12" data-scale-amp="0.12" />
+        <i className="waiting-ambient waiting-energy-node waiting-energy-node-b" data-ambient data-ax="6" data-ay="8" data-shift="1.55" data-opacity="0.38" data-opacity-amp="0.11" data-scale-amp="0.14" />
+        <i className="waiting-ambient waiting-energy-node waiting-energy-node-c" data-ambient data-ax="5" data-ay="7" data-shift="2.65" data-opacity="0.44" data-opacity-amp="0.1" data-scale-amp="0.13" />
+        <i className="waiting-ambient waiting-energy-node waiting-energy-node-d" data-ambient data-ax="7" data-ay="9" data-shift="3.8" data-opacity="0.42" data-opacity-amp="0.12" data-scale-amp="0.16" />
+        <i className="waiting-ambient waiting-energy-node waiting-energy-node-e" data-ambient data-ax="4" data-ay="6" data-shift="4.9" data-opacity="0.46" data-opacity-amp="0.1" data-scale-amp="0.12" />
+        <i className="waiting-ambient waiting-energy-node waiting-energy-node-f" data-ambient data-ax="6" data-ay="8" data-shift="5.75" data-opacity="0.34" data-opacity-amp="0.09" data-scale-amp="0.14" />
+        <i className="waiting-ambient waiting-flame-glow waiting-flame-glow-left" data-ambient data-ax="7" data-ay="2" data-shift="0.8" data-opacity="0.24" data-opacity-amp="0.07" data-scale-amp="0.035" />
+        <i className="waiting-ambient waiting-flame-glow waiting-flame-glow-right" data-ambient data-ax="6" data-ay="3" data-shift="3.9" data-opacity="0.18" data-opacity-amp="0.06" data-scale-amp="0.03" />
       </div>
-
       <div className="waiting-flame waiting-flame-left" aria-hidden="true">
         <img src="/assets/Flamme-02.png" alt="" />
       </div>

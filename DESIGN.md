@@ -20,6 +20,26 @@ Le bloc-marque officiel est affiché dans ses couleurs sources, sans filtre, con
 
 Les motifs officiels utilisés sont les flammes/volutes, le fond `Elements-01`, l’angle cyan, la ligne de points et le nuage de points fournis. Ils restent décoratifs, vivent dans les couches périphériques et ne passent pas devant le logo, le message ni le compteur. La ligne de points n’est jamais utilisée comme une grande colonne répétitive : elle devient un seul rail technique horizontal.
 
+## Décomposition vérifiée de l’univers graphique
+
+Le PDF fourni est une planche unique qui place explicitement les familles suivantes :
+
+- neuf flammes individuelles (flamme 1 à 7, 9 et 10) disposées comme une bibliothèque de gestes lumineux ; elles servent à construire des masses, pas à remplir uniformément l’image ;
+- un angle cyan dont l’orientation source correspond à un coin haut droit ; le PDF l’emploie quatre fois avec les quatre orientations logiques pour former un système de cadrage complet ;
+- une paire compacte de lignes de points verticales, avec terminaisons lumineuses ; cette famille fonctionne comme un rail technique local, jamais comme une succession de colonnes sur toute la largeur ;
+- deux nuages de points triangulaires, l’un dans son orientation source et l’autre retourné de 180 degrés ; ils créent une diagonale et perdent progressivement en densité vers le centre ;
+- le fond sombre Elements-01, utilisé comme couche de profondeur ;
+- un logo néon alternatif, volontairement exclu de cette sortie afin de conserver exclusivement le bloc-marque validé par le responsable scène.
+
+Les grands exports Flamme-02 et Flamme-03 du pack reprennent le vocabulaire des flammes individuelles sous forme de masses déjà composées. Ils sont retenus en bas à gauche et en bas à droite pour préserver la cohérence du système, sans juxtaposer artificiellement toutes les flammes de la planche.
+
+Logique d’usage retenue :
+
+- les angles et les lignes structurent les limites du cadre ;
+- les matrices de points occupent deux zones diagonales et s’effacent vers le centre ;
+- les petites sphères lumineuses sont attachées aux rails, matrices et crêtes de flammes, plutôt que dispersées au hasard ;
+- les flammes et leurs halos portent l’énergie dans le tiers inférieur ;
+- le fond donne la matière, tandis que le logo, le titre et le compteur restent dans une zone centrale stable.
 ## Ressources disponibles
 
 - bloc-marque officiel : disponible ;
@@ -41,15 +61,15 @@ La police manquante est visible dans l’administration. Elle ne bloque pas la V
 - compteur numérique seul, centré à partir de `y = 724 px`, sans libellé secondaire ;
 - centre sombre, motifs concentrés aux bords et dans la partie basse ;
 - profondeur de fond issue de `Elements-01`, conservé intact et cadré derrière les autres couches ;
-- un angle officiel principal en haut à gauche, un rappel plus léger en bas à droite, une matrice de points en haut à droite et un rail de points unique à gauche ;
-- sphères lumineuses et micro-formes géométriques limitées aux périphéries, dans les couleurs officielles, pour prolonger les ponctuations déjà présentes dans les flammes ;
+- quatre angles officiels orientés selon la logique explicitement montrée dans le PDF, une paire diagonale de matrices de points et un module compact de deux rails verticaux à droite ;
+- six nœuds lumineux rattachés aux structures périphériques et aux crêtes de flammes, dans les couleurs officielles, sans dispersion aléatoire ;
 - lueur cyan discrète située derrière le logo, jamais appliquée au fichier du logo ;
 - boucle GSAP déterministe de 15 secondes, sans caméra, flash, glitch ou pulsation du logo ;
 - une masse de flamme officielle dominante à gauche et un rappel plus léger à droite, sans troisième nappe superposée au centre ;
 - aucune translation globale des flammes : leur mouvement est une déformation interne locale à deux échelles, de faible amplitude, pilotée par des fonctions périodiques qui retrouvent exactement leur état initial à 15 secondes ;
 - respiration très lente de l’atmosphère basse et du halo placé derrière le logo ;
-- dérive sinusoïdale de 1 à 6 px et micro-variations d’intensité sur les seuls détails périphériques ; toutes les phases retrouvent exactement leur état initial à 15 secondes ;
-- aucun balayage traversant ni colonne de points ;
+- dérive sinusoïdale de 1 à 9 px sur les matrices, rails et nœuds lumineux, respiration des halos et deux impulsions lentes sur les lignes de cadre ; toutes les phases retrouvent exactement leur état initial à 15 secondes ;
+- aucune colonne de points répétitive : la ligne de points reste un module vertical compact conforme au PDF ; les impulsions lumineuses demeurent confinées aux rails du cadre ;
 - compteur piloté par une horloge distincte de la boucle décorative.
 
 ### Synthé individuel
