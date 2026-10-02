@@ -1,8 +1,9 @@
 import type { GraphicTemplate, Preset } from "./types";
 
 const LOGO_HASH = "41F82E927632C5E2C21DDAC9C08E229CAFF1C84C4D90A73A2B49CAD310AE4FEB";
-const FLAME_HASH = "A01AA8A1DECFE56289956FED851F2E876B0B15EF3BEA3BBA66BE2EE139A0AD18";
-const RESOURCE_REVISION = "les-da-2026-r1";
+const FLAME_LEFT_HASH = "7044943F84E4285D251289FB575EA9F116EC1DC003C746E30FF7EF593C2E7C30";
+const FLAME_RIGHT_HASH = "1FAD52C947A09A6D0475D69790C184D62D67EF247CDE6CD5561D35A1DC33B7DE";
+const RESOURCE_REVISION = "les-da-2026-r2";
 
 export const templates: GraphicTemplate[] = [
   {
@@ -31,12 +32,20 @@ export const templates: GraphicTemplate[] = [
         integritySha256: LOGO_HASH,
       },
       {
-        id: "flamme-officielle",
-        label: "Flamme officielle 01",
-        path: "/assets/Flamme-01.png",
+        id: "flamme-officielle-gauche",
+        label: "Flamme officielle 02 — masse gauche",
+        path: "/assets/Flamme-02.png",
         status: "available",
         required: true,
-        integritySha256: FLAME_HASH,
+        integritySha256: FLAME_LEFT_HASH,
+      },
+      {
+        id: "flamme-officielle-droite",
+        label: "Flamme officielle 03 — rappel droit",
+        path: "/assets/Flamme-03.png",
+        status: "available",
+        required: true,
+        integritySha256: FLAME_RIGHT_HASH,
       },
       {
         id: "eurostile-black",

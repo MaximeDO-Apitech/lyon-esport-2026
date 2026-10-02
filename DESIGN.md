@@ -18,7 +18,7 @@ Typographies nommées par la charte : Eurostile Extd Black, Eurostile Extd Regul
 
 Le bloc-marque officiel est affiché dans ses couleurs sources, sans filtre, contour, recadrage, recoloration, redessin, extrusion, déformation ni altération du ratio. Il reste fixe et pleinement opaque. Le fichier public `public/assets/Bloc_marque_sans-fond_blanc.png` est une copie binaire intacte du fichier explicitement choisi par le responsable scène.
 
-Les motifs officiels utilisés sont les flammes/volutes et la ligne de points fournies. Ils restent décoratifs et ne passent pas devant le logo, le message ni le compteur.
+Les motifs officiels utilisés sont les flammes/volutes fournies. Ils restent décoratifs et ne passent pas devant le logo, le message ni le compteur. La ligne de points reste disponible mais n’est plus utilisée sur l’écran d’attente, afin de préserver une hiérarchie plus nette.
 
 ## Ressources disponibles
 
@@ -38,11 +38,13 @@ La police manquante est visible dans l’administration. Elle ne bloque pas la V
 - canevas de travail 1920 × 1080 et réduction uniforme dans les aperçus ;
 - centre visuel du logo autour de `y = 365 px`, dans une enveloppe maximale de 326 × 260 px adaptée au vrai ratio ;
 - message centré à partir de `y = 560 px` ;
-- compteur centré à partir de `y = 716 px` ;
+- compteur numérique seul, centré à partir de `y = 724 px`, sans libellé secondaire ;
 - centre sombre, motifs concentrés aux bords et dans la partie basse ;
 - lueur cyan discrète située derrière le logo, jamais appliquée au fichier du logo ;
 - boucle GSAP déterministe de 15 secondes, sans caméra, flash, glitch ou pulsation du logo ;
-- faibles translations périodiques des flammes et points, et deux balayages lumineux doux ;
+- une masse de flamme officielle dominante à gauche et un rappel plus léger à droite, sans troisième nappe superposée au centre ;
+- aucune translation globale des flammes : leur mouvement est une déformation interne locale à deux échelles, de faible amplitude, pilotée par des fonctions périodiques qui retrouvent exactement leur état initial à 15 secondes ;
+- respiration très lente de l’atmosphère basse et du halo placé derrière le logo ; aucun balayage traversant ni colonne de points ;
 - compteur piloté par une horloge distincte de la boucle décorative.
 
 ### Synthé individuel
