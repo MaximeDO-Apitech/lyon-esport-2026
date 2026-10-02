@@ -10,6 +10,8 @@
     "build": "vinext build",
     "start": "vinext start",
     "test": "tsx --test tests/*.test.ts",
+    "export:stinger": "node scripts/export-stinger-cli.mjs",
+    "test:stinger-browser": "node scripts/test-stinger-browser.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },

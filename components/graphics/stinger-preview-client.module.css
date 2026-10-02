@@ -1,0 +1,56 @@
+.rig {
+  width: min(100% - 32px, 1760px);
+  margin: 22px auto 34px;
+  padding: 18px;
+  border: 1px solid rgba(250, 251, 251, 0.13);
+  background: #07131f;
+  color: #fafbfb;
+}
+
+.pageRig { width: min(100% - 32px, 1540px); margin-top: 32px; }
+.heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.eyebrow { margin: 0 0 5px; color: #01f7fd; font-family: "Gotham LES", sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+.heading h2 { margin: 0; font-family: "Eurostile LES", sans-serif; font-size: clamp(18px, 2.2vw, 28px); text-transform: uppercase; }
+.heading p:last-child { max-width: 720px; margin: 7px 0 0; color: rgba(250, 251, 251, 0.62); font-size: 12px; line-height: 1.5; }
+.status { flex: 0 0 auto; padding: 7px 10px; border: 1px solid rgba(1, 247, 253, 0.45); color: #01f7fd; font-size: 10px; text-transform: uppercase; }
+
+.viewport { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-top: 2px solid #01f7fd; background-color: #101820; }
+.checker {
+  background-color: #101820;
+  background-image:
+    linear-gradient(45deg, #2a3740 25%, rgba(42, 55, 64, 0) 25%),
+    linear-gradient(-45deg, #2a3740 25%, rgba(42, 55, 64, 0) 25%),
+    linear-gradient(45deg, rgba(42, 55, 64, 0) 75%, #2a3740 75%),
+    linear-gradient(-45deg, rgba(42, 55, 64, 0) 75%, #2a3740 75%);
+  background-position: 0 0, 0 18px, 18px -18px, -18px 0;
+  background-size: 36px 36px;
+}
+.canvas { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform: translate(-50%, -50%) scale(var(--stinger-preview-scale, 1)); transform-origin: center; }
+.source { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; }
+.source::before, .source::after { content: ""; position: absolute; }
+.sourceA { background: radial-gradient(circle at 16% 78%, rgba(1, 247, 253, 0.2), rgba(1, 247, 253, 0) 31%), linear-gradient(126deg, #021321 0 44%, #06354a 44.2% 57%, #010a14 57.2% 100%); }
+.sourceA::before { left: -6%; top: 18%; width: 68%; height: 16%; transform: skewX(-19deg); background: #01f7fd; opacity: 0.17; }
+.sourceB { background: radial-gradient(circle at 80% 24%, rgba(252, 199, 102, 0.35), rgba(252, 199, 102, 0) 30%), linear-gradient(54deg, #291105 0 41%, #ef7b28 41.2% 52%, #070e16 52.2% 100%); }
+.sourceB::before { right: -8%; bottom: 14%; width: 74%; height: 17%; transform: skewX(-19deg); background: #fcc766; opacity: 0.22; }
+.sourceLabel { position: relative; z-index: 1; display: grid; gap: 12px; text-align: center; }
+.sourceLabel b { font-family: "Eurostile LES", sans-serif; font-size: 88px; letter-spacing: 0.04em; }
+.sourceLabel span { color: rgba(250, 251, 251, 0.72); font-family: "Gotham LES", sans-serif; font-size: 22px; letter-spacing: 0.22em; text-transform: uppercase; }
+
+.timeline { position: relative; margin: 20px 0 10px; padding-top: 23px; }
+.timeline input { width: 100%; accent-color: #01f7fd; }
+.marker { position: absolute; top: 0; transform: translateX(-50%); color: rgba(250, 251, 251, 0.62); font-size: 9px; white-space: nowrap; }
+.marker::after { content: ""; display: block; width: 1px; height: 11px; margin: 3px auto 0; background: currentColor; }
+.markerCut { color: #fcc766; }
+.controls { display: grid; grid-template-columns: repeat(5, minmax(0, auto)) 1fr; gap: 8px; align-items: center; }
+.controls button, .controls a { min-height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(250, 251, 251, 0.2); padding: 9px 12px; background: transparent; color: #fafbfb; font-size: 11px; text-decoration: none; cursor: pointer; }
+.controls button:first-child { border-color: #01f7fd; color: #01f7fd; }
+.readout { justify-self: end; display: grid; gap: 3px; color: rgba(250, 251, 251, 0.62); font-size: 10px; text-align: right; }
+.readout b { color: #fafbfb; font-variant-numeric: tabular-nums; }
+.notice { min-height: 18px; margin: 11px 0 0; color: #fcc766; font-size: 11px; }
+
+@media (max-width: 820px) {
+  .heading { flex-direction: column; }
+  .controls { grid-template-columns: repeat(2, 1fr); }
+  .readout { grid-column: 1 / -1; justify-self: stretch; text-align: left; }
+  .marker { font-size: 8px; }
+}

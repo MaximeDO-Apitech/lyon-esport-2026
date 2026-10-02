@@ -4,6 +4,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { STINGER_LIBRARY_ASSET } from "../../lib/stinger/config";
 import type { GraphicsCommand, PresetExport, TemplateFamily, ValidationStatus } from "../../lib/graphics/types";
 import { createCommandId, postGraphicsCommand, useGraphicsFeed } from "../graphics/use-graphics-feed";
 
@@ -143,6 +144,7 @@ export function LibraryStudio() {
             </div>
           </article>
         ))}
+        <StingerLibraryCard onNotice={setNotice} />
       </section>
 
       <section className="preset-library admin-panel">
@@ -186,6 +188,47 @@ export function LibraryStudio() {
   );
 }
 
+function StingerLibraryCard({ onNotice }: { onNotice: (notice: string) => void }) {
+  const asset = STINGER_LIBRARY_ASSET;
+  const copyExportCommand = async () => {
+    await navigator.clipboard.writeText(asset.exportCommand);
+    onNotice(`Commande copiée : ${asset.exportCommand}`);
+  };
+
+  return (
+    <article className="template-card" data-template-id={asset.id}>
+      <div className="template-thumb template-thumb-transitions">
+        <img src={asset.thumbnail} alt="Miniature réelle de la phase centrale du stinger principal LES" />
+        <span>Alpha</span>
+      </div>
+      <div className="template-body">
+        <div className="template-title"><h2>{asset.name}</h2><StatusBadge status={asset.validationStatus} /></div>
+        <p>{asset.description}</p>
+        <dl>
+          <div><dt>Famille</dt><dd>{asset.family}</dd></div>
+          <div><dt>Identifiant</dt><dd>{asset.id}</dd></div>
+          <div><dt>Version</dt><dd>{asset.version}</dd></div>
+          <div><dt>Format</dt><dd>{asset.width} × {asset.height}</dd></div>
+          <div><dt>Durée</dt><dd>{asset.durationMs} ms</dd></div>
+          <div><dt>Cadence</dt><dd>{asset.cadenceNote}</dd></div>
+          <div><dt>Coupe</dt><dd>{asset.cutPointMs} ms</dd></div>
+          <div><dt>Opaque</dt><dd>{asset.opaqueWindowMs[0]}–{asset.opaqueWindowMs[1]} ms</dd></div>
+          <div><dt>Audio</dt><dd>Aucun</dd></div>
+        </dl>
+        <div className="resource-list">
+          {asset.resources.map((resource) => (
+            <span className="resource-ok" key={resource.id}>{resource.label}<b>Disponible</b></span>
+          ))}
+        </div>
+        <div className="preset-actions">
+          <Link href={asset.previewPath} target="_blank">Prévisualiser</Link>
+          <Link href={asset.outputPath} target="_blank">Sortie alpha</Link>
+          <button type="button" onClick={() => void copyExportCommand()}>Copier la commande d’export</button>
+        </div>
+      </div>
+    </article>
+  );
+}
 function StatusBadge({ status }: { status: ValidationStatus }) {
   return <span className={`validation-badge validation-${status}`}>{statusLabels[status]}</span>;
 }

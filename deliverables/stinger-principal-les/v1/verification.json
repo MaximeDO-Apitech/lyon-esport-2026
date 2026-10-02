@@ -1,0 +1,200 @@
+{
+  "generatedAtUtc": "2026-10-02T12:12:33.969Z",
+  "checks": {
+    "frameCount": true,
+    "numberingWithoutGaps": true,
+    "dimensions1920x1080": true,
+    "firstFrameAlphaZero": true,
+    "lastFrameAlphaZero": true,
+    "opaqueWindowEveryPixel255": true,
+    "cutFrameEveryPixel255": true,
+    "intermediateMotionVisible": true
+  },
+  "uniqueFrameHashes": 50,
+  "firstFrame": {
+    "filename": "stinger-principal-les-0001.png",
+    "timeMs": 0,
+    "sha256": "0F919687EC4CC34670B2C0E7C0DFE85748582612A9B1D953662FAD9FCB3F8CB6",
+    "alpha": {
+      "width": 1920,
+      "height": 1080,
+      "minAlpha": 0,
+      "maxAlpha": 0,
+      "transparentPixels": 2073600,
+      "opaquePixels": 0
+    }
+  },
+  "cutFrame": {
+    "filename": "stinger-principal-les-0037.png",
+    "timeMs": 600,
+    "sha256": "EF340672D3C47B239A22202D103CBD9E05D4782B637C9F65A24161BB57BF4D12",
+    "alpha": {
+      "width": 1920,
+      "height": 1080,
+      "minAlpha": 255,
+      "maxAlpha": 255,
+      "transparentPixels": 0,
+      "opaquePixels": 2073600
+    }
+  },
+  "lastFrame": {
+    "filename": "stinger-principal-les-0072.png",
+    "timeMs": 1183.3333333333335,
+    "sha256": "0F919687EC4CC34670B2C0E7C0DFE85748582612A9B1D953662FAD9FCB3F8CB6",
+    "alpha": {
+      "width": 1920,
+      "height": 1080,
+      "minAlpha": 0,
+      "maxAlpha": 0,
+      "transparentPixels": 2073600,
+      "opaquePixels": 0
+    }
+  },
+  "opaqueFrameChecks": [
+    {
+      "filename": "stinger-principal-les-0021.png",
+      "timeMs": 333.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0022.png",
+      "timeMs": 350,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0023.png",
+      "timeMs": 366.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0024.png",
+      "timeMs": 383.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0025.png",
+      "timeMs": 400,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0026.png",
+      "timeMs": 416.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0027.png",
+      "timeMs": 433.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0028.png",
+      "timeMs": 450.00000000000006,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0029.png",
+      "timeMs": 466.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0030.png",
+      "timeMs": 483.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0031.png",
+      "timeMs": 500.00000000000006,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0032.png",
+      "timeMs": 516.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0033.png",
+      "timeMs": 533.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0034.png",
+      "timeMs": 550,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0035.png",
+      "timeMs": 566.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0036.png",
+      "timeMs": 583.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0037.png",
+      "timeMs": 600,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0038.png",
+      "timeMs": 616.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0039.png",
+      "timeMs": 633.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0040.png",
+      "timeMs": 650,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0041.png",
+      "timeMs": 666.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0042.png",
+      "timeMs": 683.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0043.png",
+      "timeMs": 700,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0044.png",
+      "timeMs": 716.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0045.png",
+      "timeMs": 733.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0046.png",
+      "timeMs": 750,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0047.png",
+      "timeMs": 766.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0048.png",
+      "timeMs": 783.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "stinger-principal-les-0049.png",
+      "timeMs": 800,
+      "minAlpha": 255
+    }
+  ]
+}

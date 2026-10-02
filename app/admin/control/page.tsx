@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ControlStudio } from "../../../components/admin/control-studio";
+import { StingerTestPanel } from "../../../components/admin/stinger-test-panel";
 
 export const metadata: Metadata = {
   title: "Pupitre — LES Graphics Studio",
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function AdminControlPage() {
-  return <ControlStudio />;
+  return (
+    <>
+      <ControlStudio />
+      <StingerTestPanel />
+    </>
+  );
 }
