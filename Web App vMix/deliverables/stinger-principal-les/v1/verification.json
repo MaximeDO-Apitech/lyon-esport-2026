@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-10-02T14:32:57.585Z",
+  "generatedAtUtc": "2026-10-05T21:50:22.140Z",
   "checks": {
     "frameCount": true,
     "numberingWithoutGaps": true,
@@ -27,7 +27,7 @@
   "cutFrame": {
     "filename": "stinger-principal-les-0037.png",
     "timeMs": 600,
-    "sha256": "EF340672D3C47B239A22202D103CBD9E05D4782B637C9F65A24161BB57BF4D12",
+    "sha256": "09B21D4B382A3399C3E51DA94AD4DFA02335F5BCEB96F49367CC478C00C6803C",
     "alpha": {
       "width": 1920,
       "height": 1080,

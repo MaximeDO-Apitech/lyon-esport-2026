@@ -11,7 +11,7 @@ const BASE_URL = process.argv.includes("--base-url")
   : "http://localhost:3000";
 const CHROME = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const DEBUG_PORT = 9338;
-const OUTPUT = path.join(ROOT, "captures", "waiting-r5", "layout-verification.json");
+const OUTPUT = path.join(ROOT, "captures", "waiting-r6", "layout-verification.json");
 
 async function waitForTarget() {
   for (let attempt = 0; attempt < 80; attempt += 1) {
@@ -112,6 +112,21 @@ try {
         };
       };
       const result = Object.fromEntries(Object.entries(selectors).map(([key, selector]) => [key, rect(selector)]));
+      const logoImage = document.querySelector('.waiting-logo img');
+      if (logoImage) {
+        const box = logoImage.getBoundingClientRect();
+        const source = { width: 2709, height: 1348 };
+        const alpha = { left: 463, top: 246, width: 1698, height: 895 };
+        result.logoVisible = {
+          left: box.left + box.width * alpha.left / source.width,
+          top: box.top + box.height * alpha.top / source.height,
+          right: box.left + box.width * (alpha.left + alpha.width) / source.width,
+          bottom: box.top + box.height * (alpha.top + alpha.height) / source.height,
+          width: box.width * alpha.width / source.width,
+          height: box.height * alpha.height / source.height,
+          measurement: 'alpha bounds of the canonical logo source'
+        };
+      }
       result.counts = {
         matrices: document.querySelectorAll('.waiting-matrix').length,
         rails: document.querySelectorAll('.waiting-dot-rail').length,
@@ -131,7 +146,7 @@ try {
 
   const layout = evaluation.result.value;
   const designScale = layout.stage.width / layout.stage.cssWidth;
-  const editorial = ["logo", "message", "countdown"];
+  const editorial = ["logoVisible", "message", "countdown"];
   const decorations = ["ribbonTopLeft", "ribbonRight"];
   const clearance = (a, b) => {
     const dx = Math.max(a.left - b.right, b.left - a.right, 0);

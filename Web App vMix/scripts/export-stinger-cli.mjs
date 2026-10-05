@@ -201,7 +201,7 @@ async function main() {
 
   const manifest = {
     id: "stinger-principal-les",
-    version: "1.0.0",
+    version: "1.1.0",
     generatedAtUtc: new Date().toISOString(),
     resolution: { width: WIDTH, height: HEIGHT },
     frameRate: { numerator: FPS, denominator: 1, fps: FPS, note: "Cadence de diffusion à confirmer." },

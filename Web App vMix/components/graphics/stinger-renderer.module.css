@@ -109,8 +109,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 376px;
-  height: 318px;
+  width: 560px;
+  height: 290px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -121,7 +121,7 @@
 
 .logo {
   display: block;
-  width: 376px;
+  width: 540px;
   height: auto;
   opacity: 1;
   user-select: none;

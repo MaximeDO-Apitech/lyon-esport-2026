@@ -3,7 +3,7 @@
 ## Paramètres livrés
 
 - Identifiant : `stinger-principal-les`
-- Version : `1.0.0`
+- Version : `1.1.0`
 - Définition : 1920 × 1080
 - Durée de composition : 1 200 ms
 - Prototype : 60 images/s — cadence de diffusion à confirmer avec la régie

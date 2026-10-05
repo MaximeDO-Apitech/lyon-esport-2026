@@ -1,5 +1,5 @@
 export const STINGER_ID = "stinger-principal-les" as const;
-export const STINGER_VERSION = "1.0.0" as const;
+export const STINGER_VERSION = "1.1.0" as const;
 
 export const STINGER_TIMING = {
   durationMs: 1200,
@@ -15,7 +15,7 @@ export const STINGER_ASSETS = [
     id: "logo-officiel",
     label: "Bloc marque officiel validé",
     path: "/assets/Bloc_marque_sans-fond_blanc.png",
-    integritySha256: "41F82E927632C5E2C21DDAC9C08E229CAFF1C84C4D90A73A2B49CAD310AE4FEB",
+    integritySha256: "3F08D41E08330F7B00E44C8CB8A07600D7B701CD053571E101BCCED94731E721",
   },
   {
     id: "volute-officielle",

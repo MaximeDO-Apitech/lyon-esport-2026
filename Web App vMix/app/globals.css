@@ -2,6 +2,14 @@
 
 @font-face {
   font-family: "Eurostile LES";
+  src: url("/assets/EurostileExtendedRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Eurostile LES";
   src: url("/assets/EurostileExtendedBlack.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
@@ -319,12 +327,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: absolute;
   z-index: 7;
   left: 50%;
-  top: 235px;
+  top: 225px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 326px;
-  height: 260px;
+  width: 560px;
+  height: 279px;
   transform: translateX(-50%);
 }
 
@@ -510,7 +518,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   color: var(--les-white);
   text-decoration: none;
 }
-.admin-brand img { display: block; width: 48px; height: 48px; object-fit: contain; }
+.admin-brand img { display: block; width: 112px; height: 56px; object-fit: contain; }
 .admin-brand span { display: grid; gap: 4px; }
 .admin-brand b { font-family: "Eurostile LES", sans-serif; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; }
 .admin-brand small { color: var(--admin-muted); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }

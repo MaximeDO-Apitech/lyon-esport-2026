@@ -1,7 +1,7 @@
 {
   "id": "stinger-principal-les",
-  "version": "1.0.0",
-  "generatedAtUtc": "2026-10-02T14:32:57.585Z",
+  "version": "1.1.0",
+  "generatedAtUtc": "2026-10-05T21:50:22.140Z",
   "resolution": {
     "width": 1920,
     "height": 1080
@@ -48,8 +48,8 @@
   "resources": [
     {
       "path": "/assets/Bloc_marque_sans-fond_blanc.png",
-      "sha256": "41F82E927632C5E2C21DDAC9C08E229CAFF1C84C4D90A73A2B49CAD310AE4FEB",
-      "bytes": 124040
+      "sha256": "3F08D41E08330F7B00E44C8CB8A07600D7B701CD053571E101BCCED94731E721",
+      "bytes": 99972
     },
     {
       "path": "/assets/Flamme-03.png",

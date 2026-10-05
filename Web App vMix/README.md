@@ -2,7 +2,7 @@
 
 Application de régie graphique web pour le canal logique `stream`. Elle regroupe une bibliothèque de modèles, un pupitre brouillon/aperçu/programme, une attente animée et un synthé transparent. Les deux sorties utilisent le même moteur de rendu que leurs aperçus.
 
-Le logo servi par l’application est une copie binaire intacte de `Logo/Logo/Bloc_marque_sans-fond_blanc.png`. Les règles de marque et les choix de composition sont consignés dans [DESIGN.md](./DESIGN.md).
+Le logo servi par l’application est une copie binaire intacte de `DA 2026/logos/Lyon E-sport/Copie de Copie de Logo_les2022_blanc_transparent.png`. Ce bloc-marque horizontal entièrement blanc remplace partout l’ancien logo avec « Lyon » en rouge. Les règles de marque et les choix de composition sont consignés dans [DESIGN.md](./DESIGN.md).
 
 ## Installation et lancement
 
@@ -181,7 +181,7 @@ L’état, les révisions, les préréglages, les commandes dédupliquées et le
 
 Les statuts **Ressources manquantes**, **À valider visuellement** et **Validé** sont distincts. Les tests automatiques ne valident jamais artistiquement un modèle.
 
-La ressource `Eurostile Extended Regular` n’est pas présente dans les fichiers fournis. Elle est signalée comme manquante dans la bibliothèque, mais elle ne bloque pas les deux modèles V1, qui utilisent Eurostile Extended Black et Gotham Black aux endroits prévus.
+La ressource `Eurostile Extended Regular`, ajoutée au dossier `DA 2026/éléments source/typographies`, est désormais embarquée localement et déclarée disponible dans la bibliothèque. Les sorties existantes conservent Eurostile Extended Black et Gotham Black aux endroits prévus.
 
 ## Vérifications du dépôt
 
@@ -192,4 +192,4 @@ npx tsc --noEmit
 npm run build
 ```
 
-Les captures de contrôle se trouvent dans `captures/`. Le paramètre `freeze` de `/preview/attente` permet de figer uniquement l’aperçu, par exemple `/preview/attente?freeze=0.5`; il n’affecte jamais la sortie programme.
+Les captures de contrôle se trouvent dans `captures/`. Le remplacement du logo et ses marges sont consignés dans [`docs/waiting-r6-validation.md`](./docs/waiting-r6-validation.md). Le paramètre `freeze` de `/preview/attente` permet de figer uniquement l’aperçu, par exemple `/preview/attente?freeze=0.5`; il n’affecte jamais la sortie programme.
