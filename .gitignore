@@ -1,0 +1,16 @@
+# System and editor noise
+.DS_Store
+**/.DS_Store
+
+# Local dependency and build output
+**/node_modules/
+**/.next/
+**/dist/
+**/.vinext/
+**/.wrangler/
+
+# Local runtime state and recoverable Git metadata backup
+**/.hyperframes/
+.git-backups/
+**/*.log
+

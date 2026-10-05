@@ -1,0 +1,71 @@
+{
+  "id": "replay-pack-les",
+  "version": "1.0.0",
+  "generatedAtUtc": "2026-10-02T16:47:57.493Z",
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "prototypeFrameRate": {
+    "fps": 60,
+    "note": "Cadence de diffusion à confirmer sur le preset vMix réel."
+  },
+  "audio": false,
+  "automation": "Aucun minuteur de replay imposé.",
+  "components": [
+    {
+      "id": "replay-in-les",
+      "type": "rgba-png-sequence",
+      "manifest": "replay-in-les/manifest.json",
+      "verification": "replay-in-les/verification.json"
+    },
+    {
+      "id": "replay-marker-les",
+      "type": "persistent-browser-output-with-png-fallback",
+      "manifest": "replay-marker-les/manifest.json",
+      "verification": "replay-marker-les/verification.json"
+    },
+    {
+      "id": "replay-out-les",
+      "type": "rgba-png-sequence",
+      "manifest": "replay-out-les/manifest.json",
+      "verification": "replay-out-les/verification.json"
+    }
+  ],
+  "resources": [
+    {
+      "path": "/assets/Flamme-03.png",
+      "sha256": "1FAD52C947A09A6D0475D69790C184D62D67EF247CDE6CD5561D35A1DC33B7DE",
+      "bytes": 1897517,
+      "transformed": false
+    },
+    {
+      "path": "/assets/Angle.png",
+      "sha256": "27867347627471C47455FB4811F939DC722BD30CD689BFE1FC512BF91112B1BC",
+      "bytes": 98488,
+      "transformed": false
+    },
+    {
+      "path": "/assets/Nuage-points.png",
+      "sha256": "783557273DF93595CB0AA8E3449DFDAEFD0B17783476E6F0386BCF8085B43632",
+      "bytes": 321894,
+      "transformed": false
+    },
+    {
+      "path": "/assets/Elements-01.png",
+      "sha256": "58DDDC2B1106E24ABEA6433F736A6B96627BEA7278E3790972AD6EF9CE5694F6",
+      "bytes": 439396,
+      "transformed": false
+    }
+  ],
+  "demo": {
+    "path": "deliverables/replay-pack-les/v1/demo-replay-complet.gif",
+    "width": 960,
+    "height": 540,
+    "fps": 30,
+    "durationMs": 8000,
+    "alpha": false,
+    "scenario": "A → replay-in → B → C → replay-out → A",
+    "note": "Démonstration opaque de contrôle, distincte des livrables alpha."
+  }
+}

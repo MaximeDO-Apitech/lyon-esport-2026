@@ -1,0 +1,82 @@
+{
+  "id": "stinger-principal-les",
+  "version": "1.0.0",
+  "generatedAtUtc": "2026-10-02T14:32:57.585Z",
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "frameRate": {
+    "numerator": 60,
+    "denominator": 1,
+    "fps": 60,
+    "note": "Cadence de diffusion à confirmer."
+  },
+  "frameCount": 72,
+  "frameDurationMs": 16.666666666666668,
+  "effectiveDurationMs": 1200,
+  "lastSampleTimeMs": 1183.3333333333335,
+  "sampling": "frameIndex * 1000 / fps",
+  "indexing": {
+    "filenameStart": 1,
+    "firstFrameTimelineIndex": 0,
+    "firstFrameTimeMs": 0,
+    "pattern": "stinger-principal-les-####.png"
+  },
+  "alpha": "straight RGBA PNG",
+  "audio": false,
+  "cutPoint": {
+    "requestedMs": 600,
+    "effectiveFrameIndexZeroBased": 36,
+    "filename": "stinger-principal-les-0037.png",
+    "effectiveSampleTimeMs": 600
+  },
+  "declaredOpaqueWindowMs": {
+    "start": 320,
+    "end": 800
+  },
+  "measuredOpaqueWindow": {
+    "firstFrameIndexZeroBased": 15,
+    "firstFilename": "stinger-principal-les-0016.png",
+    "firstSampleTimeMs": 250.00000000000003,
+    "lastFrameIndexZeroBased": 48,
+    "lastFilename": "stinger-principal-les-0049.png",
+    "lastSampleTimeMs": 800,
+    "frameCount": 34,
+    "criterion": "minimum alpha equals 255 on every pixel"
+  },
+  "resources": [
+    {
+      "path": "/assets/Bloc_marque_sans-fond_blanc.png",
+      "sha256": "41F82E927632C5E2C21DDAC9C08E229CAFF1C84C4D90A73A2B49CAD310AE4FEB",
+      "bytes": 124040
+    },
+    {
+      "path": "/assets/Flamme-03.png",
+      "sha256": "1FAD52C947A09A6D0475D69790C184D62D67EF247CDE6CD5561D35A1DC33B7DE",
+      "bytes": 1897517
+    },
+    {
+      "path": "/assets/Angle.png",
+      "sha256": "27867347627471C47455FB4811F939DC722BD30CD689BFE1FC512BF91112B1BC",
+      "bytes": 98488
+    },
+    {
+      "path": "/assets/Nuage-points.png",
+      "sha256": "783557273DF93595CB0AA8E3449DFDAEFD0B17783476E6F0386BCF8085B43632",
+      "bytes": 321894
+    },
+    {
+      "path": "/assets/Elements-01.png",
+      "sha256": "58DDDC2B1106E24ABEA6433F736A6B96627BEA7278E3790972AD6EF9CE5694F6",
+      "bytes": 439396
+    }
+  ],
+  "demo": {
+    "path": "deliverables/stinger-principal-les/v1/demo-a-stinger-b.gif",
+    "width": 960,
+    "height": 540,
+    "fps": 30,
+    "note": "Démonstration opaque A → stinger → B, distincte de la séquence alpha."
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "generatedAtUtc": "2026-10-05T18:40:29.985Z",
+  "url": "http://localhost:3000/preview/attente?freeze=0",
+  "previewScale": 0.9120370229085286,
+  "distortionAllowancePixels": 13,
+  "layout": {
+    "stage": {
+      "left": 76.4444580078125,
+      "top": 0,
+      "right": 1827.5555419921875,
+      "bottom": 985,
+      "width": 1751.111083984375,
+      "height": 985,
+      "cssWidth": 1920,
+      "cssHeight": 1080,
+      "zIndex": "auto",
+      "opacity": "1",
+      "filter": "none"
+    },
+    "logo": {
+      "left": 803.3379516601562,
+      "top": 214.32870483398438,
+      "right": 1100.6619873046875,
+      "bottom": 451.45831298828125,
+      "width": 297.32403564453125,
+      "height": 237.12960815429688,
+      "cssWidth": 326,
+      "cssHeight": 260,
+      "zIndex": "7",
+      "opacity": "1",
+      "filter": "none"
+    },
+    "message": {
+      "left": 249.7314910888672,
+      "top": 510.74072265625,
+      "right": 1654.2686004638672,
+      "bottom": 587.5656127929688,
+      "width": 1404.537109375,
+      "height": 76.82489013671875,
+      "cssWidth": 1540,
+      "cssHeight": 84.2344,
+      "zIndex": "7",
+      "opacity": "1",
+      "filter": "none"
+    },
+    "countdown": {
+      "left": 714.870361328125,
+      "top": 660.3148193359375,
+      "right": 1189.129638671875,
+      "bottom": 729.629638671875,
+      "width": 474.25927734375,
+      "height": 69.3148193359375,
+      "cssWidth": 520,
+      "cssHeight": 76,
+      "zIndex": "7",
+      "opacity": "1",
+      "filter": "none"
+    },
+    "ribbonTopLeft": {
+      "left": -184.39813232421875,
+      "top": -74.78703308105469,
+      "right": 709.3981323242188,
+      "bottom": 254.58656311035156,
+      "width": 893.7962646484375,
+      "height": 329.37359619140625,
+      "cssWidth": 980,
+      "cssHeight": 361.141,
+      "zIndex": "2",
+      "opacity": "1",
+      "filter": "none"
+    },
+    "ribbonRight": {
+      "left": 1271.212890625,
+      "top": 645.7222290039062,
+      "right": 2101.16650390625,
+      "bottom": 976.0791015625,
+      "width": 829.95361328125,
+      "height": 330.35687255859375,
+      "cssWidth": 910,
+      "cssHeight": 362.219,
+      "zIndex": "2",
+      "opacity": "0.8",
+      "filter": "none"
+    },
+    "brackets": {
+      "left": 249.7314910888672,
+      "top": 479.7314758300781,
+      "right": 1654.2686004638672,
+      "bottom": 758.8148193359375,
+      "width": 1404.537109375,
+      "height": 279.0833435058594,
+      "cssWidth": 1540,
+      "cssHeight": 306,
+      "zIndex": "6",
+      "opacity": "0.572",
+      "filter": "none"
+    },
+    "counts": {
+      "matrices": 2,
+      "rails": 2,
+      "localBrackets": 4,
+      "legacyViewportAngles": 0,
+      "legacyFrameLines": 0
+    },
+    "content": {
+      "message": "LE LIVE COMMENCE BIENTÔT",
+      "countdown": "14:56"
+    }
+  },
+  "clearances": [
+    {
+      "decoration": "ribbonTopLeft",
+      "editorial": "logo",
+      "screenPixels": 93.9398193359375,
+      "designPixels": 103.00000655275926,
+      "effectiveDesignPixels": 90.00000655275926,
+      "passes48px": true
+    },
+    {
+      "decoration": "ribbonTopLeft",
+      "editorial": "message",
+      "screenPixels": 256.15415954589844,
+      "designPixels": 280.85938740623806,
+      "effectiveDesignPixels": 267.85938740623806,
+      "passes48px": true
+    },
+    {
+      "decoration": "ribbonTopLeft",
+      "editorial": "countdown",
+      "screenPixels": 405.7651576837591,
+      "designPixels": 444.89987521532305,
+      "effectiveDesignPixels": 431.89987521532305,
+      "passes48px": true
+    },
+    {
+      "decoration": "ribbonRight",
+      "editorial": "logo",
+      "screenPixels": 258.5074074163067,
+      "designPixels": 283.4395983091942,
+      "effectiveDesignPixels": 270.4395983091942,
+      "passes48px": true
+    },
+    {
+      "decoration": "ribbonRight",
+      "editorial": "message",
+      "screenPixels": 58.1566162109375,
+      "designPixels": 63.76563094497342,
+      "effectiveDesignPixels": 50.76563094497342,
+      "passes48px": true
+    },
+    {
+      "decoration": "ribbonRight",
+      "editorial": "countdown",
+      "screenPixels": 82.083251953125,
+      "designPixels": 89.99991216514181,
+      "effectiveDesignPixels": 76.99991216514181,
+      "passes48px": true
+    }
+  ],
+  "assertions": {
+    "stageIs1920x1080": true,
+    "allDecorativeClearancesPass48px": true,
+    "exactCompactMatrices": true,
+    "exactShortRails": true,
+    "oneLocalBracketSet": true,
+    "noLegacyViewportAngles": true,
+    "noLegacyFrameLines": true
+  },
+  "passed": true
+}

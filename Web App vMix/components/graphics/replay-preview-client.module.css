@@ -1,0 +1,270 @@
+.rig {
+  width: min(100%, 1320px);
+  margin: 36px auto;
+  padding: 24px;
+  color: #fafbfb;
+  background: #06111d;
+  border: 1px solid rgba(250, 251, 251, 0.12);
+  border-radius: 14px;
+}
+
+.panelMode {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.heading p {
+  margin: 0 0 7px;
+  color: #01f7fd;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+.heading a {
+  color: #fafbfb;
+}
+
+.testGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 960px) minmax(230px, 1fr);
+  gap: 20px;
+}
+
+.viewer {
+  min-width: 0;
+}
+
+.viewport {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #010a14;
+  border: 1px solid rgba(250, 251, 251, 0.14);
+}
+
+.logical {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  transform: scale(0.5);
+  transform-origin: top left;
+}
+
+.source {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: "Eurostile LES", "Arial Black", sans-serif;
+}
+
+.source::before,
+.source::after {
+  content: "";
+  position: absolute;
+  width: 920px;
+  height: 920px;
+  border: 5px solid rgba(250, 251, 251, 0.17);
+  transform: rotate(45deg);
+}
+
+.source::after {
+  width: 610px;
+  height: 610px;
+}
+
+.source span {
+  position: relative;
+  z-index: 2;
+  font-size: 118px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.source b {
+  position: absolute;
+  left: 92px;
+  bottom: 74px;
+  font-size: 31px;
+  letter-spacing: 0.08em;
+}
+
+.source i {
+  position: absolute;
+  inset: -20%;
+  background: repeating-linear-gradient(115deg, transparent 0 70px, rgba(250, 251, 251, 0.035) 70px 74px);
+  animation: drift 8s linear infinite;
+}
+
+.sourceA {
+  background: linear-gradient(135deg, #2a1238, #0b2744);
+}
+
+.sourceB {
+  background: linear-gradient(135deg, #05283a, #08717c);
+}
+
+.sourceC {
+  background: linear-gradient(135deg, #3b1a0e, #8b4820);
+}
+
+.transitionLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.transport {
+  padding: 15px 0 0;
+}
+
+.timeRow,
+.buttons,
+.cuts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.timeRow {
+  justify-content: space-between;
+}
+
+.transport input[type="range"] {
+  width: 100%;
+  margin: 14px 0;
+  accent-color: #01f7fd;
+}
+
+.buttons button {
+  padding: 10px 13px;
+  color: #fafbfb;
+  background: #10263a;
+  border: 1px solid rgba(1, 247, 253, 0.24);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cuts {
+  margin-top: 13px;
+  font-size: 12px;
+  color: rgba(250, 251, 251, 0.68);
+}
+
+.cuts span {
+  padding: 7px 9px;
+  background: rgba(250, 251, 251, 0.05);
+}
+
+.proofs {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.proofs h3,
+.proofs p {
+  margin: 0;
+}
+
+.proofs p {
+  color: rgba(250, 251, 251, 0.63);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.proof {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(250, 251, 251, 0.14);
+}
+
+.proofLogical {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  transform: scale(0.14);
+  transform-origin: top left;
+}
+
+.proof figcaption {
+  position: absolute;
+  right: 7px;
+  bottom: 5px;
+  padding: 3px 5px;
+  color: #fafbfb;
+  background: rgba(1, 10, 20, 0.72);
+  font-size: 10px;
+}
+
+.prooflight {
+  background: #e8eef2;
+}
+
+.proofdark {
+  background: #010a14;
+}
+
+.proofmoving {
+  background: linear-gradient(115deg, #0a3445, #c25f22, #11263b);
+  background-size: 180% 180%;
+  animation: gradientMove 3s ease-in-out infinite alternate;
+}
+
+.proofchecker {
+  background-color: #d4d8dc;
+  background-image:
+    linear-gradient(45deg, #aeb4ba 25%, transparent 25%),
+    linear-gradient(-45deg, #aeb4ba 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #aeb4ba 75%),
+    linear-gradient(-45deg, transparent 75%, #aeb4ba 75%);
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-size: 20px 20px;
+}
+
+@keyframes drift {
+  to { transform: translateX(260px); }
+}
+
+@keyframes gradientMove {
+  to { background-position: 100% 50%; }
+}
+
+@media (max-width: 1120px) {
+  .testGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .logical {
+    transform: scale(0.4);
+  }
+
+  .proofs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proofs h3,
+  .proofs p {
+    grid-column: 1 / -1;
+  }
+}

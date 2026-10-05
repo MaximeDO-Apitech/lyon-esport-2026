@@ -1,0 +1,65 @@
+{
+  "generatedAtUtc": "2026-10-05T18:37:31.435Z",
+  "previewUrl": "http://localhost:3000/preview/attente",
+  "loopSeconds": 15,
+  "motionProofSeconds": 20,
+  "seamHashesMatch": true,
+  "artifacts": [
+    {
+      "filename": "after-phase-0.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "725AB1FB54C1826B3C542BAA594FAFE5634B9A3CD2CE6D1C69C6E797F5AB737B"
+    },
+    {
+      "filename": "after-phase-25.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "AA7B59E1E5289317BF0C4BAE5C9A7B285221A59BA9EA334CF5608042056FEB8D"
+    },
+    {
+      "filename": "after-phase-50.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "4772249AA373597B1FE5E186747985495CC9E98F5FE1959D0B787FD590D111F2"
+    },
+    {
+      "filename": "after-phase-75.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "DC987593EE37E4B2D0E7C4F3CA568CB2045C1E57834B86ECEF4D621DC4BFDD64"
+    },
+    {
+      "filename": "after-phase-99.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "725AB1FB54C1826B3C542BAA594FAFE5634B9A3CD2CE6D1C69C6E797F5AB737B"
+    },
+    {
+      "filename": "before-after-phase-0.png",
+      "width": 1920,
+      "height": 540,
+      "pages": 1,
+      "sha256": "F0940260D255E8F265B61990CEC34D0027D420FD49794AC64DC1D44A3714F822"
+    },
+    {
+      "filename": "motion-phases.png",
+      "width": 3840,
+      "height": 540,
+      "pages": 1,
+      "sha256": "8B47140C14988862291066817666E8DC49D089F120AFC39796A49D5D54D7A463"
+    },
+    {
+      "filename": "motion-proof-20s.gif",
+      "width": 960,
+      "height": 540,
+      "pages": 20,
+      "sha256": "2088161F74C260E8A4C7AF1D500CD0B8CF86AF6FF8CF4928C58D67886A6CA76D"
+    }
+  ]
+}

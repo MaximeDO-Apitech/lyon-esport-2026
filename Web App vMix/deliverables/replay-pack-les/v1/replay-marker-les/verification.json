@@ -1,0 +1,26 @@
+{
+  "generatedAtUtc": "2026-10-02T16:47:17.456Z",
+  "checks": {
+    "dimensions1920x1080": true,
+    "transparentOutsideMarker": true,
+    "opaqueMarkerPixelsPresent": true,
+    "markerLocalizedAtDefaultTopLeft": true
+  },
+  "sha256": "F47C675219F3B994DFBF98597D739BA67C7A7DE01F96D7A8A3AA021CACCF79FB",
+  "alpha": {
+    "width": 1920,
+    "height": 1080,
+    "minAlpha": 0,
+    "maxAlpha": 255,
+    "transparentPixels": 2056217,
+    "opaquePixels": 17349,
+    "nonTransparentBounds": {
+      "left": 96,
+      "top": 72,
+      "right": 355,
+      "bottom": 139,
+      "width": 260,
+      "height": 68
+    }
+  }
+}

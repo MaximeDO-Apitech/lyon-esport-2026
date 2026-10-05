@@ -1,0 +1,49 @@
+{
+  "id": "replay-in-les",
+  "packVersion": "1.0.0",
+  "generatedAtUtc": "2026-10-02T16:46:36.825Z",
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "frameRate": {
+    "numerator": 60,
+    "denominator": 1,
+    "fps": 60,
+    "note": "Cadence de diffusion à confirmer."
+  },
+  "frameCount": 48,
+  "frameDurationMs": 16.666666666666668,
+  "effectiveDurationMs": 800,
+  "lastSampleTimeMs": 783.3333333333334,
+  "sampling": "frameIndex * 1000 / fps",
+  "indexing": {
+    "filenameStart": 1,
+    "firstFrameTimelineIndex": 0,
+    "firstFrameTimeMs": 0,
+    "pattern": "replay-in-les-####.png"
+  },
+  "alpha": "straight RGBA PNG",
+  "audio": false,
+  "cutPoint": {
+    "requestedMs": 400,
+    "effectiveFrameIndexZeroBased": 24,
+    "filename": "replay-in-les-0025.png",
+    "effectiveSampleTimeMs": 400
+  },
+  "declaredOpaqueWindowMs": {
+    "start": 200,
+    "end": 600
+  },
+  "transparentByMs": 760,
+  "measuredOpaqueWindow": {
+    "firstFrameIndexZeroBased": 9,
+    "firstFilename": "replay-in-les-0010.png",
+    "firstSampleTimeMs": 150,
+    "lastFrameIndexZeroBased": 36,
+    "lastFilename": "replay-in-les-0037.png",
+    "lastSampleTimeMs": 600,
+    "frameCount": 28,
+    "criterion": "minimum alpha equals 255 on every pixel"
+  }
+}

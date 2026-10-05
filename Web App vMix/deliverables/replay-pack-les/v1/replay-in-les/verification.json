@@ -1,0 +1,190 @@
+{
+  "generatedAtUtc": "2026-10-02T16:46:36.825Z",
+  "checks": {
+    "frameCount": true,
+    "numberingWithoutGaps": true,
+    "dimensions1920x1080": true,
+    "firstFrameAlphaZero": true,
+    "lastFrameAlphaZero": true,
+    "declaredOpaqueWindowEveryPixel255": true,
+    "cutFrameEveryPixel255": true,
+    "intermediateMotionVisible": true
+  },
+  "uniqueFrameHashes": 36,
+  "firstFrame": {
+    "filename": "replay-in-les-0001.png",
+    "timeMs": 0,
+    "sha256": "0F919687EC4CC34670B2C0E7C0DFE85748582612A9B1D953662FAD9FCB3F8CB6",
+    "alpha": {
+      "width": 1920,
+      "height": 1080,
+      "minAlpha": 0,
+      "maxAlpha": 0,
+      "transparentPixels": 2073600,
+      "opaquePixels": 0,
+      "nonTransparentBounds": null
+    }
+  },
+  "cutFrame": {
+    "filename": "replay-in-les-0025.png",
+    "timeMs": 400,
+    "sha256": "B86096DC2C29D7BBB2309990712EEE9D7791B5933AB94E4D6CB9A753A70CE6B1",
+    "alpha": {
+      "width": 1920,
+      "height": 1080,
+      "minAlpha": 255,
+      "maxAlpha": 255,
+      "transparentPixels": 0,
+      "opaquePixels": 2073600,
+      "nonTransparentBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1919,
+        "bottom": 1079,
+        "width": 1920,
+        "height": 1080
+      }
+    }
+  },
+  "lastFrame": {
+    "filename": "replay-in-les-0048.png",
+    "timeMs": 783.3333333333334,
+    "sha256": "0F919687EC4CC34670B2C0E7C0DFE85748582612A9B1D953662FAD9FCB3F8CB6",
+    "alpha": {
+      "width": 1920,
+      "height": 1080,
+      "minAlpha": 0,
+      "maxAlpha": 0,
+      "transparentPixels": 2073600,
+      "opaquePixels": 0,
+      "nonTransparentBounds": null
+    }
+  },
+  "opaqueFrameChecks": [
+    {
+      "filename": "replay-in-les-0013.png",
+      "timeMs": 200,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0014.png",
+      "timeMs": 216.66666666666669,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0015.png",
+      "timeMs": 233.33333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0016.png",
+      "timeMs": 250.00000000000003,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0017.png",
+      "timeMs": 266.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0018.png",
+      "timeMs": 283.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0019.png",
+      "timeMs": 300,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0020.png",
+      "timeMs": 316.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0021.png",
+      "timeMs": 333.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0022.png",
+      "timeMs": 350,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0023.png",
+      "timeMs": 366.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0024.png",
+      "timeMs": 383.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0025.png",
+      "timeMs": 400,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0026.png",
+      "timeMs": 416.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0027.png",
+      "timeMs": 433.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0028.png",
+      "timeMs": 450.00000000000006,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0029.png",
+      "timeMs": 466.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0030.png",
+      "timeMs": 483.33333333333337,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0031.png",
+      "timeMs": 500.00000000000006,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0032.png",
+      "timeMs": 516.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0033.png",
+      "timeMs": 533.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0034.png",
+      "timeMs": 550,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0035.png",
+      "timeMs": 566.6666666666667,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0036.png",
+      "timeMs": 583.3333333333334,
+      "minAlpha": 255
+    },
+    {
+      "filename": "replay-in-les-0037.png",
+      "timeMs": 600,
+      "minAlpha": 255
+    }
+  ]
+}

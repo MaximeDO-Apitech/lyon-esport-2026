@@ -1,0 +1,85 @@
+.stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+}
+
+.card {
+  position: absolute;
+  top: var(--replay-marker-y);
+  width: 260px;
+  height: 68px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0 25px 0 29px;
+  overflow: hidden;
+  color: #fafbfb;
+  background:
+    linear-gradient(105deg, rgba(1, 247, 253, 0.08), transparent 44%),
+    #010a14;
+  border: 1px solid rgba(250, 251, 251, 0.16);
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  will-change: transform, opacity;
+}
+
+.left {
+  left: var(--replay-marker-x);
+}
+
+.right {
+  right: var(--replay-marker-x);
+}
+
+.card strong {
+  position: relative;
+  z-index: 2;
+  font-family: "Eurostile LES", "Arial Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.075em;
+}
+
+.card small {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  margin-bottom: 14px;
+  color: rgba(250, 251, 251, 0.64);
+  font-family: "Gotham LES", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.cyanRail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 188px;
+  height: 4px;
+  background: #01f7fd;
+}
+
+.orangeRail {
+  position: absolute;
+  right: 22px;
+  bottom: 0;
+  width: 64px;
+  height: 4px;
+  background: #ef7b28;
+}
+
+.notch {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 8px;
+  height: 25px;
+  transform: skewX(-12deg);
+  background: linear-gradient(180deg, #01f7fd 0 62%, #fcc766 62% 100%);
+}

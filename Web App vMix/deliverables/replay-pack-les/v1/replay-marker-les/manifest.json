@@ -1,0 +1,28 @@
+{
+  "id": "replay-marker-les",
+  "packVersion": "1.0.0",
+  "generatedAtUtc": "2026-10-02T16:47:17.456Z",
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "cardSize": {
+    "width": 260,
+    "height": 68
+  },
+  "defaultPlacement": {
+    "corner": "top-left",
+    "offsetX": 96,
+    "offsetY": 72
+  },
+  "alternatePlacement": {
+    "corner": "top-right",
+    "configurableOffsets": true
+  },
+  "entranceMs": 150,
+  "exitMs": 130,
+  "persistent": true,
+  "alpha": "straight RGBA PNG",
+  "audio": false,
+  "fallbackPng": "replay-marker-les.png"
+}
