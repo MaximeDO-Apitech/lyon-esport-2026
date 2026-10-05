@@ -10,6 +10,7 @@ import type {
 } from "../../lib/graphics/types";
 import { LowerThirdRenderer } from "./lower-third-renderer";
 import { useGraphicsFeed } from "./use-graphics-feed";
+import { useRendererHeartbeat } from "./use-renderer-heartbeat";
 import { WaitingRenderer } from "./waiting-renderer";
 
 type GraphicOutputClientProps = {
@@ -21,15 +22,6 @@ type GraphicOutputClientProps = {
   simulationSeconds?: number | null;
 };
 
-function rendererId(output: string) {
-  const key = `les-renderer-${output}`;
-  const existing = window.sessionStorage.getItem(key);
-  if (existing) return existing;
-  const created = `renderer:${output}:${crypto.randomUUID()}`;
-  window.sessionStorage.setItem(key, created);
-  return created;
-}
-
 export function GraphicOutputClient({
   output,
   source,
@@ -39,7 +31,6 @@ export function GraphicOutputClient({
   simulationSeconds = null,
 }: GraphicOutputClientProps) {
   const { envelope, getServerNowMs } = useGraphicsFeed(100);
-  const [renderId, setRenderId] = useState("");
   const [simulationEndAtServerMs, setSimulationEndAtServerMs] = useState(0);
   const simulationKeyRef = useRef("");
   const [viewportScale, setViewportScale] = useState(1);
@@ -52,13 +43,6 @@ export function GraphicOutputClient({
     window.addEventListener("resize", updateScale);
     return () => window.removeEventListener("resize", updateScale);
   }, []);
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      setRenderId(rendererId(output));
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, [output]);
 
   useEffect(() => {
     if (!envelope || source !== "preview" || output !== "attente" || !simulationSeconds) return;
@@ -74,16 +58,7 @@ export function GraphicOutputClient({
       : envelope.state[output].program
     : null;
   const revision = snapshot?.revision ?? 0;
-
-  useEffect(() => {
-    if (!acknowledge || !renderId || !envelope) return;
-    void fetch("/api/graphics/render-ack", {
-      method: "POST",
-      cache: "no-store",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ rendererId: renderId, output, revision }),
-    });
-  }, [acknowledge, envelope, output, renderId, revision]);
+  useRendererHeartbeat({ enabled: acknowledge && Boolean(envelope), output, revision });
 
   const previewState = useMemo(() => {
     if (!envelope || source !== "preview" || output !== "attente" || !simulationSeconds || !simulationEndAtServerMs) {

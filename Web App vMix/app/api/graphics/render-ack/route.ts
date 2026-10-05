@@ -1,5 +1,5 @@
 import { acknowledgeRenderer } from "../../../../lib/graphics/store";
-import { GraphicsCommandError, type OutputId } from "../../../../lib/graphics/types";
+import { GraphicsCommandError, type RendererOutputId } from "../../../../lib/graphics/types";
 
 export const dynamic = "force-dynamic";
 
@@ -7,15 +7,15 @@ export async function POST(request: Request) {
   try {
     const payload = (await request.json()) as {
       rendererId?: string;
-      output?: OutputId;
+      output?: RendererOutputId;
       revision?: number;
     };
-    if (!payload.rendererId || (payload.output !== "attente" && payload.output !== "synthe")) {
+    if (!payload.rendererId || !["attente", "synthe", "replay-marker"].includes(payload.output ?? "")) {
       throw new GraphicsCommandError("Accusé de rendu invalide.");
     }
     await acknowledgeRenderer({
       rendererId: payload.rendererId,
-      output: payload.output,
+      output: payload.output as RendererOutputId,
       revision: Number(payload.revision),
       appliedAtUtc: new Date().toISOString(),
     });

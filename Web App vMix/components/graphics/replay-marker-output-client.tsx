@@ -5,6 +5,7 @@ import { REPLAY_MARKER, REPLAY_PACK_VERSION } from "../../lib/replay/config";
 import { DEFAULT_REPLAY_MARKER_PLACEMENT } from "../../lib/replay/state";
 import type { ReplayMarkerPlacement, ReplayMarkerVisibility } from "../../lib/replay/types";
 import { useReplayFeed } from "./use-replay-feed";
+import { useRendererHeartbeat } from "./use-renderer-heartbeat";
 import { ReplayMarkerRenderer } from "./replay-marker-renderer";
 import styles from "./replay-marker-output-client.module.css";
 
@@ -25,15 +26,22 @@ declare global {
 export function ReplayMarkerOutputClient({
   forcedPlacement = null,
   forceVisible = false,
+  acknowledge = false,
 }: {
   forcedPlacement?: ReplayMarkerPlacement | null;
   forceVisible?: boolean;
+  acknowledge?: boolean;
 }) {
   const { envelope, connection } = useReplayFeed(120);
   const [scale, setScale] = useState(1);
   const placement = forcedPlacement ?? envelope?.state.program.placement ?? DEFAULT_REPLAY_MARKER_PLACEMENT;
   const visibility: ReplayMarkerVisibility = forceVisible ? "visible" : envelope?.state.visibility ?? "hidden";
   const ready = forceVisible || connection === "connected";
+  useRendererHeartbeat({
+    enabled: acknowledge && ready,
+    output: "replay-marker",
+    revision: envelope?.state.programRevision ?? 0,
+  });
 
   useEffect(() => {
     const updateScale = () => setScale(Math.min(window.innerWidth / 1920, window.innerHeight / 1080));

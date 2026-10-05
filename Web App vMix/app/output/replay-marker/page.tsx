@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Marqueur replay — LES Graphics Stu
 export default async function ReplayMarkerOutputPage({
   searchParams,
 }: {
-  searchParams: Promise<{ force?: string; corner?: string; offsetX?: string; offsetY?: string }>;
+  searchParams: Promise<{ force?: string; monitor?: string; corner?: string; offsetX?: string; offsetY?: string }>;
 }) {
   const params = await searchParams;
   const forceVisible = params.force === "visible";
@@ -26,5 +26,11 @@ export default async function ReplayMarkerOutputPage({
     }
   }
 
-  return <ReplayMarkerOutputClient forcedPlacement={forcedPlacement} forceVisible={forceVisible} />;
+  return (
+    <ReplayMarkerOutputClient
+      forcedPlacement={forcedPlacement}
+      forceVisible={forceVisible}
+      acknowledge={!forceVisible && params.monitor !== "1"}
+    />
+  );
 }

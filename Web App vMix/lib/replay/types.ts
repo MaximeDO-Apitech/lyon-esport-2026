@@ -68,6 +68,7 @@ export type ReplayCommandResult = {
   accepted: boolean;
   duplicate?: boolean;
   commandId: string;
+  commandType?: ReplayCommand["type"];
   stateRevision: number;
   message: string;
   state: ReplayState;

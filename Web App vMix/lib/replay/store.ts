@@ -89,6 +89,7 @@ export async function executeReplayCommand(command: ReplayCommand, nowMs = Date.
   const result: ReplayCommandResult = {
     accepted: true,
     commandId: id,
+    commandType: command.type,
     stateRevision: next.revision,
     message: "Commande replay acceptée.",
     state: normalizeReplayState(next, nowMs),

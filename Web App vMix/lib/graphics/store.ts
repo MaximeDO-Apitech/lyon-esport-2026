@@ -8,9 +8,9 @@ import {
   type GraphicsCommand,
   type GraphicsState,
   type GraphicsStateEnvelope,
-  type OutputId,
   type Preset,
   type RendererAck,
+  type RendererOutputId,
 } from "./types";
 import { validateContent, validatePresetExport } from "./validation";
 
@@ -107,7 +107,7 @@ type PresetRow = {
 };
 type RendererAckRow = {
   renderer_id: string;
-  output: OutputId;
+  output: RendererOutputId;
   revision: number;
   applied_at: string;
 };
@@ -308,6 +308,7 @@ export async function executeGraphicsCommand(command: GraphicsCommand, nowMs = D
   const result: CommandResult = {
     accepted: true,
     commandId: id,
+    commandType: command.type,
     stateRevision: nextState.revision,
     message,
     state: normalizeGraphicsState(nextState, nowMs),

@@ -159,7 +159,7 @@ export function ReplayControlPanel() {
             <b>{state?.visibility ?? "—"}</b>
           </div>
           <div className={styles.frame}>
-            <iframe src="/output/replay-marker" title="Moniteur programme du marqueur replay" />
+            <iframe src="/output/replay-marker?monitor=1" title="Moniteur programme du marqueur replay" />
           </div>
           <p>État rendu par l’application — ce n’est pas un retour vidéo vMix.</p>
         </div>

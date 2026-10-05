@@ -3,6 +3,7 @@ export const CHANNEL_ID = "stream" as const;
 export const EVENT_TIME_ZONE = "Europe/Paris" as const;
 
 export type OutputId = "attente" | "synthe";
+export type RendererOutputId = OutputId | "replay-marker";
 export type TemplateFamily = OutputId;
 export type ValidationStatus =
   | "missing_resources"
@@ -128,7 +129,7 @@ export type GraphicsState = {
 
 export type RendererAck = {
   rendererId: string;
-  output: OutputId;
+  output: RendererOutputId;
   revision: number;
   appliedAtUtc: string;
 };
@@ -225,6 +226,7 @@ export type CommandResult = {
   accepted: boolean;
   duplicate?: boolean;
   commandId: string;
+  commandType?: GraphicsCommand["type"];
   stateRevision: number;
   message: string;
   state?: GraphicsState;
