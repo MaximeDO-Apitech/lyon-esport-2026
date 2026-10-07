@@ -1,0 +1,1350 @@
+{
+  "generatedAtUtc": "2026-10-07T10:59:49.247Z",
+  "previewUrl": "http://localhost:3000/preview/attente?freeze=0",
+  "guideUrl": "http://localhost:3000/preview/attente?freeze=0&guides=1",
+  "outputUrl": "http://localhost:3000/output/attente",
+  "target": {
+    "width": 1920,
+    "height": 1080,
+    "frame": {
+      "left": 96,
+      "right": 1824,
+      "top": 72,
+      "bottom": 1008
+    },
+    "rails": {
+      "right": {
+        "x": 1824,
+        "y": 324
+      },
+      "left": {
+        "x": 96,
+        "y": 702
+      },
+      "width": 18,
+      "height": 200
+    }
+  },
+  "sixAnchors": [
+    {
+      "element": "sommet haut gauche",
+      "target": {
+        "x": 96,
+        "y": 72
+      },
+      "measured": {
+        "x": 96,
+        "y": 72
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "sommet haut droit",
+      "target": {
+        "x": 1824,
+        "y": 72
+      },
+      "measured": {
+        "x": 1824,
+        "y": 72
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "sommet bas gauche",
+      "target": {
+        "x": 96,
+        "y": 1008
+      },
+      "measured": {
+        "x": 96,
+        "y": 1008
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "sommet bas droit",
+      "target": {
+        "x": 1824,
+        "y": 1008
+      },
+      "measured": {
+        "x": 1824,
+        "y": 1008
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "centre repère droit",
+      "target": {
+        "x": 1824,
+        "y": 324
+      },
+      "measured": {
+        "x": 1824,
+        "y": 324
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "centre repère gauche",
+      "target": {
+        "x": 96,
+        "y": 702
+      },
+      "measured": {
+        "x": 96,
+        "y": 702
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "layout": {
+    "stage": {
+      "left": 0,
+      "top": 0,
+      "right": 1920,
+      "bottom": 1080,
+      "width": 1920,
+      "height": 1080,
+      "cssWidth": 1920,
+      "cssHeight": 1080,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -960, -540)",
+      "filter": "none"
+    },
+    "logo": {
+      "left": 680,
+      "top": 225,
+      "right": 1240,
+      "bottom": 504,
+      "width": 560,
+      "height": 279,
+      "cssWidth": 560,
+      "cssHeight": 279,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -280, 0)",
+      "filter": "none"
+    },
+    "messageLayout": {
+      "left": 190,
+      "top": 560,
+      "right": 1730,
+      "bottom": 644.234375,
+      "width": 1540,
+      "height": 84.234375,
+      "cssWidth": 1540,
+      "cssHeight": 84.2344,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -770, 0)",
+      "filter": "none"
+    },
+    "messageBreath": {
+      "left": 190,
+      "top": 560,
+      "right": 1730,
+      "bottom": 644.234375,
+      "width": 1540,
+      "height": 84.234375,
+      "cssWidth": 1540,
+      "cssHeight": 84.2344,
+      "opacity": 0.94,
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "filter": "none"
+    },
+    "countdown": {
+      "left": 700,
+      "top": 724,
+      "right": 1220,
+      "bottom": 800,
+      "width": 520,
+      "height": 76,
+      "cssWidth": 520,
+      "cssHeight": 76,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -260, 0)",
+      "filter": "none"
+    },
+    "ribbonTopLeft": {
+      "left": -286,
+      "top": -82,
+      "right": 694,
+      "bottom": 279.140625,
+      "width": 980,
+      "height": 361.140625,
+      "cssWidth": 980,
+      "cssHeight": 361.141,
+      "opacity": 1,
+      "transform": "none",
+      "filter": "none"
+    },
+    "ribbonRight": {
+      "left": 1310,
+      "top": 708,
+      "right": 2220,
+      "bottom": 1070.21875,
+      "width": 910,
+      "height": 362.21875,
+      "cssWidth": 910,
+      "cssHeight": 362.219,
+      "opacity": 0.8,
+      "transform": "none",
+      "filter": "none"
+    },
+    "matrixTopRight": {
+      "left": 1689.326904296875,
+      "top": 73.97537231445312,
+      "right": 1815.7930908203125,
+      "bottom": 190.42025756835938,
+      "width": 126.4661865234375,
+      "height": 116.44488525390625,
+      "cssWidth": 126,
+      "cssHeight": 116.016,
+      "opacity": 0.295,
+      "transform": "matrix(1.0037, 0, 0, 1.0037, 3.56, 2.19)",
+      "filter": "none"
+    },
+    "matrixBottomLeft": {
+      "left": 79.27420043945312,
+      "top": 888.0015869140625,
+      "right": 204.84579467773438,
+      "bottom": 1003.6227416992188,
+      "width": 125.57159423828125,
+      "height": 115.62115478515625,
+      "cssWidth": 126,
+      "cssHeight": 116.016,
+      "opacity": 0.198,
+      "transform": "matrix(0.9966, 0, 0, 0.9966, -2.94, -2.18)",
+      "filter": "none"
+    },
+    "railLeft": {
+      "left": 87,
+      "top": 602,
+      "right": 105,
+      "bottom": 802,
+      "width": 18,
+      "height": 200,
+      "cssWidth": 18,
+      "cssHeight": 200,
+      "opacity": 1,
+      "transform": "none",
+      "filter": "none"
+    },
+    "railRight": {
+      "left": 1815,
+      "top": 224,
+      "right": 1833,
+      "bottom": 424,
+      "width": 18,
+      "height": 200,
+      "cssWidth": 18,
+      "cssHeight": 200,
+      "opacity": 1,
+      "transform": "none",
+      "filter": "none"
+    },
+    "railCenters": {
+      "left": {
+        "x": 96,
+        "y": 702
+      },
+      "right": {
+        "x": 1824,
+        "y": 324
+      }
+    },
+    "cornerCore": {
+      "left": 74.984375,
+      "top": 51,
+      "right": 164.984375,
+      "bottom": 152.234375,
+      "width": 90,
+      "height": 101.234375,
+      "cssWidth": 90,
+      "cssHeight": 101.234,
+      "opacity": 0.72,
+      "transform": "none",
+      "filter": "drop-shadow(rgba(1, 10, 20, 0.98) 0px 0px 1px) drop-shadow(rgba(1, 10, 20, 0.86) 0px 0px 2px)"
+    },
+    "cornerAnchors": {
+      "topLeft": {
+        "x": 96,
+        "y": 72
+      },
+      "topRight": {
+        "x": 1824,
+        "y": 72
+      },
+      "bottomLeft": {
+        "x": 96,
+        "y": 1008
+      },
+      "bottomRight": {
+        "x": 1824,
+        "y": 1008
+      }
+    },
+    "orientations": {
+      "waiting-frame-corner-top-left": "matrix(-1, 0, 0, 1, 0, 0)",
+      "waiting-frame-corner-top-right": "none",
+      "waiting-frame-corner-bottom-left": "matrix(-1, 0, 0, -1, 0, 0)",
+      "waiting-frame-corner-bottom-right": "matrix(1, 0, 0, -1, 0, 0)"
+    },
+    "sourceGeometry": {
+      "cornerAsset": {
+        "width": 1105,
+        "height": 1243,
+        "apexX": 847,
+        "apexY": 258,
+        "coreHorizontalPixels": 660,
+        "coreVerticalPixels": 799,
+        "coreThicknessPixels": 43
+      },
+      "cornerRenderedWidth": 90,
+      "railAsset": "/assets/Ligne-points-renforcee.svg"
+    },
+    "counts": {
+      "matrices": 2,
+      "rails": 2,
+      "frameCorners": 4,
+      "cornerCores": 4,
+      "cornerHalos": 4,
+      "guides": 0,
+      "legacyInformationBrackets": 0,
+      "legacyViewportAngles": 0,
+      "legacyFrameLines": 0
+    },
+    "content": {
+      "message": "J'ARRIVE !",
+      "countdown": "00:00"
+    },
+    "layoutRevision": "les-da-2026-r8",
+    "previewScale": 1
+  },
+  "cornerMetrics": {
+    "horizontalBranch": 53.755656108597286,
+    "verticalBranch": 65.07692307692308,
+    "coreThickness": 3.502262443438914,
+    "haloBlurRadius": 7
+  },
+  "railMetrics": {
+    "width": 18,
+    "length": 200,
+    "dotDiameter": 3.5,
+    "centerSpacing": 10,
+    "terminalDiameter": 8,
+    "crossSpan": 14,
+    "crossStroke": 2.5,
+    "dotOpacity": 0.65
+  },
+  "railSourceGeometry": {
+    "terminalAxisX": 9,
+    "terminalDiameter": 8,
+    "dotAxesX": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "dotDiameters": [
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "dotCentersY": [
+      24,
+      34,
+      44,
+      54,
+      64,
+      74,
+      84,
+      94,
+      104,
+      114,
+      124,
+      134,
+      144,
+      154,
+      164,
+      174
+    ],
+    "crossAxisX": 9,
+    "crossSpan": 14,
+    "crossStroke": 2.5,
+    "crossFitsViewBox": true
+  },
+  "responsiveMeasurements": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "expectedScale": 1
+      },
+      "previewScale": 1,
+      "cornerAnchors": {
+        "topLeft": {
+          "x": 96,
+          "y": 72
+        },
+        "topRight": {
+          "x": 1824,
+          "y": 72
+        },
+        "bottomLeft": {
+          "x": 96,
+          "y": 1008
+        },
+        "bottomRight": {
+          "x": 1824,
+          "y": 1008
+        }
+      },
+      "railCenters": {
+        "left": {
+          "x": 96,
+          "y": 702
+        },
+        "right": {
+          "x": 1824,
+          "y": 324
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "expectedScale": 0.6666666666666666
+      },
+      "previewScale": 0.6666666666666666,
+      "cornerAnchors": {
+        "topLeft": {
+          "x": 96,
+          "y": 72
+        },
+        "topRight": {
+          "x": 1824,
+          "y": 72
+        },
+        "bottomLeft": {
+          "x": 96,
+          "y": 1008
+        },
+        "bottomRight": {
+          "x": 1824,
+          "y": 1008
+        }
+      },
+      "railCenters": {
+        "left": {
+          "x": 96,
+          "y": 702.0000228881836
+        },
+        "right": {
+          "x": 1824,
+          "y": 324.0000228881836
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 960,
+        "height": 540,
+        "expectedScale": 0.5
+      },
+      "previewScale": 0.5,
+      "cornerAnchors": {
+        "topLeft": {
+          "x": 96,
+          "y": 72
+        },
+        "topRight": {
+          "x": 1824,
+          "y": 72
+        },
+        "bottomLeft": {
+          "x": 96,
+          "y": 1008
+        },
+        "bottomRight": {
+          "x": 1824,
+          "y": 1008
+        }
+      },
+      "railCenters": {
+        "left": {
+          "x": 96,
+          "y": 702
+        },
+        "right": {
+          "x": 1824,
+          "y": 324
+        }
+      }
+    }
+  ],
+  "clearances": {
+    "leftRailToBottomMatrix": 86.0015869140625,
+    "rightRailToTopMatrix": 33.579742431640625
+  },
+  "breath": {
+    "periodSeconds": 7.5,
+    "messageScale": [
+      1,
+      1.012
+    ],
+    "messageOpacity": [
+      0.94,
+      1
+    ],
+    "cornerCoreOpacity": [
+      0.72,
+      0.98
+    ],
+    "phaseStates": [
+      {
+        "phase": 0,
+        "seconds": 0,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "messageWidth": 1540,
+        "cornerCoreOpacity": 0.72,
+        "cornerHaloOpacity": 0.1,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        }
+      },
+      {
+        "phase": 0.25,
+        "seconds": 3.75,
+        "messageOpacity": 1,
+        "messageTransform": "matrix(1.012, 0, 0, 1.012, 0, 0)",
+        "messageWidth": 1558.47998046875,
+        "cornerCoreOpacity": 0.98,
+        "cornerHaloOpacity": 0.28,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        }
+      },
+      {
+        "phase": 0.5,
+        "seconds": 7.5,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "messageWidth": 1540,
+        "cornerCoreOpacity": 0.72,
+        "cornerHaloOpacity": 0.1,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        }
+      },
+      {
+        "phase": 0.9999,
+        "seconds": 14.9985,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "messageWidth": 1540,
+        "cornerCoreOpacity": 0.72,
+        "cornerHaloOpacity": 0.1,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        }
+      }
+    ],
+    "outputSamples": [
+      {
+        "elapsedSeconds": 0,
+        "messageOpacity": 0.9413,
+        "messageTransform": "matrix(1.0003, 0, 0, 1.0003, 0, 0)",
+        "cornerCoreOpacity": 0.7254,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 0.25,
+        "messageOpacity": 0.9438,
+        "messageTransform": "matrix(1.0008, 0, 0, 1.0008, 0, 0)",
+        "cornerCoreOpacity": 0.7364,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 0.5,
+        "messageOpacity": 0.9474,
+        "messageTransform": "matrix(1.0015, 0, 0, 1.0015, 0, 0)",
+        "cornerCoreOpacity": 0.7522,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 0.75,
+        "messageOpacity": 0.9523,
+        "messageTransform": "matrix(1.0025, 0, 0, 1.0025, 0, 0)",
+        "cornerCoreOpacity": 0.7734,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1,
+        "messageOpacity": 0.9584,
+        "messageTransform": "matrix(1.0037, 0, 0, 1.0037, 0, 0)",
+        "cornerCoreOpacity": 0.7999,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1.25,
+        "messageOpacity": 0.9647,
+        "messageTransform": "matrix(1.0049, 0, 0, 1.0049, 0, 0)",
+        "cornerCoreOpacity": 0.8268,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1.5,
+        "messageOpacity": 0.971,
+        "messageTransform": "matrix(1.0062, 0, 0, 1.0062, 0, 0)",
+        "cornerCoreOpacity": 0.8541,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1.75,
+        "messageOpacity": 0.9778,
+        "messageTransform": "matrix(1.0076, 0, 0, 1.0076, 0, 0)",
+        "cornerCoreOpacity": 0.884,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2,
+        "messageOpacity": 0.9838,
+        "messageTransform": "matrix(1.0088, 0, 0, 1.0088, 0, 0)",
+        "cornerCoreOpacity": 0.9097,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2.25,
+        "messageOpacity": 0.9892,
+        "messageTransform": "matrix(1.0098, 0, 0, 1.0098, 0, 0)",
+        "cornerCoreOpacity": 0.9333,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2.5,
+        "messageOpacity": 0.994,
+        "messageTransform": "matrix(1.0108, 0, 0, 1.0108, 0, 0)",
+        "cornerCoreOpacity": 0.9541,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2.75,
+        "messageOpacity": 0.9973,
+        "messageTransform": "matrix(1.0115, 0, 0, 1.0115, 0, 0)",
+        "cornerCoreOpacity": 0.9681,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3,
+        "messageOpacity": 0.9994,
+        "messageTransform": "matrix(1.0119, 0, 0, 1.0119, 0, 0)",
+        "cornerCoreOpacity": 0.9774,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3.25,
+        "messageOpacity": 1,
+        "messageTransform": "matrix(1.012, 0, 0, 1.012, 0, 0)",
+        "cornerCoreOpacity": 0.98,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3.5,
+        "messageOpacity": 0.9991,
+        "messageTransform": "matrix(1.0118, 0, 0, 1.0118, 0, 0)",
+        "cornerCoreOpacity": 0.9761,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3.75,
+        "messageOpacity": 0.9968,
+        "messageTransform": "matrix(1.0114, 0, 0, 1.0114, 0, 0)",
+        "cornerCoreOpacity": 0.9662,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4,
+        "messageOpacity": 0.9933,
+        "messageTransform": "matrix(1.0107, 0, 0, 1.0107, 0, 0)",
+        "cornerCoreOpacity": 0.9508,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4.25,
+        "messageOpacity": 0.9885,
+        "messageTransform": "matrix(1.0097, 0, 0, 1.0097, 0, 0)",
+        "cornerCoreOpacity": 0.9302,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4.5,
+        "messageOpacity": 0.983,
+        "messageTransform": "matrix(1.0086, 0, 0, 1.0086, 0, 0)",
+        "cornerCoreOpacity": 0.9065,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4.75,
+        "messageOpacity": 0.9769,
+        "messageTransform": "matrix(1.0074, 0, 0, 1.0074, 0, 0)",
+        "cornerCoreOpacity": 0.8801,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5,
+        "messageOpacity": 0.9704,
+        "messageTransform": "matrix(1.0061, 0, 0, 1.0061, 0, 0)",
+        "cornerCoreOpacity": 0.8516,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5.25,
+        "messageOpacity": 0.9632,
+        "messageTransform": "matrix(1.0046, 0, 0, 1.0046, 0, 0)",
+        "cornerCoreOpacity": 0.8206,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5.5,
+        "messageOpacity": 0.9571,
+        "messageTransform": "matrix(1.0034, 0, 0, 1.0034, 0, 0)",
+        "cornerCoreOpacity": 0.7942,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5.75,
+        "messageOpacity": 0.9517,
+        "messageTransform": "matrix(1.0023, 0, 0, 1.0023, 0, 0)",
+        "cornerCoreOpacity": 0.7705,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6,
+        "messageOpacity": 0.947,
+        "messageTransform": "matrix(1.0014, 0, 0, 1.0014, 0, 0)",
+        "cornerCoreOpacity": 0.7504,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6.25,
+        "messageOpacity": 0.9431,
+        "messageTransform": "matrix(1.0006, 0, 0, 1.0006, 0, 0)",
+        "cornerCoreOpacity": 0.7335,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6.5,
+        "messageOpacity": 0.9409,
+        "messageTransform": "matrix(1.0002, 0, 0, 1.0002, 0, 0)",
+        "cornerCoreOpacity": 0.7239,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6.75,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "cornerCoreOpacity": 0.7201,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 7,
+        "messageOpacity": 0.9406,
+        "messageTransform": "matrix(1.0001, 0, 0, 1.0001, 0, 0)",
+        "cornerCoreOpacity": 0.7227,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 7.25,
+        "messageOpacity": 0.9426,
+        "messageTransform": "matrix(1.0005, 0, 0, 1.0005, 0, 0)",
+        "cornerCoreOpacity": 0.7311,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 7.5,
+        "messageOpacity": 0.9457,
+        "messageTransform": "matrix(1.0011, 0, 0, 1.0011, 0, 0)",
+        "cornerCoreOpacity": 0.7449,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      }
+    ]
+  },
+  "assertions": {
+    "stageIs1920x1080": true,
+    "layoutRevisionIsR8": true,
+    "frameAnchorsMatchSharedRectangle": true,
+    "opposingFrameMarginsAreEqual": true,
+    "orientationsMatchVisibleScheme": true,
+    "cornerGeometryWithinRequestedRange": true,
+    "railsMatchDistinctAnchors": true,
+    "railAsymmetryIsDeliberate": true,
+    "railGeometryMatchesRequestedValues": true,
+    "railComponentsShareOneAxis": true,
+    "railMotifsHaveMatchingBoxes": true,
+    "railsAlignedToFrameMargins": true,
+    "railAndMatrixClearanceAtLeast24": true,
+    "railAndFrameAnchorsRemainStatic": true,
+    "responsiveScalingPreservesLogicalLayout": true,
+    "guidesArePreviewOnly": true,
+    "protectedRestGeometryUnchanged": true,
+    "exactProtectedDecorativeCounts": true,
+    "noLegacyCentralOrClosedFrame": true,
+    "frozenBreathHitsRequestedExtremes": true,
+    "frozenCycleReturnsToInitial": true,
+    "outputBreathRunsAcrossCountdownTicks": true,
+    "logoAndCountdownRemainStatic": true
+  },
+  "passed": true
+}

@@ -2,9 +2,10 @@
 
 /* eslint-disable @next/next/no-img-element -- official assets are intentionally served without optimization */
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, type CSSProperties } from "react";
 import { gsap } from "gsap";
 import type { GraphicsState, GraphicSnapshot, WaitingContent } from "../../lib/graphics/types";
+import { WAITING_LAYOUT, WAITING_LAYOUT_DERIVED, WAITING_LAYOUT_REVISION } from "../../lib/waiting/layout";
 import { useCountdownText } from "./countdown";
 
 type WaitingRendererProps = {
@@ -12,9 +13,33 @@ type WaitingRendererProps = {
   state: GraphicsState | null;
   getServerNowMs: () => number;
   freezeProgress?: number | null;
+  showLayoutGuides?: boolean;
 };
 
-export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgress = null }: WaitingRendererProps) {
+const waitingLayoutStyle = {
+  "--waiting-frame-left": `${WAITING_LAYOUT.frame.left}px`,
+  "--waiting-frame-right": `${WAITING_LAYOUT.frame.right}px`,
+  "--waiting-frame-top": `${WAITING_LAYOUT.frame.top}px`,
+  "--waiting-frame-bottom": `${WAITING_LAYOUT.frame.bottom}px`,
+  "--waiting-rail-width": `${WAITING_LAYOUT.rail.width}px`,
+  "--waiting-rail-height": `${WAITING_LAYOUT.rail.height}px`,
+  "--waiting-rail-left-x": `${WAITING_LAYOUT_DERIVED.railLeft}px`,
+  "--waiting-rail-right-x": `${WAITING_LAYOUT_DERIVED.railRight}px`,
+  "--waiting-rail-left-y": `${WAITING_LAYOUT_DERIVED.leftRailTop}px`,
+  "--waiting-rail-right-y": `${WAITING_LAYOUT_DERIVED.rightRailTop}px`,
+  "--waiting-corner-width": `${WAITING_LAYOUT.corner.renderedWidth}px`,
+  "--waiting-corner-image-left": `${WAITING_LAYOUT_DERIVED.cornerImageLeft}px`,
+  "--waiting-corner-image-top": `${WAITING_LAYOUT_DERIVED.cornerImageTop}px`,
+  "--waiting-corner-support-diameter": `${WAITING_LAYOUT.corner.supportDiameter}px`,
+  "--waiting-corner-halo-blur": `${WAITING_LAYOUT.corner.haloBlur}px`,
+  "--waiting-matrix-width": `${WAITING_LAYOUT.matrix.renderedWidth}px`,
+  "--waiting-matrix-top-right-right": `${WAITING_LAYOUT.matrix.topRight.right}px`,
+  "--waiting-matrix-top-right-top": `${WAITING_LAYOUT.matrix.topRight.top}px`,
+  "--waiting-matrix-bottom-left-left": `${WAITING_LAYOUT.matrix.bottomLeft.left}px`,
+  "--waiting-matrix-bottom-left-bottom": `${WAITING_LAYOUT.matrix.bottomLeft.bottom}px`,
+} as CSSProperties;
+
+export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgress = null, showLayoutGuides = false }: WaitingRendererProps) {
   const root = useRef<HTMLDivElement>(null);
   const { value } = useCountdownText(state, getServerNowMs);
   const content = snapshot?.content ?? { message: "", countdownEnabled: false };
@@ -79,7 +104,25 @@ export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgres
         .fromTo("[data-halo]", { scale: 1, opacity: 0.16 }, { scale: 1.014, opacity: 0.205, duration: 7.5, ease: "sine.inOut" }, 0)
         .to("[data-halo]", { scale: 1, opacity: 0.16, duration: 7.5, ease: "sine.inOut" }, 7.5)
         .fromTo("[data-atmosphere]", { opacity: 0.42 }, { opacity: 0.58, duration: 7.5, ease: "sine.inOut" }, 0)
-        .to("[data-atmosphere]", { opacity: 0.42, duration: 7.5, ease: "sine.inOut" }, 7.5);
+        .to("[data-atmosphere]", { opacity: 0.42, duration: 7.5, ease: "sine.inOut" }, 7.5)
+        .fromTo(
+          "[data-message-breath]",
+          { scale: 1, opacity: 0.94 },
+          { scale: 1.012, opacity: 1, duration: 3.75, ease: "sine.inOut", repeat: 3, yoyo: true },
+          0,
+        )
+        .fromTo(
+          "[data-frame-corner-core]",
+          { opacity: WAITING_LAYOUT.corner.coreOpacityMin },
+          { opacity: WAITING_LAYOUT.corner.coreOpacityMax, duration: 3.75, ease: "sine.inOut", repeat: 3, yoyo: true },
+          0,
+        )
+        .fromTo(
+          "[data-frame-corner-halo]",
+          { opacity: WAITING_LAYOUT.corner.haloOpacityMin },
+          { opacity: WAITING_LAYOUT.corner.haloOpacityMax, duration: 3.75, ease: "sine.inOut", repeat: 3, yoyo: true },
+          0,
+        );
 
       if (freezeProgress !== null) {
         const requestedProgress = Math.max(0, Math.min(0.9999, freezeProgress));
@@ -90,7 +133,13 @@ export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgres
   }, [freezeProgress]);
 
   return (
-    <div className="gfx-stage waiting-stage" ref={root} data-testid="waiting-stage">
+    <div
+      className="gfx-stage waiting-stage"
+      ref={root}
+      data-testid="waiting-stage"
+      data-layout-revision={WAITING_LAYOUT_REVISION}
+      style={waitingLayoutStyle}
+    >
       <svg className="waiting-filter-defs" width="0" height="0" aria-hidden="true" focusable="false">
         <defs>
           <filter id="waiting-flame-flow-left" x="-8%" y="-18%" width="116%" height="136%" colorInterpolationFilters="sRGB">
@@ -111,27 +160,99 @@ export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgres
       <img className="waiting-official-texture" src="/assets/Elements-01.png" alt="" aria-hidden="true" />
 
       <div className="waiting-structure" aria-hidden="true">
-        <div className="waiting-ambient waiting-matrix waiting-matrix-top-right" data-ambient data-ax="4" data-ay="3" data-shift="0.9" data-opacity="0.26" data-opacity-amp="0.045" data-scale-amp="0.004">
+        <div
+          className="waiting-ambient waiting-matrix waiting-matrix-top-right"
+          data-ambient
+          data-ax={WAITING_LAYOUT.matrix.driftX}
+          data-ay={WAITING_LAYOUT.matrix.driftY}
+          data-shift="0.9"
+          data-opacity={WAITING_LAYOUT.matrix.topRightOpacity}
+          data-opacity-amp={WAITING_LAYOUT.matrix.opacityAmplitude}
+          data-scale-amp="0.003"
+        >
           <img src="/assets/Nuage-points.png" alt="" />
         </div>
-        <div className="waiting-ambient waiting-matrix waiting-matrix-bottom-left" data-ambient data-ax="4" data-ay="3" data-shift="4.05" data-opacity="0.23" data-opacity-amp="0.04" data-scale-amp="0.004">
+        <div
+          className="waiting-ambient waiting-matrix waiting-matrix-bottom-left"
+          data-ambient
+          data-ax={WAITING_LAYOUT.matrix.driftX}
+          data-ay={WAITING_LAYOUT.matrix.driftY}
+          data-shift="4.05"
+          data-opacity={WAITING_LAYOUT.matrix.bottomLeftOpacity}
+          data-opacity-amp={WAITING_LAYOUT.matrix.opacityAmplitude}
+          data-scale-amp="0.003"
+        >
           <img src="/assets/Nuage-points.png" alt="" />
         </div>
 
-        <div className="waiting-ambient waiting-dot-rail waiting-dot-rail-left" data-ambient data-ay="3" data-shift="2.3" data-opacity="0.27" data-opacity-amp="0.045">
-          <img src="/assets/Ligne-points.png" alt="" />
+        <div className="waiting-dot-rail waiting-dot-rail-left">
+          <img src="/assets/Ligne-points-renforcee.svg" alt="" />
         </div>
-        <div className="waiting-ambient waiting-dot-rail waiting-dot-rail-right" data-ambient data-ay="3" data-shift="5.1" data-opacity="0.23" data-opacity-amp="0.04">
-          <img src="/assets/Ligne-points.png" alt="" />
+        <div className="waiting-dot-rail waiting-dot-rail-right">
+          <img src="/assets/Ligne-points-renforcee.svg" alt="" />
         </div>
 
-        <div className="waiting-ambient waiting-information-brackets" data-ambient data-shift="1.25" data-opacity="0.52" data-opacity-amp="0.055">
-          <img className="waiting-information-bracket waiting-information-bracket-top-left" src="/assets/Angle.png" alt="" />
-          <img className="waiting-information-bracket waiting-information-bracket-top-right" src="/assets/Angle.png" alt="" />
-          <img className="waiting-information-bracket waiting-information-bracket-bottom-left" src="/assets/Angle.png" alt="" />
-          <img className="waiting-information-bracket waiting-information-bracket-bottom-right" src="/assets/Angle.png" alt="" />
+        <div className="waiting-frame-corners">
+          <div className="waiting-frame-corner waiting-frame-corner-top-left">
+            <div className="waiting-frame-corner-orientation">
+              <img className="waiting-frame-corner-halo" data-frame-corner-halo src="/assets/Angle.png" alt="" />
+              <img className="waiting-frame-corner-core" data-frame-corner-core src="/assets/Angle.png" alt="" />
+            </div>
+          </div>
+          <div className="waiting-frame-corner waiting-frame-corner-top-right">
+            <div className="waiting-frame-corner-orientation">
+              <img className="waiting-frame-corner-halo" data-frame-corner-halo src="/assets/Angle.png" alt="" />
+              <img className="waiting-frame-corner-core" data-frame-corner-core src="/assets/Angle.png" alt="" />
+            </div>
+          </div>
+          <div className="waiting-frame-corner waiting-frame-corner-bottom-left">
+            <div className="waiting-frame-corner-orientation">
+              <img className="waiting-frame-corner-halo" data-frame-corner-halo src="/assets/Angle.png" alt="" />
+              <img className="waiting-frame-corner-core" data-frame-corner-core src="/assets/Angle.png" alt="" />
+            </div>
+          </div>
+          <div className="waiting-frame-corner waiting-frame-corner-bottom-right">
+            <div className="waiting-frame-corner-orientation">
+              <img className="waiting-frame-corner-halo" data-frame-corner-halo src="/assets/Angle.png" alt="" />
+              <img className="waiting-frame-corner-core" data-frame-corner-core src="/assets/Angle.png" alt="" />
+            </div>
+          </div>
         </div>
       </div>
+      {showLayoutGuides && (
+        <svg className="waiting-layout-guides" viewBox={`0 0 ${WAITING_LAYOUT.width} ${WAITING_LAYOUT.height}`} aria-hidden="true">
+          <rect
+            className="waiting-layout-guide-frame"
+            x={WAITING_LAYOUT.frame.left}
+            y={WAITING_LAYOUT.frame.top}
+            width={WAITING_LAYOUT_DERIVED.frameWidth}
+            height={WAITING_LAYOUT_DERIVED.frameHeight}
+          />
+          <line className="waiting-layout-guide-midline" x1="0" y1={WAITING_LAYOUT.height / 2} x2={WAITING_LAYOUT.width} y2={WAITING_LAYOUT.height / 2} />
+          <g className="waiting-layout-guide-corner-authority">
+            <rect x={WAITING_LAYOUT.frame.left} y={WAITING_LAYOUT.frame.top} width={WAITING_LAYOUT.corner.authoritySize} height={WAITING_LAYOUT.corner.authoritySize} />
+            <rect x={WAITING_LAYOUT.frame.right - WAITING_LAYOUT.corner.authoritySize} y={WAITING_LAYOUT.frame.top} width={WAITING_LAYOUT.corner.authoritySize} height={WAITING_LAYOUT.corner.authoritySize} />
+            <rect x={WAITING_LAYOUT.frame.left} y={WAITING_LAYOUT.frame.bottom - WAITING_LAYOUT.corner.authoritySize} width={WAITING_LAYOUT.corner.authoritySize} height={WAITING_LAYOUT.corner.authoritySize} />
+            <rect x={WAITING_LAYOUT.frame.right - WAITING_LAYOUT.corner.authoritySize} y={WAITING_LAYOUT.frame.bottom - WAITING_LAYOUT.corner.authoritySize} width={WAITING_LAYOUT.corner.authoritySize} height={WAITING_LAYOUT.corner.authoritySize} />
+          </g>
+          <g className="waiting-layout-guide-matrices">
+            <rect x={WAITING_LAYOUT_DERIVED.matrixTopRightLeft} y={WAITING_LAYOUT.matrix.topRight.top} width={WAITING_LAYOUT.matrix.renderedWidth} height={WAITING_LAYOUT_DERIVED.matrixHeight} />
+            <rect x={WAITING_LAYOUT.matrix.bottomLeft.left} y={WAITING_LAYOUT_DERIVED.matrixBottomLeftTop} width={WAITING_LAYOUT.matrix.renderedWidth} height={WAITING_LAYOUT_DERIVED.matrixHeight} />
+          </g>
+          <g className="waiting-layout-guide-rail">
+            <rect x={WAITING_LAYOUT_DERIVED.railLeft} y={WAITING_LAYOUT_DERIVED.leftRailTop} width={WAITING_LAYOUT.rail.width} height={WAITING_LAYOUT.rail.height} />
+            <line x1={WAITING_LAYOUT.frame.left} y1={WAITING_LAYOUT_DERIVED.leftRailTop} x2={WAITING_LAYOUT.frame.left} y2={WAITING_LAYOUT_DERIVED.leftRailTop + WAITING_LAYOUT.rail.height} />
+            <circle cx={WAITING_LAYOUT.frame.left} cy={WAITING_LAYOUT.rail.leftCenterY} r="8" />
+            <text x={WAITING_LAYOUT.frame.left + 18} y={WAITING_LAYOUT.rail.leftCenterY - 12}>gauche · 96, 702</text>
+          </g>
+          <g className="waiting-layout-guide-rail">
+            <rect x={WAITING_LAYOUT_DERIVED.railRight} y={WAITING_LAYOUT_DERIVED.rightRailTop} width={WAITING_LAYOUT.rail.width} height={WAITING_LAYOUT.rail.height} />
+            <line x1={WAITING_LAYOUT.frame.right} y1={WAITING_LAYOUT_DERIVED.rightRailTop} x2={WAITING_LAYOUT.frame.right} y2={WAITING_LAYOUT_DERIVED.rightRailTop + WAITING_LAYOUT.rail.height} />
+            <circle cx={WAITING_LAYOUT.frame.right} cy={WAITING_LAYOUT.rail.rightCenterY} r="8" />
+            <text textAnchor="end" x={WAITING_LAYOUT.frame.right - 18} y={WAITING_LAYOUT.rail.rightCenterY - 12}>droit · 1824, 324</text>
+          </g>
+        </svg>
+      )}
       <div className="waiting-atmosphere" data-atmosphere aria-hidden="true" />
 
       <div className="waiting-ambient-field" aria-hidden="true">
@@ -157,7 +278,9 @@ export function WaitingRenderer({ snapshot, state, getServerNowMs, freezeProgres
         <img src="/assets/Bloc_marque_sans-fond_blanc.png" alt="Lyon e-Sport" draggable={false} />
       </div>
 
-      {content.message && <h1 className="waiting-message">{content.message}</h1>}
+      <h1 className={`waiting-message ${content.message ? "" : "waiting-message-empty"}`}>
+        <span className="waiting-message-breath" data-message-breath>{content.message}</span>
+      </h1>
 
       {content.countdownEnabled && state && (
         <div className={`waiting-countdown ${state.timer.showDigits ? "" : "waiting-countdown-hidden"}`}>

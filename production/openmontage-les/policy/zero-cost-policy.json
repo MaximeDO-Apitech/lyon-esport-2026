@@ -1,0 +1,36 @@
+{
+  "id": "les-local-zero-cost-v1",
+  "budget": {
+    "mode": "cap",
+    "total_usd": 0.0,
+    "reserve_pct": 0.0,
+    "single_action_approval_usd": 0.0,
+    "require_approval_for_new_paid_tool": true
+  },
+  "allowed_operations": [
+    "local_file_hashing",
+    "ffprobe_inspection",
+    "ffmpeg_frame_and_alpha_analysis",
+    "local_schema_validation",
+    "human_visual_review",
+    "backlot_local_read_only"
+  ],
+  "blocked_operations": [
+    "external_generation_api",
+    "external_voice_api",
+    "external_music_api",
+    "external_analysis_api",
+    "stock_media_download",
+    "automatic_publish"
+  ],
+  "credential_handling": {
+    "inherit_provider_credentials": false,
+    "print_secret_values": false,
+    "codex_authentication_is_not_an_api_key": true
+  },
+  "network": {
+    "external_access": "blocked_by_command_allowlist_and_child_process_proxy_guard",
+    "localhost_allowed": true,
+    "note": "This project wrapper is defense in depth, not an operating-system firewall. Only its allowlisted local commands are authorized for the pilot."
+  }
+}

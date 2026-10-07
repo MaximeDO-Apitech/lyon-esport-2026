@@ -1,0 +1,76 @@
+{
+  "generatedAtUtc": "2026-10-07T07:36:57.574Z",
+  "previewUrl": "http://localhost:3001/preview/attente",
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "loopSeconds": 15,
+  "breathPeriodSeconds": 7.5,
+  "motionProofSeconds": 20,
+  "motionProofFps": 2,
+  "proofContentOverride": {
+    "scope": "capture DOM only; no API or persisted state mutation",
+    "message": "JE REVIENS DANS UN INSTANT",
+    "countdown": "00:00"
+  },
+  "seamHashesMatch": true,
+  "artifacts": [
+    {
+      "filename": "after-phase-0.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "B63FC8A459974193E7F530C03D3764DA4CE218C3B67BEA4C4A5DF01B2E9F3C68"
+    },
+    {
+      "filename": "after-phase-25.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "C2501874BBC8489646A00B3A2036D974B58CC6100D71F041859D47534893B622"
+    },
+    {
+      "filename": "after-phase-50.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "33EB85A4F3690941F603DBCF059D13803EB79DDF4720DE2298673A0514D7EB13"
+    },
+    {
+      "filename": "after-phase-75.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "A6D86D23217356A0D6564146A2133C70BA51A7B674163BF1D9EC5F9A433C0534"
+    },
+    {
+      "filename": "after-phase-99.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "B63FC8A459974193E7F530C03D3764DA4CE218C3B67BEA4C4A5DF01B2E9F3C68"
+    },
+    {
+      "filename": "before-after-phase-0.png",
+      "width": 1920,
+      "height": 540,
+      "pages": 1,
+      "sha256": "546B4F3995B4FEB0FDC2DAD9F96067F6173782CA69479994C0716A63DE5FE644"
+    },
+    {
+      "filename": "motion-phases.png",
+      "width": 2880,
+      "height": 540,
+      "pages": 1,
+      "sha256": "168B963FD0D594ED3D3F6B36783DAB1190A394C08E0AB32D980E82977CE3A7AD"
+    },
+    {
+      "filename": "motion-proof-20s.gif",
+      "width": 960,
+      "height": 540,
+      "pages": 40,
+      "sha256": "EC6314A7AA0AF658E03D423B4D3ECA16DA448C8B193C82F8F812488B52B9FDB5"
+    }
+  ]
+}

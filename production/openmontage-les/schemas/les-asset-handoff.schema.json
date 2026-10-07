@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "les/asset-handoff/v1",
+  "title": "LES prepared asset handoff",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "asset_id",
+    "version",
+    "relative_media_path",
+    "provenance",
+    "technical",
+    "tests",
+    "human_approval",
+    "status"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "asset_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "relative_media_path": {
+      "type": "string",
+      "pattern": "^(?![A-Za-z]:)(?![/\\\\])(?!.*(?:^|[/\\\\])\\.\\.(?:[/\\\\]|$))(?!.*://).+$"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_name", "source_sha256", "prepared_sha256", "prepared_at_utc", "toolchain"],
+      "properties": {
+        "source_name": { "type": "string" },
+        "source_sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+        "prepared_sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+        "prepared_at_utc": { "type": "string", "format": "date-time" },
+        "toolchain": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "license_notes": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "technical": {
+      "type": "object",
+      "required": ["width", "height", "fps", "frame_count", "duration_frames", "alpha", "audio"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "fps": {
+          "type": "object",
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": { "type": "integer", "minimum": 1 },
+            "denominator": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": false
+        },
+        "frame_count": { "type": "integer", "minimum": 1 },
+        "duration_frames": { "type": "integer", "minimum": 1 },
+        "codec": { "type": "string" },
+        "pixel_format": { "type": "string" },
+        "alpha": {
+          "type": "object",
+          "required": ["present", "association", "tested"],
+          "properties": {
+            "present": { "type": "boolean" },
+            "association": { "type": "string", "enum": ["straight", "premultiplied", "compatible_with_premultiplied", "none", "unknown"] },
+            "tested": { "type": "boolean" },
+            "notes": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "audio": {
+          "type": "object",
+          "required": ["present", "expectation"],
+          "properties": {
+            "present": { "type": "boolean" },
+            "expectation": { "type": "string", "enum": ["required", "optional", "silence_required", "not_applicable"] }
+          },
+          "additionalProperties": false
+        },
+        "cut_points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "frame_index_zero_based"],
+            "properties": {
+              "name": { "type": "string" },
+              "frame_index_zero_based": { "type": "integer", "minimum": 0 },
+              "purpose": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status", "evidence"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "type": "string", "enum": ["pass", "fail", "not_tested", "not_applicable"] },
+          "evidence": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "human_approval": {
+      "type": "object",
+      "required": ["approved"],
+      "properties": {
+        "approved": { "type": "boolean" },
+        "approved_by": { "type": ["string", "null"] },
+        "approved_at_utc": { "type": ["string", "null"], "format": "date-time" },
+        "vmix_recipe_passed": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": ["candidate", "technical_checked", "visual_reviewed", "human_approved", "broadcast_validated", "rejected"]
+    }
+  },
+  "additionalProperties": false
+}

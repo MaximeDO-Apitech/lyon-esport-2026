@@ -20,6 +20,7 @@ type GraphicOutputClientProps = {
   previewBackground?: "transparent" | "checker" | "light" | "dark";
   freezeProgress?: number | null;
   simulationSeconds?: number | null;
+  showLayoutGuides?: boolean;
 };
 
 export function GraphicOutputClient({
@@ -29,6 +30,7 @@ export function GraphicOutputClient({
   previewBackground = "transparent",
   freezeProgress = null,
   simulationSeconds = null,
+  showLayoutGuides = false,
 }: GraphicOutputClientProps) {
   const { envelope, getServerNowMs } = useGraphicsFeed(100);
   const [simulationEndAtServerMs, setSimulationEndAtServerMs] = useState(0);
@@ -85,6 +87,7 @@ export function GraphicOutputClient({
           state={previewState}
           getServerNowMs={getServerNowMs}
           freezeProgress={source === "preview" ? freezeProgress : null}
+          showLayoutGuides={source === "preview" && showLayoutGuides}
         />
       ) : (
         <LowerThirdRenderer

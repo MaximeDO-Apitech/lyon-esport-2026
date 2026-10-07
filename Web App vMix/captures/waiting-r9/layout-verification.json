@@ -1,0 +1,1499 @@
+{
+  "generatedAtUtc": "2026-10-07T14:01:41.989Z",
+  "previewUrl": "http://localhost:3000/preview/attente?freeze=0",
+  "guideUrl": "http://localhost:3000/preview/attente?freeze=0&guides=1",
+  "outputUrl": "http://localhost:3000/output/attente",
+  "target": {
+    "width": 1920,
+    "height": 1080,
+    "frame": {
+      "left": 96,
+      "right": 1824,
+      "top": 72,
+      "bottom": 1008
+    },
+    "rails": {
+      "right": {
+        "x": 1824,
+        "y": 324
+      },
+      "left": {
+        "x": 96,
+        "y": 702
+      },
+      "width": 18,
+      "height": 200
+    },
+    "cornerAuthority": {
+      "topRight": {
+        "left": 1732,
+        "top": 72,
+        "right": 1824,
+        "bottom": 164
+      },
+      "bottomLeft": {
+        "left": 96,
+        "top": 916,
+        "right": 188,
+        "bottom": 1008
+      }
+    },
+    "matrices": {
+      "width": 112,
+      "minimumAuthorityClearance": 20
+    }
+  },
+  "sixAnchors": [
+    {
+      "element": "sommet haut gauche",
+      "target": {
+        "x": 96,
+        "y": 72
+      },
+      "measured": {
+        "x": 96,
+        "y": 72
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "sommet haut droit",
+      "target": {
+        "x": 1824,
+        "y": 72
+      },
+      "measured": {
+        "x": 1824,
+        "y": 72
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "sommet bas gauche",
+      "target": {
+        "x": 96,
+        "y": 1008
+      },
+      "measured": {
+        "x": 96,
+        "y": 1008
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "sommet bas droit",
+      "target": {
+        "x": 1824,
+        "y": 1008
+      },
+      "measured": {
+        "x": 1824,
+        "y": 1008
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "centre repère droit",
+      "target": {
+        "x": 1824,
+        "y": 324
+      },
+      "measured": {
+        "x": 1824,
+        "y": 324
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "element": "centre repère gauche",
+      "target": {
+        "x": 96,
+        "y": 702
+      },
+      "measured": {
+        "x": 96,
+        "y": 702
+      },
+      "delta": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "layout": {
+    "stage": {
+      "left": 0,
+      "top": 0,
+      "right": 1920,
+      "bottom": 1080,
+      "width": 1920,
+      "height": 1080,
+      "cssWidth": 1920,
+      "cssHeight": 1080,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -960, -540)",
+      "filter": "none"
+    },
+    "logo": {
+      "left": 680,
+      "top": 225,
+      "right": 1240,
+      "bottom": 504,
+      "width": 560,
+      "height": 279,
+      "cssWidth": 560,
+      "cssHeight": 279,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -280, 0)",
+      "filter": "none"
+    },
+    "messageLayout": {
+      "left": 190,
+      "top": 560,
+      "right": 1730,
+      "bottom": 644.234375,
+      "width": 1540,
+      "height": 84.234375,
+      "cssWidth": 1540,
+      "cssHeight": 84.2344,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -770, 0)",
+      "filter": "none"
+    },
+    "messageBreath": {
+      "left": 190,
+      "top": 560,
+      "right": 1730,
+      "bottom": 644.234375,
+      "width": 1540,
+      "height": 84.234375,
+      "cssWidth": 1540,
+      "cssHeight": 84.2344,
+      "opacity": 0.94,
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "filter": "none"
+    },
+    "countdown": {
+      "left": 700,
+      "top": 724,
+      "right": 1220,
+      "bottom": 800,
+      "width": 520,
+      "height": 76,
+      "cssWidth": 520,
+      "cssHeight": 76,
+      "opacity": 1,
+      "transform": "matrix(1, 0, 0, 1, -260, 0)",
+      "filter": "none"
+    },
+    "ribbonTopLeft": {
+      "left": -286,
+      "top": -82,
+      "right": 694,
+      "bottom": 279.140625,
+      "width": 980,
+      "height": 361.140625,
+      "cssWidth": 980,
+      "cssHeight": 361.141,
+      "opacity": 1,
+      "transform": "none",
+      "filter": "none"
+    },
+    "ribbonRight": {
+      "left": 1310,
+      "top": 708,
+      "right": 2220,
+      "bottom": 1070.21875,
+      "width": 910,
+      "height": 362.21875,
+      "cssWidth": 910,
+      "cssHeight": 362.219,
+      "opacity": 0.8,
+      "transform": "none",
+      "filter": "none"
+    },
+    "matrixTopRight": {
+      "left": 1598.063232421875,
+      "top": 97.31562805175781,
+      "right": 1710.3768310546875,
+      "bottom": 200.7293701171875,
+      "width": 112.3135986328125,
+      "height": 103.41374206542969,
+      "cssWidth": 112,
+      "cssHeight": 103.125,
+      "opacity": 0.197,
+      "transform": "matrix(1.0028, 0, 0, 1.0028, 2.22, 1.46)",
+      "filter": "none"
+    },
+    "matrixBottomLeft": {
+      "left": 210.30560302734375,
+      "top": 879.55908203125,
+      "right": 322.014404296875,
+      "bottom": 982.4159545898438,
+      "width": 111.70880126953125,
+      "height": 102.85687255859375,
+      "cssWidth": 112,
+      "cssHeight": 103.125,
+      "opacity": 0.143,
+      "transform": "matrix(0.9974, 0, 0, 0.9974, -1.84, -1.45)",
+      "filter": "none"
+    },
+    "railLeft": {
+      "left": 87,
+      "top": 602,
+      "right": 105,
+      "bottom": 802,
+      "width": 18,
+      "height": 200,
+      "cssWidth": 18,
+      "cssHeight": 200,
+      "opacity": 1,
+      "transform": "none",
+      "filter": "none"
+    },
+    "railRight": {
+      "left": 1815,
+      "top": 224,
+      "right": 1833,
+      "bottom": 424,
+      "width": 18,
+      "height": 200,
+      "cssWidth": 18,
+      "cssHeight": 200,
+      "opacity": 1,
+      "transform": "none",
+      "filter": "none"
+    },
+    "railCenters": {
+      "left": {
+        "x": 96,
+        "y": 702
+      },
+      "right": {
+        "x": 1824,
+        "y": 324
+      }
+    },
+    "cornerCore": {
+      "left": 74.984375,
+      "top": 51,
+      "right": 164.984375,
+      "bottom": 152.234375,
+      "width": 90,
+      "height": 101.234375,
+      "cssWidth": 90,
+      "cssHeight": 101.234,
+      "opacity": 0.86,
+      "transform": "none",
+      "filter": "drop-shadow(rgba(1, 10, 20, 0.98) 0px 0px 1px) drop-shadow(rgba(1, 10, 20, 0.9) 0px 0px 1.5px)"
+    },
+    "cornerHalo": {
+      "left": 74.984375,
+      "top": 51,
+      "right": 164.984375,
+      "bottom": 152.234375,
+      "width": 90,
+      "height": 101.234375,
+      "cssWidth": 90,
+      "cssHeight": 101.234,
+      "opacity": 0.025,
+      "transform": "none",
+      "filter": "blur(4px)"
+    },
+    "cornerStyles": {
+      "coreFilter": "drop-shadow(rgba(1, 10, 20, 0.98) 0px 0px 1px) drop-shadow(rgba(1, 10, 20, 0.9) 0px 0px 1.5px)",
+      "haloFilter": "blur(4px)",
+      "supportOpacity": 0.72,
+      "supportBackground": "radial-gradient(circle, rgba(1, 10, 20, 0.68) 0px, rgba(1, 10, 20, 0.44) 31%, rgba(1, 10, 20, 0.17) 58%, rgba(0, 0, 0, 0) 76%)"
+    },
+    "cornerAnchors": {
+      "topLeft": {
+        "x": 96,
+        "y": 72
+      },
+      "topRight": {
+        "x": 1824,
+        "y": 72
+      },
+      "bottomLeft": {
+        "x": 96,
+        "y": 1008
+      },
+      "bottomRight": {
+        "x": 1824,
+        "y": 1008
+      }
+    },
+    "orientations": {
+      "waiting-frame-corner-top-left": "matrix(-1, 0, 0, 1, 0, 0)",
+      "waiting-frame-corner-top-right": "none",
+      "waiting-frame-corner-bottom-left": "matrix(-1, 0, 0, -1, 0, 0)",
+      "waiting-frame-corner-bottom-right": "matrix(1, 0, 0, -1, 0, 0)"
+    },
+    "sourceGeometry": {
+      "cornerAsset": {
+        "width": 1105,
+        "height": 1243,
+        "apexX": 847,
+        "apexY": 258,
+        "coreHorizontalPixels": 660,
+        "coreVerticalPixels": 799,
+        "coreThicknessPixels": 43
+      },
+      "cornerRenderedWidth": 90,
+      "railAsset": "/assets/Ligne-points-renforcee.svg"
+    },
+    "counts": {
+      "matrices": 2,
+      "rails": 2,
+      "frameCorners": 4,
+      "cornerCores": 4,
+      "cornerHalos": 4,
+      "guides": 0,
+      "legacyInformationBrackets": 0,
+      "legacyViewportAngles": 0,
+      "legacyFrameLines": 0
+    },
+    "content": {
+      "message": "J'ARRIVE !",
+      "countdown": "00:00"
+    },
+    "layoutRevision": "les-da-2026-r9",
+    "previewScale": 1
+  },
+  "cornerMetrics": {
+    "horizontalBranch": 53.755656108597286,
+    "verticalBranch": 65.07692307692308,
+    "coreThickness": 3.502262443438914,
+    "haloBlurRadius": 4
+  },
+  "railMetrics": {
+    "width": 18,
+    "length": 200,
+    "dotDiameter": 3.5,
+    "centerSpacing": 10,
+    "terminalDiameter": 8,
+    "crossSpan": 14,
+    "crossStroke": 2.5,
+    "dotOpacity": 0.65
+  },
+  "railSourceGeometry": {
+    "terminalAxisX": 9,
+    "terminalDiameter": 8,
+    "dotAxesX": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "dotDiameters": [
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5,
+      3.5
+    ],
+    "dotCentersY": [
+      24,
+      34,
+      44,
+      54,
+      64,
+      74,
+      84,
+      94,
+      104,
+      114,
+      124,
+      134,
+      144,
+      154,
+      164,
+      174
+    ],
+    "crossAxisX": 9,
+    "crossSpan": 14,
+    "crossStroke": 2.5,
+    "crossFitsViewBox": true
+  },
+  "responsiveMeasurements": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080,
+        "expectedScale": 1
+      },
+      "previewScale": 1,
+      "cornerAnchors": {
+        "topLeft": {
+          "x": 96,
+          "y": 72
+        },
+        "topRight": {
+          "x": 1824,
+          "y": 72
+        },
+        "bottomLeft": {
+          "x": 96,
+          "y": 1008
+        },
+        "bottomRight": {
+          "x": 1824,
+          "y": 1008
+        }
+      },
+      "railCenters": {
+        "left": {
+          "x": 96,
+          "y": 702
+        },
+        "right": {
+          "x": 1824,
+          "y": 324
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "expectedScale": 0.6666666666666666
+      },
+      "previewScale": 0.6666666666666666,
+      "cornerAnchors": {
+        "topLeft": {
+          "x": 96,
+          "y": 72
+        },
+        "topRight": {
+          "x": 1824,
+          "y": 72
+        },
+        "bottomLeft": {
+          "x": 96,
+          "y": 1008
+        },
+        "bottomRight": {
+          "x": 1824,
+          "y": 1008
+        }
+      },
+      "railCenters": {
+        "left": {
+          "x": 96,
+          "y": 702.0000228881836
+        },
+        "right": {
+          "x": 1824,
+          "y": 324.0000228881836
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 960,
+        "height": 540,
+        "expectedScale": 0.5
+      },
+      "previewScale": 0.5,
+      "cornerAnchors": {
+        "topLeft": {
+          "x": 96,
+          "y": 72
+        },
+        "topRight": {
+          "x": 1824,
+          "y": 72
+        },
+        "bottomLeft": {
+          "x": 96,
+          "y": 1008
+        },
+        "bottomRight": {
+          "x": 1824,
+          "y": 1008
+        }
+      },
+      "railCenters": {
+        "left": {
+          "x": 96,
+          "y": 702
+        },
+        "right": {
+          "x": 1824,
+          "y": 324
+        }
+      }
+    }
+  ],
+  "clearances": {
+    "leftRailToBottomMatrix": 130.7848662287907,
+    "rightRailToTopMatrix": 107.17989408140991,
+    "baselineMatrixToCornerAuthority": 0,
+    "minimumMatrixToCornerAuthority": 21.6231689453125,
+    "matrixAuthorityByPhase": [
+      {
+        "phase": 0,
+        "topRight": 21.6231689453125,
+        "bottomLeft": 22.30560302734375
+      },
+      {
+        "phase": 0.25,
+        "topRight": 22.642822265625,
+        "bottomLeft": 22.240402221679688
+      },
+      {
+        "phase": 0.5,
+        "topRight": 25.8468017578125,
+        "bottomLeft": 25.964401245117188
+      },
+      {
+        "phase": 0.9999,
+        "topRight": 21.6231689453125,
+        "bottomLeft": 22.30560302734375
+      }
+    ]
+  },
+  "breath": {
+    "periodSeconds": 7.5,
+    "messageScale": [
+      1,
+      1.012
+    ],
+    "messageOpacity": [
+      0.94,
+      1
+    ],
+    "cornerCoreOpacity": [
+      0.86,
+      0.96
+    ],
+    "cornerHaloOpacity": [
+      0.025,
+      0.07
+    ],
+    "phaseStates": [
+      {
+        "phase": 0,
+        "seconds": 0,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "messageWidth": 1540,
+        "cornerCoreOpacity": 0.86,
+        "cornerHaloOpacity": 0.025,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        },
+        "matrices": {
+          "topRight": {
+            "left": 1598.063232421875,
+            "top": 97.31562805175781,
+            "right": 1710.3768310546875,
+            "bottom": 200.7293701171875,
+            "width": 112.3135986328125,
+            "height": 103.41374206542969,
+            "opacity": 0.197
+          },
+          "bottomLeft": {
+            "left": 210.30560302734375,
+            "top": 879.55908203125,
+            "right": 322.014404296875,
+            "bottom": 982.4159545898438,
+            "width": 111.70880126953125,
+            "height": 102.85687255859375,
+            "opacity": 0.143
+          }
+        }
+      },
+      {
+        "phase": 0.25,
+        "seconds": 3.75,
+        "messageOpacity": 1,
+        "messageTransform": "matrix(1.012, 0, 0, 1.012, 0, 0)",
+        "messageWidth": 1558.47998046875,
+        "cornerCoreOpacity": 0.96,
+        "cornerHaloOpacity": 0.07,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        },
+        "matrices": {
+          "topRight": {
+            "left": 1597.2227783203125,
+            "top": 94.14812469482422,
+            "right": 1709.357177734375,
+            "bottom": 197.39688110351562,
+            "width": 112.1343994140625,
+            "height": 103.2487564086914,
+            "opacity": 0.163
+          },
+          "bottomLeft": {
+            "left": 210.2404022216797,
+            "top": 882.592529296875,
+            "right": 322.41961669921875,
+            "bottom": 985.8825073242188,
+            "width": 112.17921447753906,
+            "height": 103.28997802734375,
+            "opacity": 0.177
+          }
+        }
+      },
+      {
+        "phase": 0.5,
+        "seconds": 7.5,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "messageWidth": 1540,
+        "cornerCoreOpacity": 0.86,
+        "cornerHaloOpacity": 0.025,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        },
+        "matrices": {
+          "topRight": {
+            "left": 1594.466796875,
+            "top": 95.12437438964844,
+            "right": 1706.1531982421875,
+            "bottom": 197.96063232421875,
+            "width": 111.6864013671875,
+            "height": 102.83625793457031,
+            "opacity": 0.197
+          },
+          "bottomLeft": {
+            "left": 213.9644012451172,
+            "top": 881.7509155273438,
+            "right": 326.255615234375,
+            "bottom": 985.14404296875,
+            "width": 112.29121398925781,
+            "height": 103.39312744140625,
+            "opacity": 0.143
+          }
+        }
+      },
+      {
+        "phase": 0.9999,
+        "seconds": 14.9985,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "messageWidth": 1540,
+        "cornerCoreOpacity": 0.86,
+        "cornerHaloOpacity": 0.025,
+        "cornerOrientation": "matrix(-1, 0, 0, 1, 0, 0)",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        },
+        "cornerAnchors": {
+          "topLeft": {
+            "x": 96,
+            "y": 72
+          },
+          "bottomRight": {
+            "x": 1824,
+            "y": 1008
+          }
+        },
+        "matrices": {
+          "topRight": {
+            "left": 1598.063232421875,
+            "top": 97.31562805175781,
+            "right": 1710.3768310546875,
+            "bottom": 200.7293701171875,
+            "width": 112.3135986328125,
+            "height": 103.41374206542969,
+            "opacity": 0.197
+          },
+          "bottomLeft": {
+            "left": 210.30560302734375,
+            "top": 879.55908203125,
+            "right": 322.014404296875,
+            "bottom": 982.4159545898438,
+            "width": 111.70880126953125,
+            "height": 102.85687255859375,
+            "opacity": 0.143
+          }
+        }
+      }
+    ],
+    "outputSamples": [
+      {
+        "elapsedSeconds": 0,
+        "messageOpacity": 0.9412,
+        "messageTransform": "matrix(1.0002, 0, 0, 1.0002, 0, 0)",
+        "cornerCoreOpacity": 0.8619,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 0.25,
+        "messageOpacity": 0.9435,
+        "messageTransform": "matrix(1.0007, 0, 0, 1.0007, 0, 0)",
+        "cornerCoreOpacity": 0.8658,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 0.5,
+        "messageOpacity": 0.9476,
+        "messageTransform": "matrix(1.0015, 0, 0, 1.0015, 0, 0)",
+        "cornerCoreOpacity": 0.8726,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 0.75,
+        "messageOpacity": 0.9524,
+        "messageTransform": "matrix(1.0025, 0, 0, 1.0025, 0, 0)",
+        "cornerCoreOpacity": 0.8807,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1,
+        "messageOpacity": 0.9576,
+        "messageTransform": "matrix(1.0035, 0, 0, 1.0035, 0, 0)",
+        "cornerCoreOpacity": 0.8894,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1.25,
+        "messageOpacity": 0.964,
+        "messageTransform": "matrix(1.0048, 0, 0, 1.0048, 0, 0)",
+        "cornerCoreOpacity": 0.9001,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1.5,
+        "messageOpacity": 0.9707,
+        "messageTransform": "matrix(1.0061, 0, 0, 1.0061, 0, 0)",
+        "cornerCoreOpacity": 0.9112,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 1.75,
+        "messageOpacity": 0.9773,
+        "messageTransform": "matrix(1.0075, 0, 0, 1.0075, 0, 0)",
+        "cornerCoreOpacity": 0.9221,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2,
+        "messageOpacity": 0.9835,
+        "messageTransform": "matrix(1.0087, 0, 0, 1.0087, 0, 0)",
+        "cornerCoreOpacity": 0.9325,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2.25,
+        "messageOpacity": 0.9892,
+        "messageTransform": "matrix(1.0098, 0, 0, 1.0098, 0, 0)",
+        "cornerCoreOpacity": 0.9419,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2.5,
+        "messageOpacity": 0.9938,
+        "messageTransform": "matrix(1.0108, 0, 0, 1.0108, 0, 0)",
+        "cornerCoreOpacity": 0.9496,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 2.75,
+        "messageOpacity": 0.9972,
+        "messageTransform": "matrix(1.0114, 0, 0, 1.0114, 0, 0)",
+        "cornerCoreOpacity": 0.9553,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3,
+        "messageOpacity": 0.9993,
+        "messageTransform": "matrix(1.0119, 0, 0, 1.0119, 0, 0)",
+        "cornerCoreOpacity": 0.9588,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3.25,
+        "messageOpacity": 1,
+        "messageTransform": "matrix(1.012, 0, 0, 1.012, 0, 0)",
+        "cornerCoreOpacity": 0.96,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3.5,
+        "messageOpacity": 0.9991,
+        "messageTransform": "matrix(1.0118, 0, 0, 1.0118, 0, 0)",
+        "cornerCoreOpacity": 0.9586,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 3.75,
+        "messageOpacity": 0.997,
+        "messageTransform": "matrix(1.0114, 0, 0, 1.0114, 0, 0)",
+        "cornerCoreOpacity": 0.9551,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4,
+        "messageOpacity": 0.9933,
+        "messageTransform": "matrix(1.0107, 0, 0, 1.0107, 0, 0)",
+        "cornerCoreOpacity": 0.9489,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4.25,
+        "messageOpacity": 0.9888,
+        "messageTransform": "matrix(1.0098, 0, 0, 1.0098, 0, 0)",
+        "cornerCoreOpacity": 0.9414,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4.5,
+        "messageOpacity": 0.983,
+        "messageTransform": "matrix(1.0086, 0, 0, 1.0086, 0, 0)",
+        "cornerCoreOpacity": 0.9317,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 4.75,
+        "messageOpacity": 0.9772,
+        "messageTransform": "matrix(1.0074, 0, 0, 1.0074, 0, 0)",
+        "cornerCoreOpacity": 0.9219,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5,
+        "messageOpacity": 0.9703,
+        "messageTransform": "matrix(1.0061, 0, 0, 1.0061, 0, 0)",
+        "cornerCoreOpacity": 0.9104,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5.25,
+        "messageOpacity": 0.9634,
+        "messageTransform": "matrix(1.0047, 0, 0, 1.0047, 0, 0)",
+        "cornerCoreOpacity": 0.8989,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5.5,
+        "messageOpacity": 0.9572,
+        "messageTransform": "matrix(1.0034, 0, 0, 1.0034, 0, 0)",
+        "cornerCoreOpacity": 0.8887,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 5.75,
+        "messageOpacity": 0.9517,
+        "messageTransform": "matrix(1.0023, 0, 0, 1.0023, 0, 0)",
+        "cornerCoreOpacity": 0.8795,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6,
+        "messageOpacity": 0.9468,
+        "messageTransform": "matrix(1.0014, 0, 0, 1.0014, 0, 0)",
+        "cornerCoreOpacity": 0.8713,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6.25,
+        "messageOpacity": 0.9433,
+        "messageTransform": "matrix(1.0007, 0, 0, 1.0007, 0, 0)",
+        "cornerCoreOpacity": 0.8655,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6.5,
+        "messageOpacity": 0.9409,
+        "messageTransform": "matrix(1.0002, 0, 0, 1.0002, 0, 0)",
+        "cornerCoreOpacity": 0.8615,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 6.75,
+        "messageOpacity": 0.94,
+        "messageTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "cornerCoreOpacity": 0.86,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 7,
+        "messageOpacity": 0.9406,
+        "messageTransform": "matrix(1.0001, 0, 0, 1.0001, 0, 0)",
+        "cornerCoreOpacity": 0.861,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 7.25,
+        "messageOpacity": 0.9425,
+        "messageTransform": "matrix(1.0005, 0, 0, 1.0005, 0, 0)",
+        "cornerCoreOpacity": 0.8642,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      },
+      {
+        "elapsedSeconds": 7.5,
+        "messageOpacity": 0.9458,
+        "messageTransform": "matrix(1.0012, 0, 0, 1.0012, 0, 0)",
+        "cornerCoreOpacity": 0.8697,
+        "logoOpacity": 1,
+        "logoTransform": "matrix(1, 0, 0, 1, -280, 0)",
+        "countdownOpacity": 1,
+        "countdownTransform": "matrix(1, 0, 0, 1, -260, 0)",
+        "countdownText": "00:00",
+        "railCenters": {
+          "left": {
+            "x": 96,
+            "y": 702
+          },
+          "right": {
+            "x": 1824,
+            "y": 324
+          }
+        }
+      }
+    ]
+  },
+  "assertions": {
+    "stageIs1920x1080": true,
+    "layoutRevisionIsR9": true,
+    "frameAnchorsMatchSharedRectangle": true,
+    "opposingFrameMarginsAreEqual": true,
+    "orientationsMatchVisibleScheme": true,
+    "cornerGeometryWithinRequestedRange": true,
+    "cornerGlowIsControlled": true,
+    "cornerCoreRemainsAuthoritative": true,
+    "matricesStayOutsideCornerAuthority": true,
+    "matricesRemainSecondary": true,
+    "railsMatchDistinctAnchors": true,
+    "railAsymmetryIsDeliberate": true,
+    "railGeometryMatchesRequestedValues": true,
+    "railComponentsShareOneAxis": true,
+    "railMotifsHaveMatchingBoxes": true,
+    "railsAlignedToFrameMargins": true,
+    "railAndMatrixClearanceAtLeast24": true,
+    "railAndFrameAnchorsRemainStatic": true,
+    "responsiveScalingPreservesLogicalLayout": true,
+    "guidesArePreviewOnly": true,
+    "protectedRestGeometryUnchanged": true,
+    "exactProtectedDecorativeCounts": true,
+    "noLegacyCentralOrClosedFrame": true,
+    "frozenBreathHitsRequestedExtremes": true,
+    "frozenCycleReturnsToInitial": true,
+    "outputBreathRunsAcrossCountdownTicks": true,
+    "logoAndCountdownRemainStatic": true
+  },
+  "passed": true
+}

@@ -14,3 +14,14 @@
   transform: translate(-50%, -50%) scale(var(--stinger-output-scale, 1));
   transform-origin: center;
 }
+
+.browserResult {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  max-width: 100%;
+  margin: 0;
+  color: transparent;
+  pointer-events: none;
+}

@@ -1,0 +1,286 @@
+{
+  "generatedAtUtc": "2026-10-07T08:52:57.985Z",
+  "sourceProtection": "Original MOV files remain distinct and read-only; derivatives are stored in v2.",
+  "variants": {
+    "short": {
+      "checks": {
+        "sourceSha256Matches": true,
+        "sourceIsProRes4444Alpha12Bit": true,
+        "sourceFrameCountMatches": true,
+        "sourceHasNoAudio": true,
+        "opaqueWindowAllFramesMaxAlpha": true,
+        "exactCutFrameAlpha4095": true,
+        "finalSecuredFrameTransparent": true,
+        "firstPngFrameTransparent": true,
+        "cutPngFrameOpaque": true,
+        "lastPngFrameTransparent": true,
+        "webDerivativeDeclaresAlpha": true
+      },
+      "sourceSignalFrames": 120,
+      "securedSignalFrames": 120,
+      "sourceExactAlpha": [
+        {
+          "frameIndex": 64,
+          "timeMs": 1066.6666666666667,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 78,
+          "timeMs": 1300,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 99,
+          "timeMs": 1650,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 119,
+          "timeMs": 1983.3333333333333,
+          "min": 0,
+          "max": 0,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 0,
+          "leftColumnUnderMaxPixels": 1080
+        }
+      ],
+      "securedExactAlpha": [
+        {
+          "frameIndex": 64,
+          "timeMs": 1066.6666666666667,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 78,
+          "timeMs": 1300,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 99,
+          "timeMs": 1650,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 119,
+          "timeMs": 1983.3333333333333,
+          "min": 0,
+          "max": 0,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 0,
+          "leftColumnUnderMaxPixels": 1080
+        }
+      ],
+      "pngAlpha": {
+        "first": {
+          "min": 0,
+          "max": 0,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 0
+        },
+        "cut": {
+          "min": 255,
+          "max": 255,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600
+        },
+        "last": {
+          "min": 0,
+          "max": 0,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 0
+        }
+      }
+    },
+    "long": {
+      "checks": {
+        "sourceSha256Matches": true,
+        "sourceIsProRes4444Alpha12Bit": true,
+        "sourceFrameCountMatches": true,
+        "sourceHasNoAudio": true,
+        "opaqueWindowAllFramesMaxAlpha": true,
+        "exactCutFrameAlpha4095": true,
+        "finalSecuredFrameTransparent": true,
+        "firstPngFrameTransparent": true,
+        "cutPngFrameOpaque": true,
+        "lastPngFrameTransparent": true,
+        "webDerivativeDeclaresAlpha": true
+      },
+      "sourceSignalFrames": 300,
+      "securedSignalFrames": 300,
+      "sourceExactAlpha": [
+        {
+          "frameIndex": 64,
+          "timeMs": 1066.6666666666667,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 78,
+          "timeMs": 1300,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 129,
+          "timeMs": 2150,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 180,
+          "timeMs": 3000,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 258,
+          "timeMs": 4300,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 281,
+          "timeMs": 4683.333333333333,
+          "min": 3967,
+          "max": 4095,
+          "underMaxPixels": 1027,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 1027
+        },
+        {
+          "frameIndex": 299,
+          "timeMs": 4983.333333333333,
+          "min": 0,
+          "max": 1365,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 8775,
+          "leftColumnUnderMaxPixels": 1080
+        }
+      ],
+      "securedExactAlpha": [
+        {
+          "frameIndex": 64,
+          "timeMs": 1066.6666666666667,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 78,
+          "timeMs": 1300,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 129,
+          "timeMs": 2150,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 180,
+          "timeMs": 3000,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 258,
+          "timeMs": 4300,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 281,
+          "timeMs": 4683.333333333333,
+          "min": 4095,
+          "max": 4095,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600,
+          "leftColumnUnderMaxPixels": 0
+        },
+        {
+          "frameIndex": 299,
+          "timeMs": 4983.333333333333,
+          "min": 0,
+          "max": 0,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 0,
+          "leftColumnUnderMaxPixels": 1080
+        }
+      ],
+      "pngAlpha": {
+        "first": {
+          "min": 0,
+          "max": 0,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 0
+        },
+        "cut": {
+          "min": 255,
+          "max": 255,
+          "underMaxPixels": 0,
+          "nonZeroPixels": 2073600
+        },
+        "last": {
+          "min": 0,
+          "max": 0,
+          "underMaxPixels": 2073600,
+          "nonZeroPixels": 0
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Aperçu attente — LES Graphics Stu
 export default async function WaitingPreviewPage({
   searchParams,
 }: {
-  searchParams: Promise<{ source?: string; freeze?: string; simulation?: string }>;
+  searchParams: Promise<{ source?: string; freeze?: string; simulation?: string; guides?: string }>;
 }) {
   const params = await searchParams;
   const freeze = params.freeze === undefined ? null : Number(params.freeze);
@@ -17,6 +17,7 @@ export default async function WaitingPreviewPage({
       source={params.source === "program" ? "program" : "preview"}
       freezeProgress={Number.isFinite(freeze) ? freeze : null}
       simulationSeconds={Number.isFinite(simulation) && Number(simulation) > 0 ? simulation : null}
+      showLayoutGuides={params.guides === "1"}
     />
   );
 }

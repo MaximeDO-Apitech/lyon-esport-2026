@@ -1,0 +1,162 @@
+{
+  "id": "stinger-principal-les",
+  "version": "2.0.0",
+  "generatedAtUtc": "2026-10-07T08:52:57.985Z",
+  "family": "Transitions",
+  "validationStatus": "needs_visual_validation",
+  "publication": "not_published_to_production",
+  "cutMechanism": "native vMix stinger cut",
+  "alphaAssociation": "Analyse numérique compatible avec des contours prémultipliés ; aucune conversion globale appliquée. Contrôle visuel fourni sur damier, fond clair et fond sombre.",
+  "variants": [
+    {
+      "key": "short",
+      "slug": "court-2s",
+      "label": "Court — 2 s",
+      "status": "needs_visual_validation",
+      "source": {
+        "fileName": "Stinger-V2-court-compressed.mov",
+        "sha256": "148513D14E94751BEC2077281CA584A9B3824A17A812D6A3658F90264998CC54",
+        "bytes": 57382230,
+        "protectedReadOnly": true,
+        "codec": "prores 4444",
+        "pixelFormat": "yuva444p12le",
+        "timecode": "01:00:00:00",
+        "streams": [
+          {
+            "index": 0,
+            "type": "video",
+            "handler": "VideoHandler"
+          },
+          {
+            "index": 1,
+            "type": "data",
+            "handler": "TimeCodeHandler"
+          }
+        ]
+      },
+      "durationMs": 2000,
+      "resolution": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fps": 60,
+      "frameCount": 120,
+      "audio": false,
+      "cut": {
+        "timeMs": 1300,
+        "frameIndexZeroBased": 78,
+        "filename": "stinger-les-court-2s-0079.png"
+      },
+      "opaqueWindow": {
+        "firstFrameIndexZeroBased": 64,
+        "firstTimeMs": 1066.6666666666667,
+        "lastFrameIndexZeroBased": 99,
+        "lastTimeMs": 1650,
+        "criterion": "alpha 4095/4095 on every pixel in the secured broadcast derivative"
+      },
+      "browserDerivative": {
+        "path": "/assets/stinger/stinger-les-court-2s.webm",
+        "sha256": "9C568008375CE7B7A651DB5EC912BDDDD04DE207150FF91DCAA56405B4906789",
+        "codec": "vp9",
+        "pixelFormatReportedByFfprobe": "yuv420p",
+        "alphaMode": 1,
+        "note": "Proxy de prévisualisation VP9 lossless avec alpha, chroma 4:2:0 pour compatibilité navigateur ; il n’est pas le dérivé de diffusion."
+      },
+      "pngSequence": {
+        "directory": "deliverables/stinger-principal-les/v2/court-2s/png-sequence",
+        "pattern": "stinger-les-court-2s-####.png",
+        "frameCount": 120,
+        "pixelFormat": "RGBA 8-bit PNG",
+        "alphaAssociation": "Valeurs couleur/alpha du master préservées ; aucune conversion globale premultiply/unpremultiply.",
+        "sourcePipeline": "Extraction directe du master ProRes 4444 12 bits ; aucun réencodage ProRes intermédiaire.",
+        "aggregateSha256": "4C771A93717F2B80E81D9F188E8F17BE8F6DF6D28F89E00F97FB28CD1357B43A",
+        "hashesFile": "SHA256SUMS.txt"
+      },
+      "thumbnail": {
+        "path": "/thumbnails/stinger-les-court-2s.png",
+        "frameIndexZeroBased": 78,
+        "sha256": "430EEC6FC3A26952CB9AACD61C697A80BAABF30296EF7E3FA01058DB6A3403B3"
+      },
+      "auditSheets": {
+        "checker": "captures/stinger-v2-audit/court-2s-checker.png",
+        "light": "captures/stinger-v2-audit/court-2s-light.png",
+        "dark": "captures/stinger-v2-audit/court-2s-dark.png"
+      }
+    },
+    {
+      "key": "long",
+      "slug": "long-5s",
+      "label": "Long — 5 s",
+      "status": "needs_visual_validation",
+      "source": {
+        "fileName": "Stinger-V2-Long-compressed.mov",
+        "sha256": "F5EA1ACF0140C4FF9DDAB069997A4390C4E2781785F2A8583D49E367F3185732",
+        "bytes": 252433634,
+        "protectedReadOnly": true,
+        "codec": "prores 4444",
+        "pixelFormat": "yuva444p12le",
+        "timecode": "01:00:00:00",
+        "streams": [
+          {
+            "index": 0,
+            "type": "video",
+            "handler": "VideoHandler"
+          },
+          {
+            "index": 1,
+            "type": "data",
+            "handler": "TimeCodeHandler"
+          }
+        ]
+      },
+      "durationMs": 5000,
+      "resolution": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fps": 60,
+      "frameCount": 300,
+      "audio": false,
+      "cut": {
+        "timeMs": 1300,
+        "frameIndexZeroBased": 78,
+        "filename": "stinger-les-long-5s-0079.png"
+      },
+      "opaqueWindow": {
+        "firstFrameIndexZeroBased": 64,
+        "firstTimeMs": 1066.6666666666667,
+        "lastFrameIndexZeroBased": 281,
+        "lastTimeMs": 4683.333333333333,
+        "criterion": "alpha 4095/4095 on every pixel in the secured broadcast derivative"
+      },
+      "browserDerivative": {
+        "path": "/assets/stinger/stinger-les-long-5s.webm",
+        "sha256": "0E55C4C5D04E99073A39EAB0925F76BDB7C104DF6A1ACEB77FD5768E38E46F8D",
+        "codec": "vp9",
+        "pixelFormatReportedByFfprobe": "yuv420p",
+        "alphaMode": 1,
+        "note": "Proxy de prévisualisation VP9 lossless avec alpha, chroma 4:2:0 pour compatibilité navigateur ; il n’est pas le dérivé de diffusion."
+      },
+      "pngSequence": {
+        "directory": "deliverables/stinger-principal-les/v2/long-5s/png-sequence",
+        "pattern": "stinger-les-long-5s-####.png",
+        "frameCount": 300,
+        "pixelFormat": "RGBA 8-bit PNG",
+        "alphaAssociation": "Valeurs couleur/alpha du master préservées ; aucune conversion globale premultiply/unpremultiply.",
+        "sourcePipeline": "Extraction directe du master ProRes 4444 12 bits ; aucun réencodage ProRes intermédiaire.",
+        "aggregateSha256": "0D1854E0B460AD7B6DE6E6A2623C39BFAEBF2813B631C6F4287D624CD10EF452",
+        "hashesFile": "SHA256SUMS.txt"
+      },
+      "thumbnail": {
+        "path": "/thumbnails/stinger-les-long-5s.png",
+        "frameIndexZeroBased": 180,
+        "sha256": "280F07F9C18412D4CF6BC9196A0F0E2256DF04D9F74A63CAC87618B6E089D635"
+      },
+      "auditSheets": {
+        "checker": "captures/stinger-v2-audit/long-5s-checker.png",
+        "light": "captures/stinger-v2-audit/long-5s-light.png",
+        "dark": "captures/stinger-v2-audit/long-5s-dark.png"
+      }
+    }
+  ]
+}

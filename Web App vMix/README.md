@@ -59,61 +59,43 @@ Les aperçus et moniteurs intégrés au pupitre ne sont pas comptés comme sorti
 
 ## Fonctionnement du stinger
 
-Le stinger est la transition animée qui masque le passage d’une source vMix A vers une source B. Il dure **1 200 ms**, est calculé en **1920 × 1080 à 60 images/s**, possède un canal alpha et ne contient pas d’audio.
+Le stinger principal est désormais fondé sur les deux masters vidéo fournis, sans reconstruction HTML, SVG ou GSAP :
 
-Son principe est le suivant :
+| Variante | Durée | Images | Fenêtre plein cadre | Coupe vMix |
+| --- | ---: | ---: | --- | ---: |
+| Court — 2 s | 2 000 ms | 120 | index 64 à 99 | 1 300 ms, index 78 |
+| Long — 5 s | 5 000 ms | 300 | index 64 à 281 | 1 300 ms, index 78 |
 
-1. Au départ, l’image du stinger est transparente et la source A reste visible.
-2. Un volet angulaire cyan et orange balaie l’écran de gauche à droite. Il devient entièrement opaque avant la coupe.
-3. À **600 ms**, vMix remplace instantanément A par B. Cette coupe est invisible, car le stinger recouvre alors tous les pixels de l’écran.
-4. Le volet se dégage vers la droite et révèle la source B.
-5. À **1 160 ms**, l’image est redevenue transparente ; la composition se termine à 1 200 ms.
-
-| Temps | État |
-| ---: | --- |
-| 0 ms | image transparente, source A visible |
-| 320 ms | écran entièrement couvert |
-| 600 ms | point de coupe A → B, image `0037` |
-| 800 ms | début du dégagement |
-| 1 160 ms | retour à la transparence |
-| 1 200 ms | fin de la transition |
-
-La fenêtre opaque fonctionnelle est déclarée de **320 à 800 ms**. L’export actuellement livré a été mesuré comme totalement opaque de 250 à 800 ms ; le point de coupe à 600 ms dispose donc d’une marge de sécurité de part et d’autre.
+Les masters sont en ProRes 4444 alpha 12 bits, 1920 × 1080 à 60 images/s et sans audio. La variante longue conserve le cartouche partenaires CGI entre environ 2,15 et 4,30 secondes. Les originaux restent en lecture seule ; les séquences de diffusion sont des dérivés distincts dont l’alpha est sécurisé uniquement aux images nécessaires.
 
 ### Tester le stinger dans l’application
 
 Ouvrir `http://localhost:3000/preview/stinger`. Ce banc de test permet de :
 
+- choisir `Court — 2 s` ou `Long — 5 s` ;
 - lancer une simulation A → B à vitesse normale ou au ralenti ;
 - déplacer la tête de lecture à une milliseconde précise ;
-- vérifier la bascule de A vers B à 600 ms ;
-- afficher un damier pour contrôler la transparence ;
+- vérifier la bascule de A vers B à 1 300 ms ;
+- contrôler l’alpha sur damier, fond clair, fond sombre ou mire contrastée ;
 - ouvrir `/output/stinger`, qui montre uniquement le rendu RGBA du stinger.
 
 Ces essais sont isolés : ils ne modifient pas l’état programme et n’envoient aucune commande à vMix. Un second déclenchement est ignoré pendant une lecture, et le stinger revient à l’état prêt lorsqu’elle se termine. Recharger la page ne relance pas automatiquement la transition.
 
-### Exporter la séquence de diffusion
+### Préparer les séquences de diffusion
 
-Le rendu web sert de source déterministe pour produire les 72 images PNG RGBA utilisées par vMix. Le script positionne la timeline GSAP image par image ; il ne réalise pas une capture vidéo en temps réel.
-
-Avec le serveur de développement lancé dans un premier terminal :
+Le pipeline analyse les masters avec `ffprobe`, vérifie leurs empreintes, corrige l’alpha puis extrait directement 120 et 300 images PNG RGBA. Il produit aussi les proxies WebM utilisés par le navigateur :
 
 ```powershell
-npm run dev
+npm run export:stinger -- --short "C:\Users\maximed\Downloads\Stinger-V2-court-compressed.mov" --long "C:\Users\maximed\Downloads\Stinger-V2-Long-compressed.mov"
 ```
 
-lancer dans un second terminal :
+La livraison est générée dans `deliverables/stinger-principal-les/v2/` :
 
-```powershell
-npm run export:stinger
-```
-
-La livraison est générée dans `deliverables/stinger-principal-les/v1/` :
-
-- `png-sequence/` contient les fichiers `stinger-principal-les-0001.png` à `stinger-principal-les-0072.png` ;
+- `court-2s/png-sequence/` contient 120 images ;
+- `long-5s/png-sequence/` contient 300 images ;
 - `manifest.json` consigne la cadence, les temps, le point de coupe, l’alpha et les ressources utilisées ;
-- `verification.json` contient les contrôles automatiques de dimensions, numérotation, transparence et opacité ;
-- `demo-a-stinger-b.gif` illustre le résultat, mais ne doit pas être utilisé comme source de diffusion.
+- `verification.json` contient les mesures alpha 12 bits et les contrôles des dérivés ;
+- chaque séquence possède son `SHA256SUMS.txt`.
 
 Le cycle navigateur peut aussi être contrôlé avec :
 
@@ -123,15 +105,15 @@ npm run test:stinger-browser
 
 ### Installer le stinger dans vMix
 
-La route `/output/stinger` est utile pour l’aperçu, l’export et les tests automatisés, mais elle ne synchronise pas la coupe de vMix. Pour la diffusion, utiliser le mécanisme natif de stinger avec la séquence PNG :
+Les routes `/output/stinger?variant=short` et `/output/stinger?variant=long` servent à l’aperçu et aux tests automatisés, mais elles ne synchronisent pas la coupe de vMix. Pour la diffusion, utiliser le mécanisme natif de stinger avec la séquence PNG :
 
-1. Ajouter une entrée **Image Sequence / Stinger** à partir de `deliverables/stinger-principal-les/v1/png-sequence/stinger-principal-les-0001.png`. Grâce à la numérotation continue, vMix charge toute la séquence.
-2. Dans les paramètres **Overlay**, affecter l’entrée à **Stinger 1** — ou à un emplacement libre.
+1. Ajouter une entrée **Image Sequence / Stinger** à partir du fichier `0001` de la variante voulue. Grâce à la numérotation continue, vMix charge toute la séquence.
+2. Choisir un emplacement libre ; ne pas écraser un slot déjà utilisé, notamment par le replay.
 3. Régler **Effect** sur `Cut`.
 4. Sélectionner la séquence dans **Stinger Input**.
-5. Régler **Duration** sur `1200 ms` et **Stinger Cut Point** sur `600 ms`.
-6. Affecter **Stinger 1** à un bouton de transition, puis tester A → B avec des sources claires, sombres et contrastées.
-7. Vérifier le résultat sur la cadence et la version de vMix réellement utilisées en régie. La livraison est produite à 60 images/s, mais cette cadence reste à confirmer sur la machine de diffusion.
+5. Régler **Duration** sur `2000 ms` ou `5000 ms`, et **Stinger Cut Point** sur `1300 ms` dans les deux cas.
+6. Laisser la vitesse à 1 et désactiver toute boucle.
+7. Affecter le stinger à un bouton de transition, puis tester A → B avec des sources claires, sombres et contrastées.
 
 Le choix d’afficher le stinger au-dessus ou en dessous des overlays actifs dépend de la conduite souhaitée. Il faut notamment vérifier ce réglage avec le synthé à l’écran. Le guide d’exploitation détaillé se trouve dans [`docs/stinger-principal-les.md`](./docs/stinger-principal-les.md).
 
@@ -192,4 +174,11 @@ npx tsc --noEmit
 npm run build
 ```
 
-Les captures de contrôle se trouvent dans `captures/`. Le remplacement du logo et ses marges sont consignés dans [`docs/waiting-r6-validation.md`](./docs/waiting-r6-validation.md). Le paramètre `freeze` de `/preview/attente` permet de figer uniquement l’aperçu, par exemple `/preview/attente?freeze=0.5`; il n’affecte jamais la sortie programme.
+Les captures de contrôle se trouvent dans `captures/`. La finition des quatre angles, la séparation avec les matrices, les repères pointillés volontairement asymétriques et la respiration synchronisée de l’attente sont consignés dans [`docs/waiting-r9-validation.md`](./docs/waiting-r9-validation.md). Le paramètre `freeze` de `/preview/attente` permet de figer uniquement l’aperçu, par exemple `/preview/attente?freeze=0.25`; `guides=1` ajoute le cadre, les zones d’autorité, les boîtes de matrices et les axes de contrôle uniquement sur cette route d’aperçu. Aucun de ces paramètres n’affecte la sortie programme.
+
+Les contrôles dédiés de cette version peuvent être rejoués avec un serveur local déjà lancé :
+
+```powershell
+npm run verify:waiting -- --base-url http://localhost:3000
+npm run proof:waiting -- --base-url http://localhost:3000
+```

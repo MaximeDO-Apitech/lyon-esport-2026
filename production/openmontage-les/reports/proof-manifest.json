@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "pilot": "OpenMontage LES — qualification non destructive des stingers V2",
+  "source_masters": [
+    {
+      "name": "Stinger-V2-court-compressed.mov",
+      "sha256": "148513D14E94751BEC2077281CA584A9B3824A17A812D6A3658F90264998CC54",
+      "bytes": 57382230,
+      "read_only_attribute": true
+    },
+    {
+      "name": "Stinger-V2-Long-compressed.mov",
+      "sha256": "F5EA1ACF0140C4FF9DDAB069997A4390C4E2781785F2A8583D49E367F3185732",
+      "bytes": 252433634,
+      "read_only_attribute": true
+    }
+  ],
+  "technical_proof": {
+    "path": "reports/data/stinger-alpha-analysis.json",
+    "method": "Every decoded frame and every native 1920x1080 12-bit alpha sample",
+    "short_frames": 120,
+    "long_frames": 300,
+    "total_pixels_scanned": 870912000
+  },
+  "openmontage_artifact": {
+    "path": "reports/data/source-media-review.json",
+    "schema": "openmontage/artifacts/source_media_review",
+    "validated": true
+  },
+  "native_visual_proofs": {
+    "directory": "reports/proofs/native-masters",
+    "alpha_correction_applied": false,
+    "backgrounds": ["transparent", "checker", "light", "dark"],
+    "inspected_by_agent": true,
+    "special_capture": "long-frame-0299-native-checker.png"
+  },
+  "reused_visual_proofs": {
+    "source_directory": "Web App vMix/captures/stinger-v2-audit",
+    "copy_directory": "reports/proofs/stinger-contact-sheets",
+    "all_eight_copies_sha256_identical_to_source": true,
+    "note": "These existing sheets show the secured derivative after its narrow alpha correction. They are not presented as unmodified master frames."
+  },
+  "program_publication": "not_performed",
+  "vmix_validation": "not_performed",
+  "human_approval": "pending"
+}

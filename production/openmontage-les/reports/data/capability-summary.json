@@ -1,0 +1,23 @@
+{
+  "generated_at_utc": "2026-10-07T16:36:29.7976634Z",
+  "openmontage_commit": "9327439db69021ab4b0e2776729bf3b58fdb5a87",
+  "provider_menu_summary_method_exists": true,
+  "composition_runtimes": {
+    "ffmpeg": true,
+    "remotion": true,
+    "hyperframes": true
+  },
+  "capabilities": {
+    "analysis": { "configured": 7, "declared": 13 },
+    "audio_processing": { "configured": 2, "declared": 2 },
+    "character_animation": { "configured": 6, "declared": 6 },
+    "graphics": { "configured": 1, "declared": 3 },
+    "image_generation": { "configured": 0, "declared": 23 },
+    "music_generation": { "configured": 0, "declared": 5 },
+    "screen_capture": { "configured": 2, "declared": 2 },
+    "tts": { "configured": 1, "declared": 13, "available_provider": "piper" },
+    "video_generation": { "configured": 0, "declared": 31 },
+    "video_post": { "configured": 9, "declared": 9 }
+  },
+  "interpretation": "Configured means the registry reported an available route in the guarded environment. It does not mean every route was functionally tested or works offline."
+}

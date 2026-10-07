@@ -25,7 +25,7 @@ Les motifs officiels utilisés sont les flammes/volutes, le fond `Elements-01`, 
 Le PDF fourni est une planche unique qui place explicitement les familles suivantes :
 
 - neuf flammes individuelles (flamme 1 à 7, 9 et 10) disposées comme une bibliothèque de gestes lumineux ; elles servent à construire des masses, pas à remplir uniformément l’image ;
-- un angle cyan dont l’orientation source correspond à un coin haut droit ; il peut être retourné pour encadrer un groupe d’information, sans imposer un cadre aux quatre coins du viewport ;
+- un angle cyan dont l’orientation source correspond à un coin haut droit ; il peut être décliné dans les quatre orientations pour marquer les sommets d’un cadre intérieur, sans relier ces sommets par un rectangle continu ;
 - une paire compacte de lignes de points verticales, avec terminaisons lumineuses ; cette famille fonctionne comme un rail technique local, jamais comme une succession de colonnes sur toute la largeur ;
 - deux nuages de points triangulaires, l’un dans son orientation source et l’autre retourné de 180 degrés ; ils créent une diagonale et perdent progressivement en densité vers le centre ;
 - le fond sombre Elements-01, utilisé comme couche de profondeur ;
@@ -35,7 +35,7 @@ Les grands exports Flamme-02 et Flamme-03 du pack reprennent le vocabulaire des 
 
 Logique d’usage retenue :
 
-- un seul petit jeu d’angles encadre le groupe message-compteur, et non le viewport ;
+- quatre angles marquent un même rectangle intérieur régulier, tandis que les deux rails latéraux ponctuent volontairement des hauteurs différentes ;
 - les matrices de points occupent le haut droit et le bas gauche, en retrait du centre ;
 - les petites sphères lumineuses sont attachées aux rails, matrices et crêtes de flammes, plutôt que dispersées au hasard ;
 - les rubans et leurs halos portent l’énergie sur la périphérie haut-gauche / droite-basse ;
@@ -61,17 +61,22 @@ Les trois fontes utilisées par le projet sont embarquées localement depuis les
 - compteur numérique seul, centré à partir de `y = 724 px`, sans libellé secondaire ;
 - centre sombre, motifs concentrés sur les bords ;
 - profondeur de fond issue de `Elements-01`, conservé intact et cadré derrière les autres couches ;
-- un seul jeu compact de quatre angles officiels autour du groupe message-compteur, une matrice en haut à droite, une matrice en bas à gauche et deux rails latéraux courts ;
+- un seul jeu compact de quatre angles officiels partage les sommets `(96, 72)`, `(1824, 72)`, `(96, 1008)` et `(1824, 1008)` ; une matrice reste en haut à droite et une autre en bas à gauche ;
+- chaque angle conserve une zone d’autorité intérieure de 92 × 92 px ; les matrices de 112 px restent à au moins 20 px de cette zone pendant toute leur dérive, afin que les deux familles ne fusionnent jamais ;
+- le trait natif des angles porte leur lisibilité : noyau entre 0,86 et 0,96, halo limité à 4 px et à une opacité de 0,025 à 0,07, avec un soutien sombre local discret derrière le sommet ;
+- deux rails latéraux courts réutilisent le même motif mais restent volontairement asymétriques : centre droit à `y = 324`, centre gauche à `y = 702` ; le milieu `y = 540` est un guide, pas leur cible ;
 - six nœuds lumineux rattachés aux trajectoires des deux rubans, avec une dérive perceptible de quelques dizaines de pixels, dans les couleurs officielles ;
 - lueur cyan discrète située derrière le logo, jamais appliquée au fichier du logo ;
 - boucle GSAP déterministe de 15 secondes, sans caméra, flash, glitch ou pulsation du logo ;
 - un ruban officiel dominant en haut à gauche et une volute officielle plus légère ancrée sur le bord droit dans la moitié basse, sans nappe d’énergie posée au sol ;
 - aucune translation globale des flammes : leur mouvement est une déformation interne locale à deux échelles, de faible amplitude, pilotée par des fonctions périodiques qui retrouvent exactement leur état initial à 15 secondes ;
 - respiration très lente de l’atmosphère périphérique et du halo placé derrière le logo ;
-- dérive sinusoïdale discrète des matrices et rails, plus ample sur les nœuds lumineux attachés aux trajectoires ; toutes les phases retrouvent exactement leur état initial à 15 secondes ;
+- dérive sinusoïdale discrète des matrices, plus ample sur les nœuds lumineux attachés aux trajectoires ; les deux rails restent fixes et toutes les phases animées retrouvent exactement leur état initial à 15 secondes ;
 - aucune colonne de points répétitive et aucun cadre technique continu ;
 - marge visuelle de sécurité de 64 px entre les rubans et les enveloppes du logo, du message et du compteur ;
 - compteur piloté par une horloge distincte de la boucle décorative.
+
+Règle propre à cette composition : les quatre angles partagent un cadre régulier et restent hiérarchiquement au-dessus des matrices. Les deux repères pointillés utilisent le même motif avec des hauteurs volontairement différentes : droit plus haut, gauche plus bas.
 
 ### Synthé individuel
 

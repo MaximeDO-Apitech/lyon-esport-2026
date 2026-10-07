@@ -3,6 +3,11 @@ import { StingerPreviewClient } from "../../../components/graphics/stinger-previ
 
 export const metadata: Metadata = { title: "Aperçu stinger — LES Graphics Studio" };
 
-export default function StingerPreviewPage() {
-  return <StingerPreviewClient />;
+export default async function StingerPreviewPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ test?: string }>;
+}) {
+  const params = await searchParams;
+  return <StingerPreviewClient browserTest={params.test === "1"} />;
 }

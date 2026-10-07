@@ -1,0 +1,111 @@
+identity:
+  name: "Lyon e-Sport 2026 — atelier de production"
+  category: custom
+  mood: "énergique, précis et premium, avec un centre respirant"
+  pace: deliberate
+  best_for: "Habillages de live LES silencieux, transitions brèves et synthés lisibles"
+
+visual_language:
+  color_palette:
+    primary: ["#010A14", "#FAFBFB"]
+    accent: ["#01F7FD", "#FCC766", "#EF7B28"]
+    background: "#010A14"
+    text: "#FAFBFB"
+    muted: "#01F7FD"
+  composition: "Rubans et énergie en périphérie, faible densité au centre, angles cohérents, repères pointillés volontairement asymétriques"
+  texture: "Fond bleu nuit, flammes et halos officiels séparés des angles et matrices ; aucune texture générée à partir des captures de communication"
+
+typography:
+  headings:
+    font: "Eurostile Extd Black"
+    weight: 900
+    tracking: "0.01em"
+  body:
+    font: "Gotham"
+    weight: 400
+    line_height: 1.25
+  stat_card:
+    font: "Eurostile Extd Regular"
+    weight: 400
+    size_multiplier: 1.0
+  scale_system: minor_third
+  weight_matrix:
+    title: 900
+    heading: 900
+    body: 400
+    caption: 400
+
+motion:
+  transitions: ["cut-under-full-cover", "short-directional-reveal", "clean-exit"]
+  animation_style: "Attente calme et cyclique ; transitions brèves à 60 i/s ; synthés lisibles sans rebond ; données live indépendantes des boucles"
+  pacing_rules:
+    min_scene_hold_seconds: 0.5
+    max_scene_hold_seconds: 15
+    text_card_hold_seconds: 2
+    stat_card_hold_seconds: 2
+    transition_duration_seconds: 0.3
+  entrance: "Mouvement déterministe propre à la famille, sans flash ni déformation du logo"
+  exit: "Sortie propre, vérifiée à l’image près, sans résidu alpha"
+
+audio:
+  voice_style: "Non applicable aux habillages silencieux"
+  music_mood: "Aucune musique par défaut"
+  music_volume: 0
+  sfx_style: "Aucun son par défaut"
+  voice_variation_allowed: false
+
+asset_generation:
+  image_prompt_prefix: "Utiliser uniquement les ressources officielles LES approuvées ; ne pas générer ni reconstruire les logos, partenaires ou motifs de marque."
+  image_negative_prompt: "logo inventé, partenaire inventé, texte inventé, recoloration, déformation, imitation de marque"
+  diagram_style: "Non applicable sauf demande éditoriale approuvée"
+  consistency_anchors:
+    - "Logos officiels intacts, ratio et couleurs sources conservés"
+    - "Palette décorative #010A14 #FAFBFB #01F7FD #FCC766 #EF7B28"
+    - "Rubans périphériques et centre à faible densité"
+    - "Angles, matrices et halos restent des familles séparées sans collision"
+    - "Repères pointillés courts et volontairement asymétriques"
+
+quality_rules:
+  - "Canevas de travail 1920x1080 ; aperçus réduits uniformément"
+  - "Aucune substitution silencieuse de Eurostile Extd Black, Eurostile Extd Regular ou Gotham"
+  - "Les couleurs propres aux logos sources sont conservées même hors palette décorative"
+  - "Le contenu et la lisibilité priment sur les effets"
+  - "Le compteur et les données live ne sont jamais incorporés dans une boucle rendue"
+  - "Aucun texte, partenaire ou renseignement événementiel n’est inventé"
+  - "Une réussite technique ne vaut ni approbation artistique ni validation vMix"
+  - "Les exports alpha évitent tout intermédiaire opaque"
+  - "Les cadences sources rationnelles sont conservées ; aucun défaut global à 30 i/s"
+
+taste_profile:
+  design_read: "Habillage live LES cohérent avec la marque 2026 : énergie périphérique maîtrisée, centre lisible, gestes courts en transition et respiration calme sur les écrans d’attente."
+  visual_variance: 3
+  motion_intensity: 4
+  information_density: 3
+  palette_discipline: "Palette décorative fermée ; logos officiels exemptés de recoloration."
+  layout_variation: "Variation par famille d’asset, dans une grammaire commune de rubans, d’angles et de pointillés."
+  reference_strategy: "Sources officielles et décisions LES validées d’abord ; captures de communication comme références, jamais comme textures agrandies."
+  anti_patterns:
+    - "nouvelle direction artistique sans rapport avec LES à chaque asset"
+    - "cadre technique continu ou colonnes de points répétitives"
+    - "flammes et halos dans la zone éditoriale centrale"
+    - "logo redessiné, filtré ou recoloré"
+    - "effets génériques ajoutés pour satisfaire un score abstrait"
+  quality_gates:
+    - "Contrôle technique du fichier documenté séparément"
+    - "Revue visuelle fondée sur des images effectivement regardées"
+    - "Approbation humaine et recette vMix explicitement distinctes"
+
+chart_palette:
+  - "#01F7FD"
+  - "#FCC766"
+  - "#EF7B28"
+  - "#FAFBFB"
+
+color_rules:
+  harmony_type: split-complementary
+  contrast_validation: true
+  colorblind_safe: false
+
+overrides:
+  max_deviation_ratio: 0
+  scene_overrides: []

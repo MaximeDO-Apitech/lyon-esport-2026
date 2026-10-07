@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "files": [
+    {
+      "path": "C:\\Users\\maximed\\Downloads\\Stinger-V2-court-compressed.mov",
+      "media_type": "video",
+      "reviewed": true,
+      "technical_probe": {
+        "duration_seconds": 2.0,
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "Apple ProRes 4444 / yuva444p12le",
+        "file_size_bytes": 57382230,
+        "bitrate_kbps": 229528.92
+      },
+      "content_summary": "Stinger LES silencieux court : entrée depuis la transparence, repères cyan, lion et bloc Lyon e-Sport, flammes cyan/orange, couverture sombre plein cadre puis retrait.",
+      "transcript_summary": "Non applicable — aucune piste audio et aucun contenu parlé.",
+      "representative_frames": [
+        "reports/proofs/native-masters/short-native-checker.png",
+        "reports/proofs/native-masters/short-native-light.png",
+        "reports/proofs/native-masters/short-native-dark.png"
+      ],
+      "quality_risks": [
+        "Pendant la fenêtre de couverture 64–99, 1 027 pixels de la colonne gauche valent 3967/4095 au lieu de 4095.",
+        "Une recette vMix sur sources claires, sombres et contrastées reste nécessaire."
+      ],
+      "usable_for": [
+        "Source maître protégée pour préparer un dérivé de stinger court à 60/1 i/s.",
+        "Référence visuelle et motion ; ne pas reconstruire ni imiter."
+      ]
+    },
+    {
+      "path": "C:\\Users\\maximed\\Downloads\\Stinger-V2-Long-compressed.mov",
+      "media_type": "video",
+      "reviewed": true,
+      "technical_probe": {
+        "duration_seconds": 5.0,
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "Apple ProRes 4444 / yuva444p12le",
+        "file_size_bytes": 252433634,
+        "bitrate_kbps": 403893.814
+      },
+      "content_summary": "Stinger LES silencieux long : même ouverture que le court, maintien plein cadre prolongé, cartouche partenaires dont CGI, puis retrait.",
+      "transcript_summary": "Non applicable — aucune piste audio et aucun contenu parlé.",
+      "representative_frames": [
+        "reports/proofs/native-masters/long-native-checker.png",
+        "reports/proofs/native-masters/long-native-light.png",
+        "reports/proofs/native-masters/long-native-dark.png",
+        "reports/proofs/native-masters/long-frame-0299-native-checker.png"
+      ],
+      "quality_risks": [
+        "Pendant la fenêtre de couverture 64–281, 1 027 pixels de la colonne gauche valent 3967/4095 au lieu de 4095.",
+        "L’image finale 299 conserve 8 775 pixels alpha non nuls, avec un maximum de 1365/4095.",
+        "Une recette vMix sur sources claires, sombres et contrastées reste nécessaire."
+      ],
+      "usable_for": [
+        "Source maître protégée pour préparer un dérivé de stinger long à 60/1 i/s.",
+        "Référence visuelle et motion avec séquence partenaires ; ne pas reconstruire ni imiter."
+      ]
+    }
+  ],
+  "summary": "Deux maîtres ProRes 4444 alpha 12 bits, Full HD, 60/1 i/s et silencieux ont été réellement sondés et regardés. Le court dure 120 images et finit transparent ; le long dure 300 images, comporte un cartouche partenaires et présente un résidu alpha sur sa dernière image.",
+  "planning_implications": [
+    "Conserver la cadence rationnelle 60/1 et la numérotation à l’image ; ne pas appliquer le défaut OpenMontage à 30 i/s.",
+    "Ne corriger que les dérivés préparés : fenêtre de couverture à rendre parfaitement opaque et dernière image longue à rendre transparente.",
+    "Conserver les maîtres en lecture seule avec leurs SHA-256 et ne jamais publier automatiquement un dérivé.",
+    "Traiter l’audio comme non applicable — silence demandé, sans piste vide.",
+    "Faire approuver visuellement puis tester le point de coupe candidat à 1 300 ms dans vMix avant tout usage antenne."
+  ],
+  "metadata": {
+    "review_type": "local_non_destructive_media_qualification",
+    "short_sha256": "148513D14E94751BEC2077281CA584A9B3824A17A812D6A3658F90264998CC54",
+    "long_sha256": "F5EA1ACF0140C4FF9DDAB069997A4390C4E2781785F2A8583D49E367F3185732",
+    "human_approval": "pending",
+    "vmix_validation": "not_performed"
+  }
+}

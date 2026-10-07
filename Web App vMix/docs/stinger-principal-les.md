@@ -1,45 +1,95 @@
-# Stinger principal LES — exploitation locale
+# Stinger principal LES V2 — exploitation locale et vMix
 
-## Paramètres livrés
+## Livraison
 
-- Identifiant : `stinger-principal-les`
-- Version : `1.1.0`
-- Définition : 1920 × 1080
-- Durée de composition : 1 200 ms
-- Prototype : 60 images/s — cadence de diffusion à confirmer avec la régie
-- Point de coupe proposé : 600 ms, image `0037`
-- Fenêtre opaque fonctionnelle demandée : 320 à 800 ms
-- Fenêtre opaque mesurée dans l’export 60 i/s : 250 à 800 ms, images `0016` à `0049`
-- Audio : aucun
-- Rendu de diffusion : séquence PNG RGBA numérotée
+Le stinger principal utilise désormais exactement les deux vidéos fournies. L’ancien prototype GSAP n’est plus le rendu actif ; sa livraison V1 reste conservée dans `deliverables/stinger-principal-les/v1/`.
 
-La route web sert à la création, à l’aperçu et aux tests. Elle ne synchronise pas la coupe de vMix. En exploitation, charger la séquence PNG dans le mécanisme natif de stinger de vMix.
+| Variante | Durée | Images | Plein cadre sécurisé | Coupe proposée | Fin |
+| --- | ---: | ---: | --- | --- | --- |
+| Court — 2 s | 2 000 ms | 120 | images 64 à 99 incluses | 1 300 ms, index 78, fichier `0079` | image 119 transparente |
+| Long — 5 s | 5 000 ms | 300 | images 64 à 281 incluses | 1 300 ms, index 78, fichier `0079` | image 299 forcée transparente |
 
-## Régénérer la livraison
+Les deux variantes sont en 1920 × 1080, 60 images/s et sans audio. La version longue conserve son cartouche partenaires, dont CGI, visible approximativement entre 2,15 et 4,30 secondes. Elle n’est donc pas un simple ralenti de la version courte.
 
-1. Dans un terminal, lancer `npm run dev`.
-2. Dans un second terminal, lancer `npm run export:stinger`.
-3. Lire `deliverables/stinger-principal-les/v1/manifest.json` et `verification.json`.
-4. Le cycle de vie interactif peut être vérifié avec `npm run test:stinger-browser`.
+Le statut reste `needs_visual_validation`. Les contrôles automatiques certifient la structure, les temps, l’alpha et l’intégrité des fichiers ; ils ne constituent pas une validation artistique.
 
-L’export échantillonne la timeline GSAP image par image. Il ne repose pas sur une capture temps réel. La première image correspond à `t = 0`, même si le nom commence à `0001`.
+## Masters protégés
 
-## Import vMix — base documentaire vMix 29
+Les originaux restent distincts des dérivés et ont été placés en lecture seule :
 
-La version installée en régie n’a pas été fournie. La procédure ci-dessous s’appuie donc sur le guide officiel vMix 29 et doit être confirmée sur la machine de diffusion :
+| Fichier | SHA-256 |
+| --- | --- |
+| `Stinger-V2-court-compressed.mov` | `148513D14E94751BEC2077281CA584A9B3824A17A812D6A3658F90264998CC54` |
+| `Stinger-V2-Long-compressed.mov` | `F5EA1ACF0140C4FF9DDAB069997A4390C4E2781785F2A8583D49E367F3185732` |
 
-- Image Sequence / Stinger : https://www.vmix.com/help29/ImageSequence.html
-- Stinger Transitions : https://www.vmix.com/help29/StingerTransitions.html
-- Overlays et alpha : https://www.vmix.com/help29/Overlay2.html
+`ffprobe` confirme pour les deux masters : ProRes 4444, `yuva444p12le`, 1920 × 1080, 60 i/s, timecode `01:00:00:00`, aucune piste audio. Le second flux est un flux de données timecode, pas de l’audio. La lecture fonctionnelle commence à `t = 0`.
 
-1. Ajouter comme entrée `Image Sequence / Stinger` la première image `stinger-principal-les-0001.png`. La numérotation continue permet à vMix de charger la suite automatiquement.
-2. Ouvrir les paramètres `Overlay`, choisir `Stinger 1` — ou un emplacement libre — dans `Number`.
-3. Régler `Effect` sur `Cut`.
-4. Choisir l’entrée de séquence dans `Stinger Input`.
-5. Régler `Duration` à 1 200 ms et `Stinger Cut Point` à 600 ms.
-6. Choisir explicitement si le stinger doit être affiché sous les overlays actifs. Pour préserver le synthé, tester les deux cas et retenir le comportement de régie voulu, sans modifier le synthé lui-même.
-7. Sélectionner `Stinger 1` dans l’un des boutons de transition de la fenêtre principale.
-8. Tester A → B sur une mire claire, une mire sombre et une mire fortement contrastée.
-9. Vérifier sur la version de vMix et la cadence réellement utilisées que la coupe reste dans la fenêtre opaque mesurée du manifeste.
+## Correction alpha minimale
 
-La documentation vMix recommande l’entrée Image Sequence pour les animations avec alpha complet. Elle indique aussi que le point de coupe doit correspondre au moment où l’animation couvre l’écran. La recette finale reste à effectuer dans vMix ; les tests navigateur ne la remplacent pas.
+L’analyse 12 bits a mesuré, sur chaque image plein cadre, 1 027 pixels de la colonne gauche sous le maximum : minimum 3967/4095. Le pipeline force uniquement l’alpha de ces fenêtres à 4095 ; les pixels déjà opaques restent inchangés.
+
+Sur la dernière image longue, le master contient encore 8 775 pixels non nuls, avec un maximum alpha de 1365/4095. Seule l’image 299 est forcée à alpha nul. La dernière image courte était déjà entièrement transparente.
+
+L’analyse des contours est compatible avec des valeurs prémultipliées dans les masters. Aucune conversion globale `premultiply` ou `unpremultiply` n’est appliquée : les valeurs couleur/alpha sont préservées, puis contrôlées par composition sur damier, fond clair et fond sombre. Les planches se trouvent dans `captures/stinger-v2-audit/`.
+
+## Dérivés
+
+Le pipeline `scripts/prepare-stinger-v2.mjs` produit :
+
+- le dérivé de diffusion sécurisé : deux séquences PNG RGBA 8 bits, extraites directement des masters ProRes 4444 12 bits, sans réencodage ProRes intermédiaire ;
+- le dérivé d’aperçu : deux WebM VP9 lossless avec alpha, en chroma 4:2:0 pour la compatibilité navigateur ;
+- deux vraies miniatures, dont celle du long montre le cartouche partenaires ;
+- `manifest.json`, `verification.json` et un `SHA256SUMS.txt` par séquence.
+
+Le proxy WebM sert uniquement au site et aux tests navigateur. Il ne doit pas remplacer la séquence PNG dans vMix.
+
+Pour régénérer les livrables avec des chemins contenant des espaces :
+
+```powershell
+npm run export:stinger -- --short "C:\Users\maximed\Downloads\Stinger-V2-court-compressed.mov" --long "C:\Users\maximed\Downloads\Stinger-V2-Long-compressed.mov"
+```
+
+Résultats :
+
+- `deliverables/stinger-principal-les/v2/court-2s/png-sequence/` ;
+- `deliverables/stinger-principal-les/v2/long-5s/png-sequence/` ;
+- `deliverables/stinger-principal-les/v2/manifest.json` ;
+- `deliverables/stinger-principal-les/v2/verification.json` ;
+- `public/assets/stinger/` pour les proxies web.
+
+## Aperçu et banc de test
+
+Ouvrir `/preview/stinger`. Ce banc est isolé du programme et propose :
+
+- le choix `Court — 2 s` ou `Long — 5 s` ;
+- la lecture normale et le ralenti ×0,25 ;
+- le retour à zéro et le déplacement image/temps ;
+- la visualisation de la coupe A → B à 1 300 ms ;
+- les fonds sources A/B, damier alpha, clair, sombre et contraste.
+
+Les sorties brutes sont `/output/stinger?variant=short` et `/output/stinger?variant=long`. Elles préchargent le média, refusent un second déclenchement pendant la lecture, ne bouclent pas et ne rejouent rien après une reconnexion.
+
+Le cycle navigateur se teste avec :
+
+```powershell
+npm run test:stinger-browser -- --base-url http://localhost:3000
+```
+
+## Configuration vMix
+
+Utiliser le mécanisme natif **Image Sequence / Stinger**, pas une Browser Source pour piloter la coupe.
+
+1. Choisir un emplacement de stinger libre. Ne pas écraser un slot déjà occupé, notamment par le replay.
+2. Ajouter la première image de la séquence voulue :
+   - court : `stinger-les-court-2s-0001.png` ;
+   - long : `stinger-les-long-5s-0001.png`.
+3. Régler l’effet sur `Cut`.
+4. Régler `Stinger Cut Point` sur `1300 ms` pour les deux variantes.
+5. Régler `Duration` sur `2000 ms` pour le court ou `5000 ms` pour le long.
+6. Laisser la vitesse à 1 et désactiver toute boucle.
+7. Tester A → B sur une source claire, une source sombre et une mire fortement contrastée.
+8. Vérifier le choix d’affichage au-dessus ou au-dessous des overlays sans modifier le synthé ni les éléments replay.
+
+Le point de coupe est l’index 78 à 60 i/s. Il se situe après le début plein cadre à l’index 64 et avant le retrait, avec une marge suffisante dans les deux variantes.
+
+Cette préparation ne publie rien automatiquement en production et ne modifie aucun slot vMix.

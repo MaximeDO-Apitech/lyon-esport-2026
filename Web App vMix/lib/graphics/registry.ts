@@ -1,4 +1,5 @@
 import type { GraphicTemplate, Preset } from "./types";
+import { WAITING_LAYOUT_REVISION } from "../waiting/layout";
 
 const LOGO_HASH = "3F08D41E08330F7B00E44C8CB8A07600D7B701CD053571E101BCCED94731E721";
 const FLAME_LEFT_HASH = "7044943F84E4285D251289FB575EA9F116EC1DC003C746E30FF7EF593C2E7C30";
@@ -6,9 +7,10 @@ const FLAME_RIGHT_HASH = "1FAD52C947A09A6D0475D69790C184D62D67EF247CDE6CD5561D35
 const TEXTURE_HASH = "58DDDC2B1106E24ABEA6433F736A6B96627BEA7278E3790972AD6EF9CE5694F6";
 const ANGLE_HASH = "27867347627471C47455FB4811F939DC722BD30CD689BFE1FC512BF91112B1BC";
 const DOT_LINE_HASH = "0D4973889883E16893FD82E18649661BF90A482E4F6E6A9223F9DA0587B9C42E";
+const DOT_LINE_REINFORCED_HASH = "84E2E709B896E82532599178AF2C33AE5637BB7F61887A23702808973D3F0776";
 const DOT_MATRIX_HASH = "783557273DF93595CB0AA8E3449DFDAEFD0B17783476E6F0386BCF8085B43632";
 const RESOURCE_REVISION = "les-da-2026-r4";
-const WAITING_RESOURCE_REVISION = "les-da-2026-r6";
+const WAITING_RESOURCE_REVISION = WAITING_LAYOUT_REVISION;
 
 export const templates: GraphicTemplate[] = [
   {
@@ -62,7 +64,7 @@ export const templates: GraphicTemplate[] = [
       },
       {
         id: "angle-officiel",
-        label: "Angle — repères du groupe d'information",
+        label: "Angle — repères du cadre intérieur",
         path: "/assets/Angle.png",
         status: "available",
         required: true,
@@ -75,6 +77,14 @@ export const templates: GraphicTemplate[] = [
         status: "available",
         required: true,
         integritySha256: DOT_LINE_HASH,
+      },
+      {
+        id: "ligne-points-renforcee",
+        label: "Ligne points — dérivé vectoriel renforcé",
+        path: "/assets/Ligne-points-renforcee.svg",
+        status: "available",
+        required: true,
+        integritySha256: DOT_LINE_REINFORCED_HASH,
       },
       {
         id: "nuage-points-officiel",

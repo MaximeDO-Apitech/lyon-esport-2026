@@ -199,8 +199,13 @@ function StingerLibraryCard({ onNotice }: { onNotice: (notice: string) => void }
 
   return (
     <article className="template-card" data-template-id={asset.id}>
-      <div className="template-thumb template-thumb-transitions">
-        <img src={asset.thumbnail} alt="Miniature réelle de la phase centrale du stinger principal LES" />
+      <div className="template-thumb template-thumb-transitions stinger-variant-thumbs">
+        {asset.variants.map((variant) => (
+          <figure key={variant.key}>
+            <img src={variant.thumbnail} alt={`Image réelle du stinger LES ${variant.label}`} />
+            <figcaption>{variant.label}</figcaption>
+          </figure>
+        ))}
         <span>Alpha</span>
       </div>
       <div className="template-body">
@@ -211,20 +216,24 @@ function StingerLibraryCard({ onNotice }: { onNotice: (notice: string) => void }
           <div><dt>Identifiant</dt><dd>{asset.id}</dd></div>
           <div><dt>Version</dt><dd>{asset.version}</dd></div>
           <div><dt>Format</dt><dd>{asset.width} × {asset.height}</dd></div>
-          <div><dt>Durée</dt><dd>{asset.durationMs} ms</dd></div>
+          <div><dt>Variantes</dt><dd>2 000 ms · 5 000 ms</dd></div>
           <div><dt>Cadence</dt><dd>{asset.cadenceNote}</dd></div>
           <div><dt>Coupe</dt><dd>{asset.cutPointMs} ms</dd></div>
-          <div><dt>Opaque</dt><dd>{asset.opaqueWindowMs[0]}–{asset.opaqueWindowMs[1]} ms</dd></div>
+          <div><dt>Alpha</dt><dd>Association source préservée · fin transparente</dd></div>
           <div><dt>Audio</dt><dd>Aucun</dd></div>
         </dl>
         <div className="resource-list">
-          {asset.resources.map((resource) => (
-            <span className="resource-ok" key={resource.id}>{resource.label}<b>Disponible</b></span>
+          {asset.variants.map((variant) => (
+            <span className="resource-ok" key={variant.key}>
+              {variant.label}
+              <b>{variant.frameCount} images · source et dérivés disponibles</b>
+            </span>
           ))}
         </div>
         <div className="preset-actions">
           <Link href={asset.previewPath} target="_blank">Prévisualiser</Link>
-          <Link href={asset.outputPath} target="_blank">Sortie alpha</Link>
+          <Link href={`${asset.outputPath}?variant=short`} target="_blank">Sortie courte</Link>
+          <Link href={`${asset.outputPath}?variant=long`} target="_blank">Sortie longue</Link>
           <button type="button" onClick={() => void copyExportCommand()}>Copier la commande d’export</button>
         </div>
       </div>

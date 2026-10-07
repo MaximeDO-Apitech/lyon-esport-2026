@@ -1,0 +1,144 @@
+{
+  "generatedAtUtc": "2026-10-07T14:02:24.701Z",
+  "previewUrl": "http://localhost:3000/preview/attente",
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "loopSeconds": 15,
+  "breathPeriodSeconds": 7.5,
+  "layoutRevision": "les-da-2026-r9",
+  "anchors": {
+    "topLeft": [
+      96,
+      72
+    ],
+    "topRight": [
+      1824,
+      72
+    ],
+    "bottomLeft": [
+      96,
+      1008
+    ],
+    "bottomRight": [
+      1824,
+      1008
+    ],
+    "rightRail": [
+      1824,
+      324
+    ],
+    "leftRail": [
+      96,
+      702
+    ]
+  },
+  "motionProofSeconds": 20,
+  "motionProofFps": 2,
+  "qualityDecisions": {
+    "cornerCoreOpacity": [
+      0.86,
+      0.96
+    ],
+    "cornerHaloOpacity": [
+      0.025,
+      0.07
+    ],
+    "cornerHaloBlurPx": 4,
+    "matrixWidthPx": 112,
+    "matrixAuthorityClearanceMinimumPx": 20
+  },
+  "proofContentOverride": {
+    "scope": "capture DOM only; no API or persisted state mutation",
+    "message": "JE REVIENS DANS UN INSTANT",
+    "countdown": "00:00"
+  },
+  "seamHashesMatch": true,
+  "artifacts": [
+    {
+      "filename": "after-phase-0.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "D049CE28DA3A0CAE760679343C212FFFA462172A693D9AB00B5FA4832447C536"
+    },
+    {
+      "filename": "after-phase-25.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "D238F3EB1F7F7F7D8FFFCC12EFC515450C67913B69333604E9500398594224A8"
+    },
+    {
+      "filename": "after-phase-50.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "8A076EFF43616C1C341928210C99A6FDAB5CC5742B920FB9C0349D144D982BA5"
+    },
+    {
+      "filename": "after-phase-75.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "F7F5D55AA99366E1719A52DACF4F0409C002B22A1C2FF9C9CD4F44722009D3D9"
+    },
+    {
+      "filename": "after-phase-99.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "D049CE28DA3A0CAE760679343C212FFFA462172A693D9AB00B5FA4832447C536"
+    },
+    {
+      "filename": "guide-phase-0.png",
+      "width": 1920,
+      "height": 1080,
+      "pages": 1,
+      "sha256": "9643E53FDD927114E22243A460308B25266B4DB2A8DD4CA5EDDCE955220E880F"
+    },
+    {
+      "filename": "preview-1280x720.png",
+      "width": 1280,
+      "height": 720,
+      "pages": 1,
+      "sha256": "2C024A2FBA96EE5CEE5D85322E3DCD4215D9438C83461CC4C524FADD0735376C"
+    },
+    {
+      "filename": "preview-960x540.png",
+      "width": 960,
+      "height": 540,
+      "pages": 1,
+      "sha256": "AC1254073536FBE82B0AA7F9836DB1BB2B8F6E1830F5FE6DFB560C2E4B998A33"
+    },
+    {
+      "filename": "before-after-phase-0.png",
+      "width": 1920,
+      "height": 540,
+      "pages": 1,
+      "sha256": "B1EF419B65C313EF3E1FB423C5E9B32188FED5E7E83CB3C087868AF68E2F690F"
+    },
+    {
+      "filename": "motion-phases.png",
+      "width": 2880,
+      "height": 540,
+      "pages": 1,
+      "sha256": "D04389C7C38E5E1AE02451964803CE0F63E89F1AFA76A6579D4C3AB0EFA91127"
+    },
+    {
+      "filename": "detail-inspection.png",
+      "width": 1440,
+      "height": 540,
+      "pages": 1,
+      "sha256": "91B9BD77E8D7D78B205B296D71B4D71A45D50FD90097B1D0A354E910EF8CAE7D"
+    },
+    {
+      "filename": "motion-proof-20s.gif",
+      "width": 960,
+      "height": 540,
+      "pages": 40,
+      "sha256": "B424ACEB5AA72BF76408C495555D73547DB17D9B5DE423FC9CE6E2852586B8D2"
+    }
+  ]
+}
