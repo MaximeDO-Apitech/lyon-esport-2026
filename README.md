@@ -1,5 +1,7 @@
 # lyon-esport-2026
 
+La procédure complète de mise en service, conduite antenne, dépannage, sauvegarde et arrêt est disponible dans [`DOCUMENTATION-EXPLOITATION.md`](DOCUMENTATION-EXPLOITATION.md).
+
 ## NodeCG / Valorant
 
 Le nouveau bundle [`NodeCG/`](NodeCG/README.md) consomme la sortie officielle du serveur Spectra dans une extension unique, normalise les donnees dans des Replicants et sert un HUD LES transparent 1920 × 1080 pour vMix. Spectra reste la source metier ; NodeCG gere la presentation ; la video reste une entree vMix separee. La migration est additive : les sorties validees de `Web App vMix` ne sont ni deplacees ni modifiees dans ce lot.
