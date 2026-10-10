@@ -1,0 +1,76 @@
+{
+  "groupCode": "NEVER_REPLICATE_THIS",
+  "isRunning": true,
+  "roundNumber": 17,
+  "roundPhase": "combat",
+  "map": "Ascent",
+  "teams": [
+    {
+      "teamName": "Equipe Gauche",
+      "teamTricode": "LFT",
+      "teamUrl": "https://assets.example.test/left.png",
+      "isAttacking": false,
+      "roundsWon": 9,
+      "players": [
+        {
+          "playerId": 101,
+          "name": "Alpha",
+          "fullName": "Alpha#101",
+          "agentInternal": "Hunter",
+          "isAlive": true,
+          "isObserved": true,
+          "hasSpike": false,
+          "health": 100,
+          "highestWeapon": "Vandal",
+          "armorName": "Heavy",
+          "money": 3200,
+          "kills": 12,
+          "deaths": 8,
+          "assists": 5,
+          "currUltPoints": 5,
+          "maxUltPoints": 8,
+          "ultReady": false,
+          "abilities": { "grenade": 1, "ability1": 2, "ability2": 1 },
+          "scoreboardAvailable": true,
+          "auxiliaryAvailable": { "health": true, "abilities": true, "scoreboard": false }
+        },
+        {
+          "playerId": 102,
+          "name": "Beta",
+          "fullName": "Beta#102",
+          "agentInternal": "Mage",
+          "isAlive": true,
+          "isObserved": false,
+          "hasSpike": false,
+          "health": 100,
+          "highestWeapon": "Phantom",
+          "armorName": "Heavy",
+          "money": 0,
+          "kills": 0,
+          "deaths": 0,
+          "assists": 0,
+          "currUltPoints": 0,
+          "maxUltPoints": 7,
+          "ultReady": false,
+          "abilities": { "grenade": 0, "ability1": 0, "ability2": 0 },
+          "scoreboardAvailable": false,
+          "auxiliaryAvailable": { "health": false, "abilities": false, "scoreboard": false }
+        }
+      ]
+    },
+    {
+      "teamName": "Equipe Droite",
+      "teamTricode": "RGT",
+      "teamUrl": "http://private.invalid/right.png",
+      "isAttacking": true,
+      "roundsWon": 7,
+      "players": []
+    }
+  ],
+  "spikeState": { "planted": true, "defused": false, "detonated": false },
+  "tools": {
+    "seriesInfo": { "needed": 2, "wonLeft": 1, "wonRight": 0, "mapInfo": [] },
+    "tournamentInfo": { "name": "LES Test", "logoUrl": "", "backdropUrl": "" },
+    "privateToken": "NEVER_REPLICATE_THIS_EITHER"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "integrationQualification",
+    "packetsReceived",
+    "snapshotsPublished",
+    "duplicateSnapshots",
+    "invalidPayloads",
+    "delayedQueueDepth",
+    "lastPayloadBytes",
+    "missingFields",
+    "warnings",
+    "capabilities",
+    "lastError",
+    "updatedAt"
+  ],
+  "properties": {
+    "integrationQualification": { "enum": ["real-integration-to-verify", "live-qualified"] },
+    "packetsReceived": { "type": "integer", "minimum": 0 },
+    "snapshotsPublished": { "type": "integer", "minimum": 0 },
+    "duplicateSnapshots": { "type": "integer", "minimum": 0 },
+    "invalidPayloads": { "type": "integer", "minimum": 0 },
+    "delayedQueueDepth": { "type": "integer", "minimum": 0, "maximum": 300 },
+    "lastPayloadBytes": { "type": ["integer", "null"], "minimum": 0 },
+    "missingFields": { "type": "array", "maxItems": 100, "items": { "type": "string" } },
+    "warnings": { "type": "array", "maxItems": 100, "items": { "type": "string" } },
+    "capabilities": { "$ref": "#/definitions/capabilities" },
+    "lastError": { "type": ["string", "null"] },
+    "updatedAt": { "type": "integer", "minimum": 0 }
+  },
+  "definitions": {
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "teams",
+        "agents",
+        "score",
+        "round",
+        "phase",
+        "observedPlayer",
+        "health",
+        "abilities",
+        "stats",
+        "loadout",
+        "spike",
+        "series",
+        "roundTimer",
+        "mapban",
+        "playercams"
+      ],
+      "properties": {
+        "identity": { "type": "boolean" },
+        "teams": { "type": "boolean" },
+        "agents": { "type": "boolean" },
+        "score": { "type": "boolean" },
+        "round": { "type": "boolean" },
+        "phase": { "type": "boolean" },
+        "observedPlayer": { "type": "boolean" },
+        "health": { "type": "boolean" },
+        "abilities": { "type": "boolean" },
+        "stats": { "type": "boolean" },
+        "loadout": { "type": "boolean" },
+        "spike": { "type": "boolean" },
+        "series": { "type": "boolean" },
+        "roundTimer": { "enum": [false] },
+        "mapban": { "enum": [false] },
+        "playercams": { "enum": [false] }
+      }
+    }
+  }
+}

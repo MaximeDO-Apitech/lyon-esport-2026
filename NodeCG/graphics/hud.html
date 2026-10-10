@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="hud.css">
+  <title>LES Valorant HUD</title>
+</head>
+<body>
+  <div id="viewport">
+    <div id="stage" aria-live="off">
+      <img id="reference-backdrop" alt="" aria-hidden="true">
+      <div id="hud">
+        <section id="scoreboard" class="module" aria-label="Score de la rencontre">
+          <div class="brand-mark" aria-hidden="true"><span>LES</span><i></i></div>
+          <div id="team-left" class="team-score team-score-left">
+            <div class="team-identity">
+              <img class="team-logo" alt="">
+              <div><div class="team-name">—</div><div class="team-side">—</div></div>
+            </div>
+            <div class="score-value">—</div>
+          </div>
+          <div class="match-core">
+            <div class="phase-line"><span id="match-phase">—</span><b id="spike-status"></b></div>
+            <div class="round-line"><span id="match-map">—</span><i></i><span id="match-round">—</span></div>
+          </div>
+          <div id="team-right" class="team-score team-score-right">
+            <div class="score-value">—</div>
+            <div class="team-identity">
+              <div><div class="team-name">—</div><div class="team-side">—</div></div>
+              <img class="team-logo" alt="">
+            </div>
+          </div>
+          <div id="series-line" class="series-line">—</div>
+        </section>
+
+        <section id="rail-left" class="player-rail player-rail-left module" aria-label="Joueurs equipe gauche"></section>
+        <section id="rail-right" class="player-rail player-rail-right module" aria-label="Joueurs equipe droite"></section>
+
+        <section id="observed-card" class="observed-card module" aria-label="Joueur observe">
+          <div class="observed-kicker">JOUEUR OBSERVE</div>
+          <div class="observed-main">
+            <div id="observed-agent" class="agent-chip">—</div>
+            <div class="observed-copy"><strong id="observed-name">—</strong><span id="observed-loadout">—</span></div>
+            <div id="observed-health" class="observed-health">—</div>
+          </div>
+          <div id="observed-stats" class="observed-stats">—</div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="hud.js"></script>
+</body>
+</html>

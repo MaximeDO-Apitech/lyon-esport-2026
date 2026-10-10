@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <title>Apercu Valorant</title>
+</head>
+<body>
+  <div class="stack">
+    <div class="row">
+      <div>
+        <button id="show-live">Donnees live</button>
+        <button id="show-fixture" class="gold">Fixture synthetique</button>
+      </div>
+      <span id="preview-status" class="badge warn">fixture isolee</span>
+    </div>
+    <div class="preview-shell"><iframe id="preview" title="Apercu HUD LES Valorant"></iframe></div>
+    <p class="muted">L'apercu utilise la presentation « preview ». La fixture synthetique est chargee uniquement dans cet iframe et ne touche ni le Replicant live ni le programme.</p>
+  </div>
+  <script src="preview.js"></script>
+</body>
+</html>

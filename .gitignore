@@ -13,6 +13,12 @@
 **/.hyperframes/
 .git-backups/
 **/*.log
+NodeCG/.env
+NodeCG/cfg/*
+!NodeCG/cfg/nodecg.json
+NodeCG/db/
+NodeCG/logs/
+NodeCG/extension/
 
 # Local Python inspection caches
 **/__pycache__/

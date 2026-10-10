@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <title>Diagnostic Valorant</title>
+</head>
+<body>
+  <div class="stack">
+    <div class="card"><div class="row"><span class="label">Qualification</span><span id="qualification" class="badge warn">—</span></div></div>
+    <div class="grid">
+      <div class="card"><div class="label">Paquets</div><div id="packets" class="value">0</div></div>
+      <div class="card"><div class="label">Snapshots publies</div><div id="published" class="value">0</div></div>
+      <div class="card"><div class="label">Doublons</div><div id="duplicates" class="value">0</div></div>
+      <div class="card"><div class="label">Invalides</div><div id="invalid" class="value">0</div></div>
+    </div>
+    <h2>Capacites observees</h2>
+    <pre id="capabilities">—</pre>
+    <h2>Champs absents / indisponibles</h2>
+    <pre id="missing">—</pre>
+    <h2>Avertissements</h2>
+    <pre id="warnings">—</pre>
+    <h2>Vue normalisee diffusee</h2>
+    <pre id="view">Aucun snapshot publie.</pre>
+    <p class="muted">Le payload Spectra brut, le code de groupe, les secrets, les URL privees et les donnees non necessaires ne sont pas distribues aux navigateurs.</p>
+  </div>
+  <script src="common.js"></script>
+  <script src="diagnostics.js"></script>
+</body>
+</html>

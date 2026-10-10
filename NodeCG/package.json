@@ -1,0 +1,73 @@
+{
+  "name": "les-valorant",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bundle NodeCG Lyon e-Sport pour les donnees live Valorant fournies par Spectra.",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "npm run build && node --test tests/*.test.cjs",
+    "start": "npm run build && nodecg start",
+    "start:nodecg": "nodecg start",
+    "test": "node --test tests/*.test.cjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "nodecg": "2.8.0",
+    "socket.io-client": "4.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "socket.io": "4.8.1",
+    "typescript": "5.9.3"
+  },
+  "nodecg": {
+    "compatibleRange": ">=2.8.0 <3.0.0",
+    "dashboardPanels": [
+      {
+        "name": "les-valorant-connection",
+        "title": "VALORANT — Connexion",
+        "file": "connection.html",
+        "width": 3,
+        "headerColor": "#01F7FD",
+        "workspace": "LES Valorant"
+      },
+      {
+        "name": "les-valorant-control",
+        "title": "VALORANT — Programme",
+        "file": "control.html",
+        "width": 4,
+        "headerColor": "#EF7B28",
+        "workspace": "LES Valorant"
+      },
+      {
+        "name": "les-valorant-diagnostics",
+        "title": "VALORANT — Diagnostic",
+        "file": "diagnostics.html",
+        "width": 4,
+        "headerColor": "#FCC766",
+        "workspace": "LES Valorant"
+      },
+      {
+        "name": "les-valorant-preview",
+        "title": "VALORANT — Apercu",
+        "file": "preview.html",
+        "width": 8,
+        "headerColor": "#01F7FD",
+        "workspace": "LES Valorant"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "hud.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      }
+    ]
+  }
+}

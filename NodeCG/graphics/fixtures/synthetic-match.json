@@ -1,0 +1,51 @@
+{
+  "source": "spectra",
+  "sourceVersion": "server-0.3.5/frontend-0.3.6-contract",
+  "running": true,
+  "round": 17,
+  "phase": "combat",
+  "map": "Ascent",
+  "teams": [
+    {
+      "identityKey": "spectra-left-team",
+      "position": "left",
+      "name": "Lyon Horizon",
+      "tricode": "LYH",
+      "logoUrl": null,
+      "side": "defense",
+      "score": 9,
+      "seriesScore": 1,
+      "players": [
+        { "id": "L-01", "renderKey": "spectra-player:L-01", "order": 0, "name": "Aster", "fullName": "Aster#LES", "agent": "Hunter", "alive": true, "observed": false, "hasSpike": false, "health": 100, "weapon": "Vandal", "armor": "Heavy", "credits": 3100, "kills": 18, "deaths": 11, "assists": 7, "ultimate": { "current": 6, "required": 8, "ready": false }, "abilities": { "grenade": 1, "ability1": 2, "ability2": 1 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } },
+        { "id": "L-02", "renderKey": "spectra-player:L-02", "order": 1, "name": "NébuleuseTrèsLongue", "fullName": "Nebuleuse#0002", "agent": "Killjoy", "alive": false, "observed": false, "hasSpike": false, "health": 0, "weapon": "Phantom", "armor": "Heavy", "credits": 800, "kills": 12, "deaths": 14, "assists": 9, "ultimate": { "current": 2, "required": 7, "ready": false }, "abilities": { "grenade": 0, "ability1": 0, "ability2": 1 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } },
+        { "id": "L-03", "renderKey": "spectra-player:L-03", "order": 2, "name": "Maël", "fullName": "Mael#LYO", "agent": "Mage", "alive": true, "observed": true, "hasSpike": false, "health": 72, "weapon": "Operator", "armor": "Light", "credits": 1700, "kills": 21, "deaths": 9, "assists": 3, "ultimate": { "current": 7, "required": 7, "ready": true }, "abilities": { "grenade": 1, "ability1": 1, "ability2": 0 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } },
+        { "id": "L-04", "renderKey": "spectra-player:L-04", "order": 3, "name": "Quartz", "fullName": "Quartz#L04", "agent": "Gumshoe", "alive": true, "observed": false, "hasSpike": false, "health": null, "weapon": "Bulldog", "armor": "Heavy", "credits": 2400, "kills": 9, "deaths": 12, "assists": 15, "ultimate": { "current": 4, "required": 6, "ready": false }, "abilities": { "grenade": null, "ability1": null, "ability2": null }, "availability": { "health": "unknown", "abilities": "unknown", "stats": "valid", "loadout": "valid" } },
+        { "id": "L-05", "renderKey": "spectra-player:L-05", "order": 4, "name": "Vega", "fullName": "Vega#LES", "agent": "Breach", "alive": true, "observed": false, "hasSpike": false, "health": 46, "weapon": "Guardian", "armor": "Heavy", "credits": 1200, "kills": 11, "deaths": 13, "assists": 11, "ultimate": { "current": 3, "required": 8, "ready": false }, "abilities": { "grenade": 1, "ability1": 1, "ability2": 1 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } }
+      ]
+    },
+    {
+      "identityKey": "spectra-right-team",
+      "position": "right",
+      "name": "Rhône Titans International",
+      "tricode": "RTI",
+      "logoUrl": null,
+      "side": "attack",
+      "score": 7,
+      "seriesScore": 0,
+      "players": [
+        { "id": "R-01", "renderKey": "spectra-player:R-01", "order": 0, "name": "Sol", "fullName": "Sol#RTI", "agent": "Phoenix", "alive": true, "observed": false, "hasSpike": true, "health": 88, "weapon": "Vandal", "armor": "Heavy", "credits": 900, "kills": 15, "deaths": 12, "assists": 6, "ultimate": { "current": 5, "required": 6, "ready": false }, "abilities": { "grenade": 1, "ability1": 1, "ability2": 1 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } },
+        { "id": "R-02", "renderKey": "spectra-player:R-02", "order": 1, "name": "Noctis", "fullName": "Noctis#R02", "agent": "Wraith", "alive": true, "observed": false, "hasSpike": false, "health": 63, "weapon": "Phantom", "armor": "Light", "credits": 1300, "kills": 13, "deaths": 13, "assists": 4, "ultimate": { "current": 4, "required": 7, "ready": false }, "abilities": { "grenade": 0, "ability1": 1, "ability2": 2 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } },
+        { "id": "R-03", "renderKey": "spectra-player:R-03", "order": 2, "name": "Écho", "fullName": "Echo#RTI", "agent": "Guide", "alive": false, "observed": false, "hasSpike": false, "health": 0, "weapon": "Sheriff", "armor": "Heavy", "credits": 300, "kills": 7, "deaths": 15, "assists": 12, "ultimate": { "current": 2, "required": 7, "ready": false }, "abilities": { "grenade": 0, "ability1": 0, "ability2": 0 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } },
+        { "id": "R-04", "renderKey": "spectra-player:R-04", "order": 3, "name": "Mistral", "fullName": "Mistral#R04", "agent": "Nox", "alive": true, "observed": false, "hasSpike": false, "health": 100, "weapon": "Odin", "armor": "Heavy", "credits": 2100, "kills": 10, "deaths": 10, "assists": 14, "ultimate": { "current": 8, "required": 8, "ready": true }, "abilities": { "grenade": 2, "ability1": 1, "ability2": 1 }, "availability": { "health": "valid", "abilities": "valid", "stats": "valid", "loadout": "valid" } },
+        { "id": "R-05", "renderKey": "spectra-player:R-05", "order": 4, "name": "Kappa", "fullName": "Kappa#RTI", "agent": "Cable", "alive": true, "observed": false, "hasSpike": false, "health": null, "weapon": null, "armor": null, "credits": null, "kills": null, "deaths": null, "assists": null, "ultimate": { "current": null, "required": null, "ready": null }, "abilities": { "grenade": null, "ability1": null, "ability2": null }, "availability": { "health": "unknown", "abilities": "unknown", "stats": "unknown", "loadout": "unknown" } }
+      ]
+    }
+  ],
+  "observedPlayerId": "L-03",
+  "spike": { "planted": true, "defused": false, "detonated": false },
+  "series": { "mapsNeeded": 2, "tournamentName": "Lyon e-Sport 2026" },
+  "sessionId": "fixture-synthetic-only",
+  "revision": 1,
+  "receivedAt": 0,
+  "publishedAt": 0
+}

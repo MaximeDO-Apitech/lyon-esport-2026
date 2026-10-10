@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": ["object", "null"],
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "sourceVersion",
+    "running",
+    "round",
+    "phase",
+    "map",
+    "teams",
+    "observedPlayerId",
+    "spike",
+    "series",
+    "sessionId",
+    "revision",
+    "receivedAt",
+    "publishedAt"
+  ],
+  "properties": {
+    "source": { "enum": ["spectra"] },
+    "sourceVersion": { "enum": ["server-0.3.5/frontend-0.3.6-contract"] },
+    "running": { "type": ["boolean", "null"] },
+    "round": { "type": ["integer", "null"], "minimum": 0 },
+    "phase": { "type": ["string", "null"] },
+    "map": { "type": ["string", "null"] },
+    "teams": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "$ref": "#/definitions/team" }
+    },
+    "observedPlayerId": { "type": ["string", "null"] },
+    "spike": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["planted", "defused", "detonated"],
+      "properties": {
+        "planted": { "type": ["boolean", "null"] },
+        "defused": { "type": ["boolean", "null"] },
+        "detonated": { "type": ["boolean", "null"] }
+      }
+    },
+    "series": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mapsNeeded", "tournamentName"],
+      "properties": {
+        "mapsNeeded": { "type": ["integer", "null"], "minimum": 0 },
+        "tournamentName": { "type": ["string", "null"] }
+      }
+    },
+    "sessionId": { "type": "string" },
+    "revision": { "type": "integer", "minimum": 0 },
+    "receivedAt": { "type": "integer", "minimum": 0 },
+    "publishedAt": { "type": "integer", "minimum": 0 }
+  },
+  "definitions": {
+    "team": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identityKey",
+        "position",
+        "name",
+        "tricode",
+        "logoUrl",
+        "side",
+        "score",
+        "seriesScore",
+        "players"
+      ],
+      "properties": {
+        "identityKey": { "enum": ["spectra-left-team", "spectra-right-team"] },
+        "position": { "enum": ["left", "right"] },
+        "name": { "type": ["string", "null"] },
+        "tricode": { "type": ["string", "null"] },
+        "logoUrl": { "type": ["string", "null"] },
+        "side": { "enum": ["attack", "defense", "unknown"] },
+        "score": { "type": ["integer", "null"], "minimum": 0 },
+        "seriesScore": { "type": ["integer", "null"], "minimum": 0 },
+        "players": {
+          "type": "array",
+          "maxItems": 5,
+          "items": { "$ref": "#/definitions/player" }
+        }
+      }
+    },
+    "player": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "renderKey",
+        "order",
+        "name",
+        "fullName",
+        "agent",
+        "alive",
+        "observed",
+        "hasSpike",
+        "health",
+        "weapon",
+        "armor",
+        "credits",
+        "kills",
+        "deaths",
+        "assists",
+        "ultimate",
+        "abilities",
+        "availability"
+      ],
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "renderKey": { "type": "string" },
+        "order": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "name": { "type": ["string", "null"] },
+        "fullName": { "type": ["string", "null"] },
+        "agent": { "type": ["string", "null"] },
+        "alive": { "type": ["boolean", "null"] },
+        "observed": { "type": "boolean" },
+        "hasSpike": { "type": ["boolean", "null"] },
+        "health": { "type": ["integer", "null"], "minimum": 0, "maximum": 200 },
+        "weapon": { "type": ["string", "null"] },
+        "armor": { "type": ["string", "null"] },
+        "credits": { "type": ["integer", "null"], "minimum": 0 },
+        "kills": { "type": ["integer", "null"], "minimum": 0 },
+        "deaths": { "type": ["integer", "null"], "minimum": 0 },
+        "assists": { "type": ["integer", "null"], "minimum": 0 },
+        "ultimate": { "$ref": "#/definitions/ultimate" },
+        "abilities": { "$ref": "#/definitions/abilities" },
+        "availability": { "$ref": "#/definitions/availability" }
+      }
+    },
+    "ultimate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current", "required", "ready"],
+      "properties": {
+        "current": { "type": ["integer", "null"], "minimum": 0 },
+        "required": { "type": ["integer", "null"], "minimum": 0 },
+        "ready": { "type": ["boolean", "null"] }
+      }
+    },
+    "abilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["grenade", "ability1", "ability2"],
+      "properties": {
+        "grenade": { "type": ["integer", "null"], "minimum": 0 },
+        "ability1": { "type": ["integer", "null"], "minimum": 0 },
+        "ability2": { "type": ["integer", "null"], "minimum": 0 }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["health", "abilities", "stats", "loadout"],
+      "properties": {
+        "health": { "enum": ["valid", "unknown", "unsupported"] },
+        "abilities": { "enum": ["valid", "unknown", "unsupported"] },
+        "stats": { "enum": ["valid", "unknown", "unsupported"] },
+        "loadout": { "enum": ["valid", "unknown", "unsupported"] }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <title>Controle Valorant</title>
+</head>
+<body>
+  <div class="stack">
+    <div class="grid">
+      <button data-action="program.show" class="primary">Afficher le HUD</button>
+      <button data-action="program.hide">Masquer</button>
+      <button data-action="program.emergency-clear" class="danger">Urgence transparent</button>
+      <button id="replay" data-action="program.replay" data-value="true" class="gold">Entrer en replay</button>
+    </div>
+    <div class="card stack">
+      <div class="row"><span class="label">Etat programme</span><span id="program-state" class="badge">—</span></div>
+      <div class="row"><span class="label">Mode</span><span id="mode" class="value">—</span></div>
+      <div class="row"><span class="label">Revision</span><span id="revision" class="value">—</span></div>
+      <div class="grid">
+        <button data-action="program.mode" data-value="compact">Mode compact</button>
+        <button data-action="program.mode" data-value="full">Mode complet</button>
+      </div>
+    </div>
+    <form id="modules-form" class="card stack">
+      <h2>Modules programme</h2>
+      <div class="grid">
+        <label class="check"><input type="checkbox" name="score"> Score</label>
+        <label class="check"><input type="checkbox" name="players"> Rails joueurs</label>
+        <label class="check"><input type="checkbox" name="observed"> Joueur observe</label>
+        <label class="check"><input type="checkbox" name="series"> Serie / carte</label>
+        <label class="check"><input type="checkbox" name="spike"> Spike</label>
+        <label class="check"><input type="checkbox" name="autoHideOnDisconnect"> Masquer si deconnecte</label>
+      </div>
+      <label class="label" for="delay">Delai graphique (0–15000 ms)</label>
+      <input id="delay" name="delay" type="number" min="0" max="15000" step="100">
+      <button type="submit">Appliquer les reglages</button>
+    </form>
+    <div class="card stack">
+      <h2>Preparation</h2>
+      <div class="grid">
+        <button data-action="preview.mode" data-value="compact">Apercu compact</button>
+        <button data-action="preview.mode" data-value="full">Apercu complet</button>
+      </div>
+      <button data-action="preview.publish" class="gold">Publier l'apercu sans afficher</button>
+      <p class="muted">Publier copie uniquement la presentation. La telemetrie reste live et le programme demeure masque jusqu'a « Afficher ».</p>
+    </div>
+    <div id="command-status" class="status-line"></div>
+  </div>
+  <script src="common.js"></script>
+  <script src="control.js"></script>
+</body>
+</html>

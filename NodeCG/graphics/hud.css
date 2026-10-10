@@ -1,0 +1,97 @@
+@font-face { font-family: "Eurostile LES"; src: url("fonts/EurostileExtendedBlack.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Eurostile LES"; src: url("fonts/EurostileExtendedRegular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Gotham LES"; src: url("fonts/GothamBlack.otf") format("opentype"); font-weight: 800; font-style: normal; font-display: swap; }
+
+:root {
+  --ink: #010a14;
+  --paper: #fafbfb;
+  --cyan: #01f7fd;
+  --gold: #fcc766;
+  --orange: #ef7b28;
+  --panel: rgba(1, 10, 20, .91);
+  --muted: #9fb1bf;
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: transparent; }
+body { font-family: "Gotham LES", sans-serif; }
+#viewport { position: relative; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+#stage { position: absolute; width: 1920px; height: 1080px; left: 50%; top: 50%; transform-origin: 50% 50%; color: var(--paper); }
+#reference-backdrop { display: none; position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; }
+#stage.has-backdrop #reference-backdrop { display: block; }
+#hud { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity 160ms linear; }
+#stage.is-visible #hud { opacity: 1; }
+#stage.is-emergency #hud { opacity: 0 !important; transition: none !important; }
+.module { transition: opacity 160ms ease-out, transform 160ms ease-out; }
+.module.is-disabled { opacity: 0 !important; visibility: hidden; }
+
+#scoreboard {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  width: 1040px;
+  height: 112px;
+  display: grid;
+  grid-template-columns: 420px 200px 420px;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .28));
+  transform: translateX(-50%);
+}
+.brand-mark { position: absolute; left: 50%; top: -1px; z-index: 3; width: 70px; height: 22px; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; background: var(--cyan); color: var(--ink); font: 900 12px/1 "Eurostile LES", sans-serif; letter-spacing: .16em; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
+.brand-mark i { display: none; }
+.team-score { min-width: 0; height: 82px; display: flex; align-items: center; background: var(--panel); border-top: 2px solid var(--side-color, var(--cyan)); }
+.team-score-left { --side-color: var(--cyan); padding-left: 18px; clip-path: polygon(16px 0, 100% 0, calc(100% - 14px) 100%, 0 100%, 0 16px); }
+.team-score-right { --side-color: var(--orange); justify-content: flex-end; padding-right: 18px; clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 14px 100%); }
+.team-score[data-side="attack"] { --side-color: var(--orange); }
+.team-score[data-side="defense"] { --side-color: var(--cyan); }
+.team-identity { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; }
+.team-score-right .team-identity { justify-content: flex-end; text-align: right; }
+.team-logo { width: 42px; height: 42px; object-fit: contain; }
+.team-logo:not([src]) { display: none; }
+.team-name { max-width: 270px; overflow: hidden; color: var(--paper); font: 900 18px/1.05 "Eurostile LES", sans-serif; letter-spacing: .035em; text-overflow: ellipsis; white-space: nowrap; }
+.team-side { margin-top: 7px; color: var(--side-color); font: 800 10px/1 "Gotham LES", sans-serif; letter-spacing: .18em; }
+.score-value { min-width: 76px; color: var(--paper); font: 900 46px/1 "Eurostile LES", sans-serif; text-align: center; font-variant-numeric: tabular-nums; }
+.match-core { height: 82px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(1, 10, 20, .97); border-top: 2px solid var(--gold); text-align: center; }
+.phase-line { display: flex; align-items: center; gap: 8px; color: var(--paper); font: 900 13px/1 "Eurostile LES", sans-serif; letter-spacing: .07em; text-transform: uppercase; }
+#spike-status:not(:empty) { padding: 5px 7px 4px; background: var(--orange); color: var(--ink); font-size: 9px; letter-spacing: .08em; }
+.round-line { display: flex; align-items: center; gap: 8px; margin-top: 10px; color: var(--muted); font: 800 10px/1 "Gotham LES", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.round-line i { width: 3px; height: 3px; background: var(--cyan); transform: rotate(45deg); }
+.series-line { position: absolute; left: 250px; right: 250px; top: 82px; height: 25px; padding-top: 8px; color: #d2dce4; background: rgba(1, 10, 20, .78); font: 800 9px/1 "Gotham LES", sans-serif; letter-spacing: .1em; text-align: center; text-transform: uppercase; clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 100%, 0 100%); }
+
+.player-rail { position: absolute; top: 214px; width: 302px; display: grid; gap: 8px; }
+.player-rail-left { left: 28px; }
+.player-rail-right { right: 28px; }
+.player-card { position: relative; height: 74px; display: grid; grid-template-columns: 50px minmax(0, 1fr) 58px; align-items: center; gap: 10px; padding: 8px 10px; overflow: hidden; background: linear-gradient(100deg, rgba(1,10,20,.94), rgba(8,29,43,.89)); border-left: 3px solid var(--side-color, var(--cyan)); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); transition: opacity 140ms linear, transform 160ms ease-out, border-color 120ms linear; }
+.player-rail-right .player-card { grid-template-columns: 58px minmax(0, 1fr) 50px; border-left: 0; border-right: 3px solid var(--side-color, var(--orange)); clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px); }
+.player-card[data-side="attack"] { --side-color: var(--orange); }
+.player-card[data-side="defense"] { --side-color: var(--cyan); }
+.player-card.is-dead { opacity: .58; filter: saturate(.25); }
+.player-card.is-observed::after { content: "OBS"; position: absolute; right: 7px; top: 4px; color: var(--gold); font: 800 8px/1 "Gotham LES", sans-serif; letter-spacing: .12em; }
+.player-rail-right .player-card.is-observed::after { left: 7px; right: auto; }
+.agent-token { width: 50px; height: 48px; display: flex; align-items: center; justify-content: center; background: rgba(250,251,251,.07); color: var(--side-color); font: 900 13px/1 "Eurostile LES", sans-serif; letter-spacing: .04em; }
+.player-copy { min-width: 0; }
+.player-name { overflow: hidden; font: 900 14px/1 "Eurostile LES", sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.player-detail { overflow: hidden; margin-top: 7px; color: #aab9c4; font: 800 9px/1 "Gotham LES", sans-serif; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.player-state { color: var(--paper); font: 900 11px/1.25 "Eurostile LES", sans-serif; text-align: right; font-variant-numeric: tabular-nums; }
+.player-state small { display: block; margin-top: 5px; color: var(--muted); font: 800 8px/1 "Gotham LES", sans-serif; letter-spacing: .08em; }
+.player-rail-right .agent-token { grid-column: 3; grid-row: 1; }
+.player-rail-right .player-copy { grid-column: 2; grid-row: 1; text-align: right; }
+.player-rail-right .player-state { grid-column: 1; grid-row: 1; text-align: left; }
+
+.observed-card { position: absolute; left: 50%; bottom: 40px; width: 590px; min-height: 116px; padding: 14px 20px 16px; transform: translateX(-50%); background: var(--panel); border-top: 2px solid var(--gold); clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%, 0 16px); filter: drop-shadow(0 8px 14px rgba(0,0,0,.26)); }
+.observed-kicker { color: var(--gold); font: 800 9px/1 "Gotham LES", sans-serif; letter-spacing: .2em; }
+.observed-main { display: grid; grid-template-columns: 64px minmax(0, 1fr) 88px; align-items: center; gap: 14px; margin-top: 9px; }
+.agent-chip { height: 48px; display: flex; align-items: center; justify-content: center; background: rgba(1,247,253,.1); color: var(--cyan); font: 900 14px/1 "Eurostile LES", sans-serif; }
+.observed-copy { min-width: 0; display: grid; gap: 6px; }
+.observed-copy strong { overflow: hidden; font: 900 20px/1 "Eurostile LES", sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.observed-copy span { color: var(--muted); font: 800 10px/1 "Gotham LES", sans-serif; text-transform: uppercase; }
+.observed-health { font: 900 28px/1 "Eurostile LES", sans-serif; text-align: right; font-variant-numeric: tabular-nums; }
+.observed-stats { margin-top: 8px; color: #c4d1da; font: 800 9px/1 "Gotham LES", sans-serif; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+
+#stage.mode-compact #scoreboard { top: 24px; width: 900px; grid-template-columns: 360px 180px 360px; }
+#stage.mode-compact .team-name { max-width: 215px; }
+#stage.mode-compact .series-line { left: 200px; right: 200px; }
+#stage.source-stale .score-value,
+#stage.source-stale .player-detail,
+#stage.source-stale .player-state,
+#stage.source-stale .observed-health,
+#stage.source-stale .observed-stats { visibility: hidden; }

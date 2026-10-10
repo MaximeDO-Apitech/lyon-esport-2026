@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile",
+    "endpointConfigured",
+    "protocol",
+    "namespace",
+    "path",
+    "phase",
+    "transportConnected",
+    "subscriptionAcknowledged",
+    "sourceStatus",
+    "groupHint",
+    "attempt",
+    "lastPacketAt",
+    "lastChangeAt",
+    "lastError",
+    "updatedAt"
+  ],
+  "properties": {
+    "profile": { "type": "string" },
+    "endpointConfigured": { "type": "boolean" },
+    "protocol": { "enum": ["socket.io-4.8.1"] },
+    "namespace": { "enum": ["/"] },
+    "path": { "type": "string" },
+    "phase": {
+      "enum": [
+        "waiting-configuration",
+        "connecting",
+        "transport-connected",
+        "subscribed",
+        "reconnecting",
+        "stopped"
+      ]
+    },
+    "transportConnected": { "type": "boolean" },
+    "subscriptionAcknowledged": { "type": "boolean" },
+    "sourceStatus": {
+      "enum": ["unconfigured", "waiting-source", "live", "quiet", "stale", "invalid"]
+    },
+    "groupHint": { "type": ["string", "null"] },
+    "attempt": { "type": "integer", "minimum": 0 },
+    "lastPacketAt": { "type": ["integer", "null"], "minimum": 0 },
+    "lastChangeAt": { "type": ["integer", "null"], "minimum": 0 },
+    "lastError": { "type": ["string", "null"] },
+    "updatedAt": { "type": "integer", "minimum": 0 }
+  }
+}

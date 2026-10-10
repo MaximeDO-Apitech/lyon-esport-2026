@@ -1,5 +1,9 @@
 # lyon-esport-2026
 
+## NodeCG / Valorant
+
+Le nouveau bundle [`NodeCG/`](NodeCG/README.md) consomme la sortie officielle du serveur Spectra dans une extension unique, normalise les donnees dans des Replicants et sert un HUD LES transparent 1920 × 1080 pour vMix. Spectra reste la source metier ; NodeCG gere la presentation ; la video reste une entree vMix separee. La migration est additive : les sorties validees de `Web App vMix` ne sont ni deplacees ni modifiees dans ce lot.
+
 ## OpenMontage
 
 [OpenMontage](https://github.com/calesthio/OpenMontage) est intégré comme sous-module dans `tools/OpenMontage`. Cette séparation conserve son historique et sa licence AGPL-3.0 sans mélanger ses dépendances Python/Remotion avec `Web App vMix`.
