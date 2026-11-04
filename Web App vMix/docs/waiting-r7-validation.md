@@ -4,7 +4,7 @@ La révision `les-da-2026-r7` renforce uniquement le cadrage, les deux rails poi
 
 ## Références et ressources
 
-La page unique `DA 2026/éléments source/éléments graphiques/Univers Graphique.pdf` a été rendue et contrôlée visuellement. La zone « ÉLÉMENTS GRAPHIQUES » confirme :
+La page unique `../../archives/DA 2026/éléments source/éléments graphiques/Univers Graphique.pdf` a été rendue et contrôlée visuellement. La zone « ÉLÉMENTS GRAPHIQUES » confirme :
 
 - quatre angles cyan ouverts vers l’intérieur ;
 - deux rails verticaux composés d’un point terminal cyan, de points clairs et d’une croix cyan ;

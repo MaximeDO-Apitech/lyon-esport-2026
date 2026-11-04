@@ -23,3 +23,7 @@ NodeCG/extension/
 # Local Python inspection caches
 **/__pycache__/
 **/*.pyc
+
+# Local source drops and retired project material
+archives/
+Les_Logos/

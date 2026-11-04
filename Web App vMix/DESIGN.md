@@ -4,7 +4,7 @@ Ce document sépare les règles officielles constatées dans les sources de marq
 
 ## Règles officielles
 
-Sources examinées : les exemplaires fournis de `Univers Graphique.pdf`, les nouveaux dossiers `DA 2026/logos`, `DA 2026/éléments source`, `DA 2026/déclinaisons png` et les variantes de direction artistique, ainsi que les cinq visuels de communication du 5 octobre 2026 (`05_17_00 PM`, `05_16_58 PM`, `05_16_55 PM`, `05_16_47 PM`, `05_16_43 PM`). Les vidéos `WIP-V4-STREAM-1920-ALED-Compressed.mov`, `STREAM-PROBLEME-TECHNIQUE-V5-1920.mp4` et `Stinger-V1-court-compressed.mov` ont également été examinées comme points de comparaison de l'habillage plein écran.
+Sources examinées : les exemplaires fournis de `Univers Graphique.pdf`, désormais conservés avec `../archives/DA 2026/logos`, `../archives/DA 2026/éléments source`, `../archives/DA 2026/déclinaisons png` et les variantes de direction artistique, ainsi que les cinq visuels de communication du 5 octobre 2026 (`05_17_00 PM`, `05_16_58 PM`, `05_16_55 PM`, `05_16_47 PM`, `05_16_43 PM`). Les vidéos `WIP-V4-STREAM-1920-ALED-Compressed.mov`, `STREAM-PROBLEME-TECHNIQUE-V5-1920.mp4` et `Stinger-V1-court-compressed.mov` ont également été examinées comme points de comparaison de l'habillage plein écran.
 
 Palette unique :
 
@@ -16,7 +16,7 @@ Palette unique :
 
 Typographies nommées par la charte : Eurostile Extd Black, Eurostile Extd Regular et Gotham. Les sorties utilisent exclusivement les fichiers locaux autorisés présents dans le projet. Aucun CDN ni téléchargement de police n’est effectué en exploitation.
 
-Le bloc-marque officiel est le fichier horizontal entièrement blanc `DA 2026/logos/Lyon E-sport/Copie de Copie de Logo_les2022_blanc_transparent.png`. Il remplace dans toute l’application l’ancien bloc vertical comportant « Lyon » en rouge. Il est affiché sans filtre, contour, recadrage, recoloration, redessin, extrusion, déformation ni altération du ratio, reste fixe et pleinement opaque, et sa copie publique `public/assets/Bloc_marque_sans-fond_blanc.png` est binaire-identique à la source choisie.
+Le bloc-marque officiel est le fichier horizontal entièrement blanc `../archives/DA 2026/logos/Lyon E-sport/Copie de Copie de Logo_les2022_blanc_transparent.png`. Il remplace dans toute l’application l’ancien bloc vertical comportant « Lyon » en rouge. Il est affiché sans filtre, contour, recadrage, recoloration, redessin, extrusion, déformation ni altération du ratio, reste fixe et pleinement opaque, et sa copie publique `public/assets/Bloc_marque_sans-fond_blanc.png` est binaire-identique à la source choisie.
 
 Les motifs officiels utilisés sont les flammes/volutes, le fond `Elements-01`, l’angle cyan, la ligne de points et le nuage de points fournis. Ils restent décoratifs, vivent dans les couches périphériques et ne passent pas devant le logo, le message ni le compteur. La ligne de points n’est jamais utilisée comme une grande colonne répétitive : elle devient un repère latéral court et local.
 

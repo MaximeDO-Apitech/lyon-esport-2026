@@ -1,40 +1,26 @@
-# lyon-esport-2026
+# Lyon e-Sport 2026 — régie graphique
 
-La procédure complète de mise en service, conduite antenne, dépannage, sauvegarde et arrêt est disponible dans [`DOCUMENTATION-EXPLOITATION.md`](DOCUMENTATION-EXPLOITATION.md).
+Le dépôt actif est désormais centré sur le produit **Spectra → NodeCG → vMix** :
 
-## NodeCG / Valorant
+- [`NodeCG/`](NodeCG/README.md) : connexion unique au serveur Spectra, validation et normalisation des données, Replicants, dashboard et HUD Valorant transparent 1920 × 1080 ;
+- [`Web App vMix/`](Web%20App%20vMix/README.md) : sorties historiques encore exploitées — attente, synthé, stingers et pack replay ;
+- `Les_Logos/` : sources partenaires locales, volontairement ignorées par Git et hors runtime tant qu'une intégration validée ne les a pas embarquées ;
+- [`DOCUMENTATION-EXPLOITATION.md`](DOCUMENTATION-EXPLOITATION.md) : installation, conduite antenne, incidents, sauvegarde et reprise.
+- [`VALIDATION-EXPLOITATION-2026-11-04.md`](VALIDATION-EXPLOITATION-2026-11-04.md) : résultat de la recette technique après rangement.
 
-Le nouveau bundle [`NodeCG/`](NodeCG/README.md) consomme la sortie officielle du serveur Spectra dans une extension unique, normalise les donnees dans des Replicants et sert un HUD LES transparent 1920 × 1080 pour vMix. Spectra reste la source metier ; NodeCG gere la presentation ; la video reste une entree vMix separee. La migration est additive : les sorties validees de `Web App vMix` ne sont ni deplacees ni modifiees dans ce lot.
+Spectra reste la source métier. NodeCG décide de la présentation du HUD Valorant. vMix compose les graphismes avec la vidéo et reste responsable de la réalisation.
 
-## OpenMontage
-
-[OpenMontage](https://github.com/calesthio/OpenMontage) est intégré comme sous-module dans `tools/OpenMontage`. Cette séparation conserve son historique et sa licence AGPL-3.0 sans mélanger ses dépendances Python/Remotion avec `Web App vMix`.
-
-Après un nouveau clone du projet :
-
-```powershell
-git submodule update --init --recursive
-py -3.11 -m venv tools/OpenMontage/.venv
-tools/OpenMontage/.venv/Scripts/python.exe -m pip install -r tools/OpenMontage/requirements.txt
-tools/OpenMontage/.venv/Scripts/python.exe -m pip install piper-tts
-npm ci --prefix tools/OpenMontage/remotion-composer
-```
-
-Sur cette machine, FFmpeg 9.0.2, Python 3.11, Piper, Remotion 4.0.484 et HyperFrames 0.8.140 sont installés. Le modèle vocal local par défaut `en_US-lessac-medium` est présent. Les clés de fournisseurs restent optionnelles et doivent être placées uniquement dans `tools/OpenMontage/.env`, qui est ignoré par Git.
-
-Commandes utiles depuis la racine :
+## Vérification rapide
 
 ```powershell
-.\openmontage.ps1 preflight
-.\openmontage.ps1 doctor
-.\openmontage.ps1 backlot
-.\openmontage.ps1 demo-list
+cd NodeCG
+npm run check
+
+cd "..\Web App vMix"
+npm test
+npm run lint
+npx tsc --noEmit
+npm run build
 ```
 
-Les productions OpenMontage sont créées dans `tools/OpenMontage/projects/`, également ignoré par Git. Avant toute production, suivre le contrat décrit dans `tools/OpenMontage/AGENT_GUIDE.md` : sélection de pipeline, préflight, proposition et points d’approbation.
-
-L’intégration propre au projet LES, son profil de marque, sa politique locale à
-0 USD et le pilote de qualification des deux stingers sont documentés dans
-[`production/openmontage-les/`](production/openmontage-les/README.md). Ce chemin
-reste un atelier hors programme : il ne publie ni ne sélectionne aucun asset
-dans la régie.
+Les sources graphiques historiques, anciens ateliers, plans et outils hors runtime sont conservés localement dans `archives/`, volontairement ignoré par Git. Aucun élément de ce dossier ne doit être ajouté aux chemins de production sans réactivation et recette dédiées.

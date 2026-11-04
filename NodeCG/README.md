@@ -4,7 +4,7 @@ Ce dossier est un vrai projet/bundle NodeCG autonome. Spectra reste la source de
 
 ## Demarrage local sur la regie
 
-Prerequis testes : Node.js `24.20.0` sur Windows, NodeCG `2.8.0` verrouille dans `package-lock.json`. NodeCG documente Node.js 22 comme version d'installation ; le projet conserve `>=22` et a aussi ete demarre avec la version 24 installee.
+Prerequis testes : Node.js `24.20.0` et `26.13.0` sur Windows, NodeCG `2.8.0` verrouille dans `package-lock.json`. Le projet conserve `>=22` et les tests ainsi que le serveur local ont ete revalides avec la version 26 installee.
 
 ```powershell
 cd "C:\Users\maximed\Documents\Lyon e-Sport 2026\NodeCG"

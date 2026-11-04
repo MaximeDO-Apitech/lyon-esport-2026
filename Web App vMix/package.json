@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
-    "start": "vinext start",
+    "start": "vite preview --host 127.0.0.1 --port 3000",
+    "start:lan": "vite preview --host 0.0.0.0 --port 3000",
     "test": "tsx --test tests/*.test.ts",
     "export:stinger": "node scripts/prepare-stinger-v2.mjs",
     "prepare:stinger": "node scripts/prepare-stinger-v2.mjs",

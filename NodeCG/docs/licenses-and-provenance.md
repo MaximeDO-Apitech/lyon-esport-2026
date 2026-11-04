@@ -13,7 +13,7 @@ Liens : [licence Server](https://github.com/ValoSpectra/Spectra-Server/blob/6e10
 
 ## Ressources graphiques
 
-- fontes `EurostileExtendedBlack.ttf`, `EurostileExtendedRegular.ttf`, `GothamBlack.otf` : copies binaires des fichiers fournis dans `DA 2026/éléments source/typographies`. Le depot ne documente pas ici leurs droits au-dela de cette mise a disposition interne ; ne pas redistribuer separement sans verification contractuelle ;
+- fontes `EurostileExtendedBlack.ttf`, `EurostileExtendedRegular.ttf`, `GothamBlack.otf` : copies binaires des fichiers fournis dans `../../archives/DA 2026/éléments source/typographies`. Le depot ne documente pas ici leurs droits au-dela de cette mise a disposition interne ; ne pas redistribuer separement sans verification contractuelle ;
 - `reference-gameplay.jpg` : screengrab officiel inchangé provenant du [VALORANT Asset Kit](https://playvalorant.com/en-us/news/game-updates/valorant-asset-kit/), utilise seulement comme fond d'apercu/test ; Riot invite presse et createurs a utiliser ces fichiers sous reserve de son « Legal Jibber Jabber » ;
 - aucune image d'agent, arme ou logo d'equipe Spectra n'est copiee ; les logos distants sont refuses par defaut et ne sont affiches que pour des hotes HTTPS explicitement autorises.
 

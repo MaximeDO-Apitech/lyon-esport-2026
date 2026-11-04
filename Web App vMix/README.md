@@ -2,7 +2,7 @@
 
 Application de régie graphique web pour le canal logique `stream`. Elle regroupe une bibliothèque de modèles, un pupitre brouillon/aperçu/programme, une attente animée et un synthé transparent. Les deux sorties utilisent le même moteur de rendu que leurs aperçus.
 
-Le logo servi par l’application est une copie binaire intacte de `DA 2026/logos/Lyon E-sport/Copie de Copie de Logo_les2022_blanc_transparent.png`. Ce bloc-marque horizontal entièrement blanc remplace partout l’ancien logo avec « Lyon » en rouge. Les règles de marque et les choix de composition sont consignés dans [DESIGN.md](./DESIGN.md).
+Le logo servi par l’application est une copie binaire intacte de `../archives/DA 2026/logos/Lyon E-sport/Copie de Copie de Logo_les2022_blanc_transparent.png`. Ce bloc-marque horizontal entièrement blanc remplace partout l’ancien logo avec « Lyon » en rouge. Les règles de marque et les choix de composition sont consignés dans [DESIGN.md](./DESIGN.md).
 
 ## Installation et lancement
 
@@ -31,6 +31,8 @@ Pour une exploitation sans serveur de développement ni hot reload :
 npm run build
 npm run start
 ```
+
+`npm run start` sert le build avec le runtime Workers local de Vite, nécessaire aux bindings D1, et écoute seulement sur `127.0.0.1:3000`. Le serveur Node expérimental `vinext start` n'est pas utilisé car les imports natifs `cloudflare:workers` ne sont pas résolus par le chargeur ESM Node.
 
 ## Configuration vMix
 
@@ -152,8 +154,10 @@ Les commandes sont autorisées sans jeton uniquement sur l’interface de boucle
 
 ```powershell
 $env:LES_ADMIN_TOKEN = "une-valeur-longue-et-secrete"
-npm run start
+npm run start:lan
 ```
+
+`start:lan` écoute sur toutes les interfaces. Ne l'utiliser que sur le réseau de régie filtré avec le jeton configuré ; le lancement local par défaut reste lié à la boucle locale.
 
 Pour Companion, ajouter `Authorization: Bearer une-valeur-longue-et-secrete`. Les pages de sortie n’embarquent aucun secret. Les origines étrangères sont refusées.
 
@@ -163,7 +167,7 @@ L’état, les révisions, les préréglages, les commandes dédupliquées et le
 
 Les statuts **Ressources manquantes**, **À valider visuellement** et **Validé** sont distincts. Les tests automatiques ne valident jamais artistiquement un modèle.
 
-La ressource `Eurostile Extended Regular`, ajoutée au dossier `DA 2026/éléments source/typographies`, est désormais embarquée localement et déclarée disponible dans la bibliothèque. Les sorties existantes conservent Eurostile Extended Black et Gotham Black aux endroits prévus.
+La ressource `Eurostile Extended Regular`, issue du dossier archivé `../archives/DA 2026/éléments source/typographies`, est embarquée localement et déclarée disponible dans la bibliothèque. Les sorties existantes conservent Eurostile Extended Black et Gotham Black aux endroits prévus.
 
 ## Vérifications du dépôt
 
